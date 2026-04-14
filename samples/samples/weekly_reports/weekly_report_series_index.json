@@ -1,0 +1,26 @@
+{
+  "sample_set_id": "PMO-CYCLE-2025-DEC-LATEST3",
+  "sample_set_type": "weekly_report_series",
+  "report_count": 3,
+  "time_range": {
+    "start": "1208-1212",
+    "end": "1222-1226"
+  },
+  "sample_ids": [
+    "PMO-WR-2025-1222-1226",
+    "PMO-WR-2025-1215-1219",
+    "PMO-WR-2025-1208-1212"
+  ],
+  "periods": [
+    "1222-1226",
+    "1215-1219",
+    "1208-1212"
+  ],
+  "tracked_dimensions": [
+    "总待办事项变化",
+    "进行中事项变化",
+    "新增项目",
+    "结项/延期/终止申请",
+    "黄灯事项连续跟踪"
+  ]
+}

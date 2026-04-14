@@ -1,0 +1,8 @@
+{
+  "project_name": "智慧园区一期",
+  "owner": "张明",
+  "promised_items": "6月30日前完成基础平台部署，交付物包括用户权限模块和数据看板",
+  "current_progress": "基础平台部署完成80%，用户权限模块开发完成，数据看板开发滞后约2周",
+  "risk_points": "数据源接口对接进度不及预期，可能影响看板按时上线",
+  "escalation_requested": false
+}

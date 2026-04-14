@@ -1,0 +1,20 @@
+{
+  "package_name": "openclaw_unified_sample_pack",
+  "report_count": 32,
+  "report_period_range": {
+    "first": "0421-0430",
+    "last": "1222-1226"
+  },
+  "active_project_count": 20,
+  "closed_or_terminated_count": 49,
+  "quant_metric_row_count": 41,
+  "recommended_slices": [
+    "00_all_periods_manifest.json",
+    "01_dev_core_december.json",
+    "02_holdout_validation_november.json",
+    "03_stress_regression_aug_sep.json",
+    "04_baseline_transition_apr_jul.json",
+    "05_formal_trial_live_placeholder.json"
+  ],
+  "production_switch_strategy": "只替换与 templates 相同结构的新数据，不修改字段、输出口径和目录。"
+}

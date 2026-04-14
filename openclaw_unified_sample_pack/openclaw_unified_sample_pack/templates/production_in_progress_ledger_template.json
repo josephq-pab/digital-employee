@@ -1,0 +1,18 @@
+{
+  "snapshot_period": "MMDD-MMDD",
+  "start_date": "YYYY-MM-DD",
+  "end_date": "YYYY-MM-DD",
+  "active_project_count": 0,
+  "projects": [
+    {
+      "project_name": "",
+      "canonical_key": "",
+      "category": "",
+      "owner_department": "",
+      "due_time": "",
+      "project_requirement": "",
+      "progress": "",
+      "subitems": []
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+你现在基于统一样本包继续开发/调试。
+
+本次只使用：
+- slices/01_dev_core_december.json
+- normalized/ledgers/closed_terminated_master.json
+- normalized/metrics/quant_metrics_long.json
+
+目标：
+1. 完成开发、调试、冒烟测试、演示打磨
+2. 所有输出保持与统一样本包 schema 一致
+3. 不得使用 holdout 或 stress 切片做规则调优
+
+输出要求：
+- 明确本次使用的 report_periods
+- 明确生成的输入、归一化结果、摘要、台账、风险清单路径
+- 明确哪些规则和字段来自样本包

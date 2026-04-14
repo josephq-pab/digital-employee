@@ -1,0 +1,14 @@
+{
+  "slice_name": "formal_trial_live_placeholder",
+  "purpose": "正式试运行/生产切换占位切片；只替换数据，不改结构",
+  "expected_inputs": [
+    "templates/production_weekly_report_template.json",
+    "templates/production_in_progress_ledger_template.json",
+    "templates/production_closed_terminated_template.json",
+    "templates/production_metrics_template.json"
+  ],
+  "notes": [
+    "切换生产时，优先保持字段一致、文件路径一致、输出口径一致。",
+    "建议用新的周报、台账、结项中止表和量化指标表覆盖模板内容。"
+  ]
+}

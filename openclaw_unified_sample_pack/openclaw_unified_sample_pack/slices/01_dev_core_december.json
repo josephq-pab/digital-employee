@@ -1,0 +1,34 @@
+{
+  "slice_name": "dev_core_december",
+  "purpose": "开发/调试/首轮冒烟/演示主样本集",
+  "report_periods": [
+    "1208-1212",
+    "1215-1219",
+    "1222-1226"
+  ],
+  "includes": "weekly+ledger+metrics where available",
+  "items": [
+    {
+      "report_period": "1208-1212",
+      "report_file": "normalized/weekly_reports/by_period/2025-12-08_2025-12-12.json",
+      "ledger_snapshot_file": "normalized/ledgers/snapshots/2025-12-08_2025-12-12.json",
+      "metrics_snapshot_file": "normalized/metrics/snapshots/2025-12-12.json"
+    },
+    {
+      "report_period": "1215-1219",
+      "report_file": "normalized/weekly_reports/by_period/2025-12-15_2025-12-19.json",
+      "ledger_snapshot_file": "normalized/ledgers/snapshots/2025-12-15_2025-12-19.json",
+      "metrics_snapshot_file": "normalized/metrics/snapshots/2025-12-19.json"
+    },
+    {
+      "report_period": "1222-1226",
+      "report_file": "normalized/weekly_reports/by_period/2025-12-22_2025-12-26.json",
+      "ledger_snapshot_file": "normalized/ledgers/snapshots/2025-12-22_2025-12-26.json",
+      "metrics_snapshot_file": "normalized/metrics/snapshots/2025-12-26.json"
+    }
+  ],
+  "notes": [
+    "这组样本周报、台账、量化指标三者对齐程度最高。",
+    "建议所有开发阶段默认先基于这一切片。"
+  ]
+}

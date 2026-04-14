@@ -1,0 +1,19 @@
+你现在准备从统一样本包切换到正式试运行/生产业务数据。
+
+必须遵守：
+1. 只替换 templates/ 下定义的数据结构
+2. 不改变字段名、不改变输出格式、不改变输出目录
+3. 新数据先通过输入检查，再做新样本适配验证，再进入正式试运行
+
+本次优先读取：
+- templates/production_weekly_report_template.json
+- templates/production_in_progress_ledger_template.json
+- templates/production_closed_terminated_template.json
+- templates/production_metrics_template.json
+
+输出《生产替换检查清单》：
+一、哪些文件需要替换
+二、哪些字段必须保留
+三、哪些字段允许为空但要显式标记
+四、替换后先跑哪些检查
+五、什么时候可以启动正式试运行

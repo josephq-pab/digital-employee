@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>组织执行力数字员工 · 一期演示总览</title>
+<style>
+  :root {
+    --bg: #f5f6fa;
+    --card: #ffffff;
+    --border: #e2e8f0;
+    --text: #1a202c;
+    --text-muted: #718096;
+    --primary: #4f46e5;
+    --green: #22c55e;
+    --yellow: #eab308;
+    --red: #ef4444;
+    --blue: #3b82f6;
+    --violet: #7c3aed;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.6; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+
+  /* Nav tabs */
+  .nav-tabs { display: flex; gap: 4px; background: var(--card); border-radius: 12px; padding: 6px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .nav-tabs .tab { padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 13px; font-weight: 500; color: var(--text-muted); transition: all 0.2s; border: none; background: none; }
+  .nav-tabs .tab:hover { color: var(--primary); }
+  .nav-tabs .tab.active { background: var(--primary); color: white; }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* Page header */
+  .page-header { margin-bottom: 24px; }
+  .page-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary); margin-bottom: 6px; }
+  .page-title { font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+  .page-subtitle { color: var(--text-muted); font-size: 13px; }
+
+  /* Cards */
+  .card { background: var(--card); border-radius: 12px; padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid var(--border); }
+  .card-title { font-size: 14px; font-weight: 600; margin-bottom: 12px; color: var(--text); display: flex; align-items: center; gap: 8px; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 11px; font-weight: 600; }
+  .badge-green { background: #dcfce7; color: #166534; }
+  .badge-yellow { background: #fef9c3; color: #854d0e; }
+  .badge-red { background: #fee2e2; color: #991b1b; }
+  .badge-blue { background: #dbeafe; color: #1e40af; }
+  .badge-violet { background: #ede9fe; color: #5b21b6; }
+  .badge-gray { background: #f1f5f9; color: #475569; }
+
+  /* Grid */
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 16px; }
+  .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 16px; }
+  .stat-card { background: var(--card); border-radius: 12px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid var(--border); text-align: center; }
+  .stat-num { font-size: 32px; font-weight: 700; color: var(--primary); }
+  .stat-num.green { color: var(--green); }
+  .stat-num.yellow { color: var(--yellow); }
+  .stat-num.red { color: var(--red); }
+  .stat-label { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+  .stat-sub { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+  /* Tables */
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { background: #f8fafc; padding: 10px 12px; text-align: left; font-weight: 600; color: var(--text-muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 2px solid var(--border); }
+  td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #f8fafc; }
+  .light-row td { background: #fffbeb; }
+
+  /* Timeline / roadmap */
+  .timeline { position: relative; padding-left: 24px; }
+  .timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+  .timeline-item { position: relative; margin-bottom: 20px; }
+  .timeline-dot { position: absolute; left: -20px; top: 6px; width: 12px; height: 12px; border-radius: 50%; border: 2px solid white; }
+  .dot-done { background: var(--green); }
+  .dot-current { background: var(--primary); }
+  .dot-next { background: var(--blue); }
+  .dot-future { background: var(--border); }
+  .timeline-title { font-weight: 600; font-size: 14px; margin-bottom: 2px; }
+  .timeline-sub { font-size: 12px; color: var(--text-muted); }
+
+  /* Alert rows */
+  .alert-box { border-left: 4px solid var(--yellow); background: #fffbeb; padding: 12px 16px; border-radius: 0 8px 8px 0; margin-bottom: 12px; }
+  .alert-box.red { border-left-color: var(--red); background: #fef2f2; }
+  .alert-title { font-weight: 600; font-size: 13px; margin-bottom: 4px; }
+  .alert-desc { font-size: 12px; color: var(--text-muted); }
+  .alert-meta { display: flex; gap: 16px; margin-top: 8px; font-size: 12px; color: var(--text-muted); }
+  .alert-meta span { display: flex; align-items: center; gap: 4px; }
+
+  /* Phase bar */
+  .phase-bar { display: flex; align-items: center; gap: 0; margin-bottom: 24px; background: var(--card); border-radius: 12px; padding: 16px 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid var(--border); overflow-x: auto; }
+  .phase-item { display: flex; flex-direction: column; align-items: center; min-width: 100px; flex: 1; position: relative; }
+  .phase-item::after { content: ''; position: absolute; top: 14px; right: -12px; width: 24px; height: 2px; background: var(--border); }
+  .phase-item:last-child::after { display: none; }
+  .phase-dot { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; margin-bottom: 6px; border: 2px solid white; box-shadow: 0 0 0 2px var(--border); }
+  .phase-dot.done { background: var(--green); color: white; box-shadow: 0 0 0 2px var(--green); }
+  .phase-dot.current { background: var(--primary); color: white; box-shadow: 0 0 0 2px var(--primary); }
+  .phase-dot.next { background: var(--blue); color: white; box-shadow: 0 0 0 2px var(--blue); }
+  .phase-dot.future { background: var(--border); color: var(--text-muted); }
+  .phase-name { font-size: 11px; text-align: center; color: var(--text-muted); font-weight: 500; }
+  .phase-name.active { color: var(--primary); font-weight: 600; }
+
+  /* Info row */
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .info-item { background: #f8fafc; border-radius: 8px; padding: 12px; }
+  .info-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
+  .info-value { font-size: 14px; font-weight: 600; }
+  .info-value.green { color: var(--green); }
+  .info-value.yellow { color: var(--yellow); }
+  .info-value.red { color: var(--red); }
+
+  /* Not-badge tags */
+  .tag { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: 500; background: #f1f5f9; color: var(--text-muted); margin: 2px; }
+  .tag.red { background: #fee2e2; color: #991b1b; }
+  .tag.yellow { background: #fef9c3; color: #854d0e; }
+  .tag.green { background: #dcfce7; color: #166534; }
+  .tag.blue { background: #dbeafe; color: #1e40af; }
+
+  /* Disclaimer banner */
+  .disclaimer { background: linear-gradient(135deg, #fef9c3, #fef3c7); border: 1px solid #f59e0b; border-radius: 10px; padding: 14px 18px; margin-bottom: 20px; font-size: 13px; color: #78350f; }
+  .disclaimer strong { color: #92400e; }
+  .disclaimer::before { content: '⚠️ '; }
+
+  /* Sample comparison */
+  .comparison-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+  .comparison-box { background: #f8fafc; border-radius: 8px; padding: 14px; border: 1px solid var(--border); }
+  .comparison-box h4 { font-size: 12px; font-weight: 600; margin-bottom: 8px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+  .comparison-box pre { font-size: 12px; color: var(--text); white-space: pre-wrap; word-break: break-all; font-family: inherit; }
+
+  /* Metric table */
+  .metric-row { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+  .metric-row:last-child { border-bottom: none; }
+  .metric-name { flex: 2; font-size: 13px; font-weight: 500; }
+  .metric-value { flex: 1; text-align: right; font-size: 14px; font-weight: 700; color: var(--primary); }
+  .metric-target { flex: 1; text-align: right; font-size: 12px; color: var(--text-muted); }
+  .metric-bar-wrap { flex: 2; height: 6px; background: #e2e8f0; border-radius: 3px; overflow: hidden; }
+  .metric-bar { height: 100%; border-radius: 3px; }
+  .bar-green { background: var(--green); }
+  .bar-yellow { background: var(--yellow); }
+  .bar-red { background: var(--red); }
+  .bar-blue { background: var(--blue); }
+
+  .footer { text-align: center; padding: 24px; color: var(--text-muted); font-size: 11px; }
+  .footer-note { margin-top: 4px; color: #94a3b8; }
+
+  h3 { font-size: 15px; font-weight: 700; margin-bottom: 12px; color: var(--text); }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ===================== PAGE 1: HOME / OVERVIEW ===================== -->
+<div id="page-home" class="tab-content active">
+
+  <div class="page-header">
+    <div class="page-label">数字员工 · 一期原型</div>
+    <div class="page-title">📋 组织执行力数字员工 · 系统演示总览</div>
+    <div class="page-subtitle">1208-1212期 · 某总行PMO条线 · 演示样本</div>
+  </div>
+
+  <!-- Phase progress bar -->
+  <div class="phase-bar">
+    <div class="phase-item">
+      <div class="phase-dot done">✓</div>
+      <div class="phase-name">原型构建</div>
+    </div>
+    <div class="phase-item">
+      <div class="phase-dot done">✓</div>
+      <div class="phase-name">规则链路</div>
+    </div>
+    <div class="phase-item">
+      <div class="phase-dot done">✓</div>
+      <div class="phase-name">四周试跑</div>
+    </div>
+    <div class="phase-item">
+      <div class="phase-dot done">✓</div>
+      <div class="phase-name">留出验证</div>
+    </div>
+    <div class="phase-item">
+      <div class="phase-dot done">✓</div>
+      <div class="phase-name">压力验证</div>
+    </div>
+    <div class="phase-item">
+      <div class="phase-dot done">✓</div>
+      <div class="phase-name">扩大评审</div>
+    </div>
+    <div class="phase-item">
+      <div class="phase-dot current">●</div>
+      <div class="phase-name active">演示实物化</div>
+    </div>
+    <div class="phase-item">
+      <div class="phase-dot next">○</div>
+      <div class="phase-name">影子运行</div>
+    </div>
+    <div class="phase-item">
+      <div class="phase-dot future">○</div>
+      <div class="phase-name">真实试运行</div>
+    </div>
+  </div>
+
+  <!-- Key stats -->
+  <div class="grid-3">
+    <div class="stat-card">
+      <div class="stat-num">59</div>
+      <div class="stat-label">条线待办总事项</div>
+      <div class="stat-sub">"1+3"项目 12 项 · 其他重点 47 项</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num green">3</div>
+      <div class="stat-label">本期申请结项</div>
+      <div class="stat-sub">数字经营 / 六策新行业 / 港分战略</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num yellow">2</div>
+      <div class="stat-label">黄灯警示项</div>
+      <div class="stat-sub">学校行业逾期3月 · 汽车行业逾期1月</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🎯 一句话说明：项目现在到了哪一步</div>
+    <div style="font-size: 15px; line-height: 1.8;">
+      <strong>已完成：</strong>规则链路 + 四周试跑 + 留出验证 + 压力验证 + 扩大评审包<br>
+      <strong>正在做：</strong>演示实物化 — 把现有能力做成"可见页面 + 可讨论结论"<br>
+      <strong>还要做：</strong>影子运行（等真实样本到位）→ 真实试运行 → 正式交接<br><br>
+      <span style="color: var(--red);">⚠️ 当前不是什么：不是生产上线系统，不是自动决策系统，不是数据看板。</span>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">✅ 已建立的能力</div>
+      <ul style="font-size: 13px; padding-left: 18px; color: var(--text);">
+        <li>接收 PMO 周报（JSON格式）→ 结构化解析</li>
+        <li>按规则自动判断延期、黄灯、结项申请</li>
+        <li>生成领导摘要 + 事项总台账 + 风险清单</li>
+        <li>量化指标自动对照目标值</li>
+        <li>全链路判断依据可追溯</li>
+        <li>四周真实样本试跑验证</li>
+        <li>留出样本独立验证</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">⏳ 尚未建立的能力</div>
+      <ul style="font-size: 13px; padding-left: 18px; color: var(--text-muted);">
+        <li>生产系统实时接入</li>
+        <li>多项目横向对比与排名</li>
+        <li>自动催报 / 通知 / 升级推送</li>
+        <li>Dashboard 可视化界面</li>
+        <li>PMIS / OA 自动数据采集</li>
+        <li>非 JSON 格式的周报解析</li>
+        <li>人工审阅环节的完整嵌入</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📌 本期样本关键事项一览（1208-1212）</div>
+    <table>
+      <thead>
+        <tr>
+          <th>事项</th>
+          <th>类型</th>
+          <th>状态</th>
+          <th>系统判断</th>
+          <th>管理建议</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>"数字经营"规划推进</td>
+          <td><span class="tag green">申请结项</span></td>
+          <td>已汇报获同意</td>
+          <td><span class="badge badge-green">通过</span></td>
+          <td>推进立项及后续交付</td>
+        </tr>
+        <tr>
+          <td>"六策合一"新行业扫描</td>
+          <td><span class="tag green">申请结项</span></td>
+          <td>行业库已形成</td>
+          <td><span class="badge badge-green">通过</span></td>
+          <td>后续定期检视行业库</td>
+        </tr>
+        <tr>
+          <td>香港分行战略发展规划</td>
+          <td><span class="tag green">申请结项</span></td>
+          <td>已建立联动机制</td>
+          <td><span class="badge badge-green">通过</span></td>
+          <td>转常态化推进</td>
+        </tr>
+        <tr class="light-row">
+          <td>"六策合一"学校行业</td>
+          <td><span class="tag yellow">黄灯</span></td>
+          <td>逾期3月（9月末→12月末）</td>
+          <td><span class="badge badge-yellow">延期</span></td>
+          <td>确认储备项目数量</td>
+        </tr>
+        <tr class="light-row">
+          <td>"六策合一"汽车行业</td>
+          <td><span class="tag yellow">黄灯</span></td>
+          <td>逾期1月（11月→12月）</td>
+          <td><span class="badge badge-yellow">延期</span></td>
+          <td>推进中试启动</td>
+        </tr>
+        <tr>
+          <td>拓链拓客 / 双链融合汇报</td>
+          <td><span class="tag blue">会议待办</span></td>
+          <td>计划12月18日汇报</td>
+          <td><span class="badge badge-blue">正常</span></td>
+          <td>按计划推进</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🔗 查看各页面</div>
+    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+      <button class="tab-btn" onclick="showTab('page-leader')" style="padding: 10px 18px; border-radius: 8px; border: 1px solid var(--border); background: var(--card); cursor: pointer; font-size: 13px; font-weight: 500;">📊 领导摘要页</button>
+      <button class="tab-btn" onclick="showTab('page-ledger')" style="padding: 10px 18px; border-radius: 8px; border: 1px solid var(--border); background: var(--card); cursor: pointer; font-size: 13px; font-weight: 500;">📋 事项总台账页</button>
+      <button class="tab-btn" onclick="showTab('page-risk')" style="padding: 10px 18px; border-radius: 8px; border: 1px solid var(--border); background: var(--card); cursor: pointer; font-size: 13px; font-weight: 500;">⚠️ 风险清单页</button>
+      <button class="tab-btn" onclick="showTab('page-sample')" style="padding: 10px 18px; border-radius: 8px; border: 1px solid var(--border); background: var(--card); cursor: pointer; font-size: 13px; font-weight: 500;">🔍 样本与结论对照页</button>
+      <button class="tab-btn" onclick="showTab('page-roadmap')" style="padding: 10px 18px; border-radius: 8px; border: 1px solid var(--border); background: var(--card); cursor: pointer; font-size: 13px; font-weight: 500;">🗺️ 项目路线图页</button>
+    </div>
+  </div>
+
+  <!-- 底部声明：移到页面底部，不影响首屏专业感 -->
+  <div style="margin-top: 32px; padding: 16px 20px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0;">
+    <div style="font-size: 12px; color: #94a3b8; line-height: 1.6;">
+      <strong style="color: #64748b;">边界声明：</strong>
+      本页面为演示预览，基于 1208-1212 期历史样本生成。
+      不是生产系统界面，不替代正式管理决策，不声称数据已真实到位。
+      样本来源：openclaw_unified_sample_pack / slices/01_dev_core_december.json
+    </div>
+  </div>
+
+</div>
+
+<!-- ===================== PAGE 2: LEADER SUMMARY ===================== -->
+<div id="page-leader" class="tab-content">
+
+  <div class="page-header">
+    <div class="page-label">演示页面 · 领导视角</div>
+    <div class="page-title">📊 领导摘要</div>
+    <div class="page-subtitle">1208-1212期 · 系统自动生成 · 人工审阅后使用</div>
+  </div>
+
+  <div class="disclaimer">
+    <strong>说明：</strong>本摘要由系统根据PMO周报自动生成，每条结论均附判断依据。必须经人工审阅后方可用于正式管理动作，当前不可替代人工判断。
+  </div>
+
+  <div class="grid-3" style="margin-bottom: 16px;">
+    <div class="stat-card" style="border-left: 4px solid var(--green);">
+      <div class="stat-num green">3</div>
+      <div class="stat-label">申请结项（已获同意）</div>
+      <div class="stat-sub">数字经营 · 六策新行业 · 港分战略</div>
+    </div>
+    <div class="stat-card" style="border-left: 4px solid var(--yellow);">
+      <div class="stat-num yellow">2</div>
+      <div class="stat-label">黄灯警示（需关注）</div>
+      <div class="stat-sub">学校行业 · 汽车行业</div>
+    </div>
+    <div class="stat-card" style="border-left: 4px solid var(--blue);">
+      <div class="stat-num" style="color: var(--blue);">18</div>
+      <div class="stat-label">推进中项目</div>
+      <div class="stat-sub">未出现节点失控偏离</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📝 整体判断</div>
+    <div style="font-size: 14px; line-height: 1.8; padding: 4px 0;">
+      本期以<strong>结项申请为主</strong>：3项申请均已获同意，可推进后续工作。<br>
+      <strong>推进中18项</strong>整体未出现节点失控偏离，<strong>2项黄灯</strong>需纳入下周期重点跟踪。<br>
+      黄灯中的学校行业已逾期近3个月，建议从"提示"升级为<strong>"节点约束"</strong>——明确下周期必须给出明确节点。
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">✅ 本期已完成 / 同意结项事项</div>
+    <table>
+      <thead>
+        <tr>
+          <th>事项</th>
+          <th>主责部门</th>
+          <th>结项说明</th>
+          <th>判断</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>"数字经营"规划推进</td>
+          <td>结现部</td>
+          <td>已专题汇报获同意，推进立项及交付</td>
+          <td><span class="badge badge-green">同意结项</span></td>
+        </tr>
+        <tr>
+          <td>"六策合一"新行业扫描</td>
+          <td>战客部</td>
+          <td>已形成行业库，后续定期检视</td>
+          <td><span class="badge badge-green">同意结项</span></td>
+        </tr>
+        <tr>
+          <td>香港分行战略发展规划</td>
+          <td>香港分行</td>
+          <td>已建立联动机制，转常态化推进</td>
+          <td><span class="badge badge-green">同意结项</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title">⚠️ 黄灯 / 延期警示事项（需管理层关注）</div>
+
+    <div class="alert-box">
+      <div class="alert-title">🚨 "六策合一"学校行业 — 项目逾期</div>
+      <div class="alert-desc">原计划9月末完成小试，因储备项目较少，预计中试推迟至12月末。已逾期近3个月。</div>
+      <div class="alert-meta">
+        <span>📅 原节点：9月末</span>
+        <span>📅 当前预期：12月末</span>
+        <span>👤 主责：战略客户部 / 风险管理部</span>
+        <span>🔴 规则：项目逾期超2周 → 黄灯提示</span>
+      </div>
+      <div style="margin-top: 10px; font-size: 12px; color: #78350f;">
+        <strong>建议动作：</strong>确认储备项目数量，制定明确收口计划，避免进一步延期。
+      </div>
+    </div>
+
+    <div class="alert-box">
+      <div class="alert-title">🚨 "六策合一"汽车行业 — 项目逾期</div>
+      <div class="alert-desc">计划11月启动中试，当前尚未完成启动，中试目标推迟。</div>
+      <div class="alert-meta">
+        <span>📅 原节点：11月启动中试</span>
+        <span>📅 当前状态：尚未启动</span>
+        <span>👤 主责：战略客户部 / 风险管理部</span>
+        <span>🔴 规则：计划节点超期 → 黄灯提示</span>
+      </div>
+      <div style="margin-top: 10px; font-size: 12px; color: #78350f;">
+        <strong>建议动作：</strong>确认12月启动计划，指定专人跟踪，避免再次逾期。
+      </div>
+    </div>
+
+    <div class="alert-box" style="border-left-color: var(--blue); background: #eff6ff;">
+      <div class="alert-title" style="color: #1e40af;">📋 拓链拓客 / 双链融合筛选专题汇报</div>
+      <div class="alert-desc">应于11月上旬汇报，当前计划12月18日公司金融管委会上专题汇报下游经销链。</div>
+      <div class="alert-meta">
+        <span>📅 原节点：11月上旬</span>
+        <span>📅 当前计划：12月18日</span>
+        <span>👤 主责：交易银行部</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📈 关键量化指标（截至12月12日）</div>
+    <div>
+      <div class="metric-row">
+        <div class="metric-name">战客口径人民币贷款</div>
+        <div class="metric-value green">521亿</div>
+        <div class="metric-target">目标 500亿</div>
+        <div class="metric-bar-wrap"><div class="metric-bar bar-green" style="width: 100%;"></div></div>
+      </div>
+      <div class="metric-row">
+        <div class="metric-name">外币低息存款月日均净增</div>
+        <div class="metric-value green">503亿</div>
+        <div class="metric-target">目标 100亿</div>
+        <div class="metric-bar-wrap"><div class="metric-bar bar-green" style="width: 100%;"></div></div>
+      </div>
+      <div class="metric-row">
+        <div class="metric-name">人民币付息率</div>
+        <div class="metric-value green">1.38%</div>
+        <div class="metric-target">目标 ≤1.45%</div>
+        <div class="metric-bar-wrap"><div class="metric-bar bar-green" style="width: 95%;"></div></div>
+      </div>
+      <div class="metric-row">
+        <div class="metric-name">并购贷款余额净增</div>
+        <div class="metric-value red">-40亿</div>
+        <div class="metric-target">目标 -180亿</div>
+        <div class="metric-bar-wrap"><div class="metric-bar bar-yellow" style="width: 22%;"></div></div>
+      </div>
+      <div class="metric-row">
+        <div class="metric-name">银团贷款余额净增</div>
+        <div class="metric-value yellow">108亿</div>
+        <div class="metric-target">目标 200亿</div>
+        <div class="metric-bar-wrap"><div class="metric-bar bar-yellow" style="width: 54%;"></div></div>
+      </div>
+      <div class="metric-row">
+        <div class="metric-name">电子行业贷款余额净增</div>
+        <div class="metric-value green">69.5亿</div>
+        <div class="metric-target">目标暂未设定</div>
+        <div class="metric-bar-wrap"><div class="metric-bar bar-blue" style="width: 100%;"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">👆 管理层可做决策</div>
+    <div style="font-size: 13px;">
+      <div style="margin-bottom: 10px;">
+        <strong>① 批准以下3项结项：</strong>数字经营 / 六策新行业扫描 / 港分战略规划
+      </div>
+      <div style="margin-bottom: 10px;">
+        <strong>② 关注学校行业黄灯：</strong>请战略客户部确认储备项目情况，12月末前提交明确中试计划
+      </div>
+      <div style="margin-bottom: 10px;">
+        <strong>③ 关注汽车行业中试启动：</strong>请战略客户部确认12月启动安排
+      </div>
+      <div style="margin-bottom: 10px;">
+        <strong>④ 并购贷款指标承压：</strong>当前-40亿 vs 目标-180亿，请投行部分析原因并调整举措
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===================== PAGE 3: LEDGER ===================== -->
+<div id="page-ledger" class="tab-content">
+
+  <div class="page-header">
+    <div class="page-label">演示页面 · 业务复核视角</div>
+    <div class="page-title">📋 事项总台账</div>
+    <div class="page-subtitle">1208-1212期 · 19个推进中事项 · 适合PMO/业务人员复核</div>
+  </div>
+
+  <div style="margin-bottom: 16px; display: flex; gap: 8px; align-items: center;">
+    <span class="badge badge-green">结项 3项</span>
+    <span class="badge badge-blue">推进中 18项</span>
+    <span class="badge badge-yellow">黄灯警示 2项</span>
+    <span class="badge badge-violet">会议待办 2项</span>
+  </div>
+
+  <div class="alert-box" style="margin-bottom: 16px; border-left-color: var(--red); background: #fef2f2;">
+    <div class="alert-title" style="color: #991b1b;">🔴 以下2项为"重点关注事项"，建议优先过目</div>
+    <div style="font-size: 12px; color: #666; margin-top: 4px;">
+      黄灯事项持续时间偏长，系统已附加黄色高亮标识，建议优先确认节点和主责人。
+    </div>
+  </div>
+
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>事项名称</th>
+          <th>类型</th>
+          <th>主责部门</th>
+          <th>计划节点</th>
+          <th>系统判断</th>
+          <th>风险</th>
+          <th>管理建议</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>对公改革规划</td>
+          <td><span class="tag">改革规划</span></td>
+          <td>公司条线</td>
+          <td>11月~12月</td>
+          <td><span class="badge badge-blue">推进中</span></td>
+          <td><span class="badge badge-gray">无</span></td>
+          <td>按计划推进</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>六策合一定向推动（主线）</td>
+          <td><span class="tag">创新</span></td>
+          <td>战客部/风险管理部</td>
+          <td>7月末</td>
+          <td><span class="badge badge-blue">推进中</span></td>
+          <td><span class="badge badge-gray">无</span></td>
+          <td>持续跟踪</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>六策合一定向推动（汽车零部件）</td>
+          <td><span class="tag yellow">创新</span></td>
+          <td>战客部/风险管理部</td>
+          <td>12月末</td>
+          <td><span class="badge badge-yellow">黄灯</span></td>
+          <td><span class="badge badge-yellow">中</span></td>
+          <td>推进中试启动</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>六策合一定向推动（园区）</td>
+          <td><span class="tag">创新</span></td>
+          <td>战客部/风险管理部</td>
+          <td>12月末</td>
+          <td><span class="badge badge-blue">推进中</span></td>
+          <td><span class="badge badge-gray">无</span></td>
+          <td>持续跟踪</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>六策合一定向推动（电子）</td>
+          <td><span class="tag">创新</span></td>
+          <td>战客部/风险管理部</td>
+          <td>持续</td>
+          <td><span class="badge badge-blue">推进中</span></td>
+          <td><span class="badge badge-gray">无</span></td>
+          <td>按计划推进</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>制定贷款促投放提升方案</td>
+          <td><span class="tag">调优</span></td>
+          <td>公司业务管理部</td>
+          <td>12月末</td>
+          <td><span class="badge badge-green">超标</span></td>
+          <td><span class="badge badge-gray">无</span></td>
+          <td>指标已超目标，可申请结项</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>中长期贷款提升（并购/银团/项目贷）</td>
+          <td><span class="tag">关键增长</span></td>
+          <td>投资银行部</td>
+          <td>12月末</td>
+          <td><span class="badge badge-yellow">部分未达</span></td>
+          <td><span class="badge badge-yellow">中</span></td>
+          <td>并购贷款承压，需调整</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>存款结构调优</td>
+          <td><span class="tag">调优</span></td>
+          <td>公司业务管理部等</td>
+          <td>12月末</td>
+          <td><span class="badge badge-green">接近/达标</span></td>
+          <td><span class="badge badge-gray">无</span></td>
+          <td>继续推进</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>跨境非息收入持续上量</td>
+          <td><span class="tag">关键增长点</span></td>
+          <td>跨境金融部</td>
+          <td>12月末</td>
+          <td><span class="badge badge-blue">推进中</span></td>
+          <td><span class="badge badge-gray">无</span></td>
+          <td>接近年度目标</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>外币低息存款上量</td>
+          <td><span class="tag">关键增长点</span></td>
+          <td>跨境金融部</td>
+          <td>12月末</td>
+          <td><span class="badge badge-green">大幅超标</span></td>
+          <td><span class="badge badge-gray">无</span></td>
+          <td>远超目标，12月继续上量</td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>机构业务政策改革</td>
+          <td><span class="tag">改革</span></td>
+          <td>战略客户部</td>
+          <td>12月末</td>
+          <td><span class="badge badge-green">多项超标</span></td>
+          <td><span class="badge badge-gray">无</span></td>
+          <td>资格/账户均超额完成</td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td>普惠改革长期规划</td>
+          <td><span class="tag">改革规划</span></td>
+          <td>普惠金融部</td>
+          <td>9月~10月</td>
+          <td><span class="badge badge-blue">推进中</span></td>
+          <td><span class="badge badge-gray">无</span></td>
+          <td>方案持续推进</td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td>海南FT账户联动方案</td>
+          <td><span class="tag blue">会议待办</span></td>
+          <td>跨境金融部</td>
+          <td>9月中旬</td>
+          <td><span class="badge badge-gray">持续完善</span></td>
+          <td><span class="badge badge-gray">无</span></td>
+          <td>方案定稿后反馈</td>
+        </tr>
+        <tr>
+          <td>14</td>
+          <td>跨境金融赋能分行</td>
+          <td><span class="tag">赋能</span></td>
+          <td>跨境金融部</td>
+          <td>持续</td>
+          <td><span class="badge badge-blue">推进中</span></td>
+          <td><span class="badge badge-gray">无</span></td>
+          <td>持续赋能</td>
+        </tr>
+        <tr>
+          <td>15</td>
+          <td>总行战客"一客一档"</td>
+          <td><span class="tag">战客经营</span></td>
+          <td>战略客户部</td>
+          <td>26年春节前</td>
+          <td><span class="badge badge-blue">推进中</span></td>
+          <td><span class="badge badge-gray">无</span></td>
+          <td>已完成47户一客一档</td>
+        </tr>
+        <tr>
+          <td>16</td>
+          <td>北京分行战客专班建设</td>
+          <td><span class="tag">战客经营</span></td>
+          <td>战略客户部</td>
+          <td>10月末</td>
+          <td><span class="badge badge-blue">推进中</span></td>
+          <td><span class="badge badge-gray">无</span></td>
+          <td>方案已批复，持续推进</td>
+        </tr>
+        <tr>
+          <td>17</td>
+          <td>健全分行级战客经营管理体系</td>
+          <td><span class="tag">战客经营</span></td>
+          <td>战略客户部</td>
+          <td>2026年6月</td>
+          <td><span class="badge badge-blue">推进中</span></td>
+          <td><span class="badge badge-gray">无</span></td>
+          <td>拟管委会正式汇报</td>
+        </tr>
+        <tr>
+          <td>18</td>
+          <td>好医生医健权益融入客户开发经营</td>
+          <td><span class="tag">创新</span></td>
+          <td>战客部/公司部</td>
+          <td>待定</td>
+          <td><span class="badge badge-blue">推进中</span></td>
+          <td><span class="badge badge-gray">无</span></td>
+          <td>车企/房企试点中</td>
+        </tr>
+        <tr>
+          <td>19</td>
+          <td>拓链拓客及双链融合筛选专题汇报</td>
+          <td><span class="tag blue">会议待办</span></td>
+          <td>交易银行部</td>
+          <td>11月上旬→12月18日</td>
+          <td><span class="badge badge-yellow">逾期</span></td>
+          <td><span class="badge badge-yellow">中</span></td>
+          <td>已排期12月18日管委会</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📌 台账使用说明</div>
+    <div style="font-size: 13px; color: var(--text-muted);">
+      本台账由系统根据PMO周报（1208-1212期）自动生成。<br>
+      <strong>适合用途：</strong>PMO周会复核、项目主责人自查、管理层快速了解全貌。<br>
+      <strong>不可替代：</strong>正式项目管理系统的数据记录，不作正式存档依据。<br>
+      <strong>判断规则：</strong>黄灯 = 项目逾期超2周 | 延期 = 申请延期且超原定节点 | 正常 = 在节点内推进中
+    </div>
+  </div>
+
+</div>
+
+<!-- ===================== PAGE 4: RISK LIST ===================== -->
+<div id="page-risk" class="tab-content">
+
+  <div class="page-header">
+    <div class="page-label">演示页面 · 风险视角</div>
+    <div class="page-title">⚠️ 风险清单</div>
+    <div class="page-subtitle">1208-1212期 · 系统自动识别 · 黄灯/延期/逾期专项</div>
+  </div>
+
+  <div class="grid-3" style="margin-bottom: 16px;">
+    <div class="stat-card" style="border-left: 4px solid var(--yellow);">
+      <div class="stat-num yellow">2</div>
+      <div class="stat-label">黄灯警示项</div>
+      <div class="stat-sub">学校 · 汽车行业</div>
+    </div>
+    <div class="stat-card" style="border-left: 4px solid var(--red);">
+      <div class="stat-num red">1</div>
+      <div class="stat-label">逾期事项</div>
+      <div class="stat-sub">双链融合汇报</div>
+    </div>
+    <div class="stat-card" style="border-left: 4px solid var(--blue);">
+      <div class="stat-num" style="color: var(--blue);">1</div>
+      <div class="stat-label">指标持续偏离</div>
+      <div class="stat-sub">并购贷款较目标差距大</div>
+    </div>
+  </div>
+
+  <!-- 风险分级说明 -->
+  <div class="card" style="background: #f8fafc; margin-bottom: 16px;">
+    <div style="font-size: 12px; color: var(--text-muted); line-height: 1.6;">
+      <strong>本清单风险分级标准：</strong>
+      <span style="margin-left:12px;"><span style="display:inline-block;width:10px;height:10px;background:#eab308;border-radius:2px;vertical-align:middle;margin-right:4px;"></span><strong>黄灯</strong>=节点超期或进度严重滞后，需确认节点和资源</span>
+      <span style="margin-left:12px;"><span style="display:inline-block;width:10px;height:10px;background:#ef4444;border-radius:2px;vertical-align:middle;margin-right:4px;"></span><strong>逾期</strong>=已过节点未完成，需立即处置</span>
+      <span style="margin-left:12px;"><span style="display:inline-block;width:10px;height:10px;background:#3b82f6;border-radius:2px;vertical-align:middle;margin-right:4px;"></span><strong>指标偏离</strong>=量化指标持续偏离目标，需分析原因</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🔴 黄灯/逾期风险详情</div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>风险ID</th>
+          <th>事项</th>
+          <th>风险类型</th>
+          <th>风险说明</th>
+          <th>判断依据</th>
+          <th>处置建议</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background: #fffbeb;">
+          <td>R-001</td>
+          <td>"六策合一"学校行业</td>
+          <td><span class="tag red">黄灯</span></td>
+          <td>储备项目较少，试点推进推迟，逾期近3个月</td>
+          <td style="font-size: 11px; color: var(--text-muted);">判断依据：节点（9月末小试完成）→ 已过节点，储备不足导致中试无法启动</td>
+          <td><span class="badge badge-red">需确认</span> 储备项目数量及后续节点</td>
+        </tr>
+        <tr style="background: #fffbeb;">
+          <td>R-002</td>
+          <td>"六策合一"汽车行业</td>
+          <td><span class="tag red">黄灯</span></td>
+          <td>中试尚未启动，原计划11月启动，当前仍在推进小试</td>
+          <td style="font-size: 11px; color: var(--text-muted);">判断依据：节点（11月启动中试）→ 未达成小试目标，距离节点差距1个月</td>
+          <td><span class="badge badge-red">需确认</span> 12月启动计划及主责人</td>
+        </tr>
+        <tr style="background: #fff8f8;">
+          <td>R-003</td>
+          <td>拓链拓客/双链融合汇报</td>
+          <td><span class="tag red">逾期</span></td>
+          <td>原定11月上旬汇报，推迟至12月18日</td>
+          <td style="font-size: 11px; color: var(--text-muted);">判断依据：节点（11月上旬汇报）→ 已过节点1个月以上，已排期12月18日</td>
+          <td><span class="badge badge-blue">已排期</span> 12月18日管委会</td>
+        </tr>
+        <tr style="background: #f0f9ff;">
+          <td>R-004</td>
+          <td>中长期贷款（并购）</td>
+          <td><span class="tag blue">指标偏离</span></td>
+          <td>并购贷款余额净增-40亿，较目标（-180亿）差距较大</td>
+          <td style="font-size: 11px; color: var(--text-muted);">判断依据：截至12月9日-40亿 vs 全年目标-180亿，偏离超7倍（方向一致但幅度不足）</td>
+          <td><span class="badge badge-yellow">需分析</span> 原因并调整举措</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📋 黄灯事项历史追踪（四周样本体感）</div>
+    <table>
+      <thead>
+        <tr>
+          <th>事项</th>
+          <th>首次亮灯</th>
+          <th>持续周数</th>
+          <th>本周进展</th>
+          <th>系统评估</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background: #fffbeb;">
+          <td>"六策合一"学校行业</td>
+          <td>约第2-3周</td>
+          <td><span style="color: var(--red); font-weight: 700;">≥4周</span></td>
+          <td>储备不足，中试推迟至12月末</td>
+          <td><span class="badge badge-red">黄灯持续升级</span></td>
+        </tr>
+        <tr style="background: #fffbeb;">
+          <td>"六策合一"汽车行业</td>
+          <td>约第3-4周</td>
+          <td><span style="color: var(--yellow); font-weight: 700;">2-3周</span></td>
+          <td>小试尚未完成，中试延后</td>
+          <td><span class="badge badge-yellow">黄灯持续</span></td>
+        </tr>
+        <tr>
+          <td>拓链拓客汇报</td>
+          <td>本周</td>
+          <td><span style="color: var(--blue); font-weight: 700;">1周</span></td>
+          <td>已排期12月18日，有明确后续节点</td>
+          <td><span class="badge badge-blue">新进入，有节点</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title">⚙️ 系统判断规则说明</div>
+    <div style="font-size: 12px; color: var(--text-muted); display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+      <div style="background: #fffbeb; padding: 10px; border-radius: 6px;">
+        <strong style="color: #92400e;">规则：黄灯触发</strong><br>
+        计划节点超期7天以上 → 黄灯<br>
+        项目逾期超2周 → 自动进风险清单
+      </div>
+      <div style="background: #fef2f2; padding: 10px; border-radius: 6px;">
+        <strong style="color: #991b1b;">规则：红牌升级</strong><br>
+        黄灯持续超4周 → 建议管理层介入<br>
+        无明确后续节点 → 触发停缓拨建议
+      </div>
+      <div style="background: #eff6ff; padding: 10px; border-radius: 6px;">
+        <strong style="color: #1e40af;">规则：逾期记录</strong><br>
+        延期申请 → 记录原节点/新节点<br>
+        系统判断"可解释"或"待确认"
+      </div>
+      <div style="background: #f0fdf4; padding: 10px; border-radius: 6px;">
+        <strong style="color: #166534;">规则：结项剥离</strong><br>
+        申请结项且获同意 → 自动移出风险清单<br>
+        暂停/终止 → 单独台账管理
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===================== PAGE 5: SAMPLE VS CONCLUSION ===================== -->
+<div id="page-sample" class="tab-content">
+
+  <div class="page-header">
+    <div class="page-label">演示页面 · 规则可解释性</div>
+    <div class="page-title">🔍 样本与结论对照页</div>
+    <div class="page-subtitle">输入长什么样 → 系统为什么这么判断 → 判断依据是什么</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🎯 这个页面的目的</div>
+    <div style="font-size: 13px; line-height: 1.8;">
+      让业务方和PMO能够：<br>
+      ① 看到原始周报文本（输入长什么样）<br>
+      ② 看到系统提取了什么（结构化解析）<br>
+      ③ 看到系统为什么给出这个判断（规则依据）<br>
+      ④ 人工核对系统判断是否正确（复核机制）
+    </div>
+  </div>
+
+  <div class="comparison-row">
+    <div class="comparison-box">
+      <h4>📥 输入：原始周报文本（节选）</h4>
+      <pre>本期PMO周报（1208-1212）汇报如下。
+一、三个项目申请结项，请您批示意见：
+1、"六策合一"新行业扫描，"上一横"
+已形成行业库，战客部申请结项。
+2、"数字经营"规划推进，结现部本周向您、
+项行和孙行专题汇报并获同意，申请结项。
+3、香港分行战略发展规划：项目启动以来，
+港分加强与境内分行沟通…申请结项。
+二、"六策合一"定向推动两个行业亮灯，请您重点关注：
+-学校行业，计划9月末完成小试，因储备项目较少，
+预计中试推迟至12月末。项目逾期，黄灯继续提示。
+-汽车行业：计划11月启动中试。
+项目逾期，黄灯继续提示。</pre>
+    </div>
+    <div class="comparison-box">
+      <h4>⚙️ 系统处理：结构化解析</h4>
+      <pre>{
+  "report_period": "1208-1212",
+  "overview": {
+    "total_items": 59,
+    "one_plus_three_items": 12
+  },
+  "request_lines": [
+    "三个项目申请结项",
+    "六策合一新行业扫描 → 结项",
+    "数字经营规划推进 → 结项",
+    "香港分行战略规划 → 结项"
+  ],
+  "alert_lines": [
+    "学校行业：计划9月末…推迟至12月末",
+    "汽车行业：计划11月启动…黄灯"
+  ]
+}</pre>
+    </div>
+    <div class="comparison-box">
+      <h4>📤 系统输出：判断结论</h4>
+      <pre>{
+  "结论_结项申请_1": {
+    "事项": "六策合一新行业扫描",
+    "系统判断": "同意结项",
+    "规则": "结项申请+有明确交付物+获同意"
+  },
+  "结论_结项申请_2": {
+    "事项": "数字经营规划推进",
+    "系统判断": "同意结项",
+    "规则": "专题汇报已获同意"
+  },
+  "结论_黄灯_1": {
+    "事项": "学校行业",
+    "系统判断": "黄灯持续",
+    "规则": "项目逾期超2周",
+    "依据": "计划9月末→12月末，逾期3月"
+  },
+  "结论_黄灯_2": {
+    "事项": "汽车行业",
+    "系统判断": "黄灯持续",
+    "规则": "节点超期未达",
+    "依据": "计划11月启动中试，尚未启动"
+  }
+}</pre>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📋 规则可解释性示例：学校行业黄灯判断链路</div>
+    <div style="font-size: 13px;">
+      <div style="margin-bottom: 12px;"><strong>Step 1 — 原始文本提取：</strong></div>
+      <div style="background: #f8fafc; padding: 10px; border-radius: 6px; margin-bottom: 12px; font-family: monospace; font-size: 12px;">
+        "学校行业，计划9月末完成小试，因储备项目较少，预计中试推迟至12月末。项目逾期，黄灯继续提示。"
+      </div>
+
+      <div style="margin-bottom: 12px;"><strong>Step 2 — 字段识别：</strong></div>
+      <div style="background: #f8fafc; padding: 10px; border-radius: 6px; margin-bottom: 12px; font-size: 12px;">
+        <table style="font-size: 12px;">
+          <tr><td style="border:none; padding: 2px 8px;"><strong>事项名称</strong></td><td style="border:none; padding: 2px 8px;">"六策合一"学校行业</td></tr>
+          <tr><td style="border:none; padding: 2px 8px;"><strong>类型</strong></td><td style="border:none; padding: 2px 8px;">黄灯提示（原文本明确写"黄灯继续提示"）</td></tr>
+          <tr><td style="border:none; padding: 2px 8px;"><strong>计划节点</strong></td><td style="border:none; padding: 2px 8px;">9月末（小试完成）</td></tr>
+          <tr><td style="border:none; padding: 2px 8px;"><strong>当前状态</strong></td><td style="border:none; padding: 2px 8px;">储备不足，中试推迟至12月末</td></tr>
+          <tr><td style="border:none; padding: 2px 8px;"><strong>时间差</strong></td><td style="border:none; padding: 2px 8px;">约3个月（超期14周+）</td></tr>
+        </table>
+      </div>
+
+      <div style="margin-bottom: 12px;"><strong>Step 3 — 规则匹配：</strong></div>
+      <div style="background: #fef9c3; padding: 10px; border-radius: 6px; margin-bottom: 12px; font-size: 12px;">
+        <table style="font-size: 12px;">
+          <tr><td style="border:none; padding: 2px 8px;"><strong>匹配规则</strong></td><td style="border:none; padding: 2px 8px;">规则Y-02：黄灯超2周自动识别</td></tr>
+          <tr><td style="border:none; padding: 2px 8px;"><strong>匹配条件</strong></td><td style="border:none; padding: 2px 8px;">节点超期 14周 &gt; 2周阈值</td></tr>
+          <tr><td style="border:none; padding: 2px 8px;"><strong>系统判断</strong></td><td style="border:none; padding: 2px 8px; color: #92400e; font-weight: 600;">进入风险清单（R-001）</td></tr>
+          <tr><td style="border:none; padding: 2px 8px;"><strong>管理建议</strong></td><td style="border:none; padding: 2px 8px;">确认储备项目数量，制定明确收口计划</td></tr>
+        </table>
+      </div>
+
+      <div style="margin-bottom: 4px;"><strong>Step 4 — 人工复核：</strong></div>
+      <div style="font-size: 12px; color: var(--text-muted);">
+        系统判断：黄灯持续（<span style="color: var(--yellow); font-weight: 600;">依据充分</span>）| 人工复核：<span style="background: #dcfce7; padding: 2px 6px; border-radius: 4px;">☑ 确认</span> 或 <span style="background: #fee2e2; padding: 2px 6px; border-radius: 4px;">☐ 修改判断</span> | 备注：_______________
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🔄 全链路闭环示意</div>
+    <div style="display: flex; align-items: center; gap: 8px; font-size: 13px; flex-wrap: wrap; padding: 8px 0;">
+      <span style="background: #dbeafe; padding: 6px 12px; border-radius: 6px; font-weight: 500;">📥 PMO周报文本</span>
+      <span style="color: var(--text-muted);">→</span>
+      <span style="background: #ede9fe; padding: 6px 12px; border-radius: 6px; font-weight: 500;">⚙️ 字段解析提取</span>
+      <span style="color: var(--text-muted);">→</span>
+      <span style="background: #fef9c3; padding: 6px 12px; border-radius: 6px; font-weight: 500;">📐 规则匹配判断</span>
+      <span style="color: var(--text-muted);">→</span>
+      <span style="background: #f0fdf4; padding: 6px 12px; border-radius: 6px; font-weight: 500;">👤 人工审阅确认</span>
+      <span style="color: var(--text-muted);">→</span>
+      <span style="background: #dcfce7; padding: 6px 12px; border-radius: 6px; font-weight: 500;">📤 结构化输出</span>
+    </div>
+    <div style="font-size: 12px; color: var(--text-muted); margin-top: 8px;">
+      关键约束：<strong>人工审阅不可跳过</strong>。系统输出必须经人工审阅后方可用于正式管理动作。每条结论均附原始文本关键词和规则名称，支持逐条复核。
+    </div>
+  </div>
+
+</div>
+
+<!-- ===================== PAGE 6: ROADMAP ===================== -->
+<div id="page-roadmap" class="tab-content">
+
+  <div class="page-header">
+    <div class="page-label">演示页面 · 项目路线图</div>
+    <div class="page-title">🗺️ 项目整体路线图</div>
+    <div class="page-subtitle">从原型到正式试运行 · 阶段位置与后续路径</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📍 你现在在哪里</div>
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="info-label">已完成</div>
+        <div class="info-value green">规则链路 · 四周试跑 · 留出验证 · 压力验证 · 扩大评审</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">当前阶段</div>
+        <div class="info-value" style="color: var(--primary);">演示实物化（4R）— 可见页面 + 可讨论结论</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">还需做什么</div>
+        <div class="info-value">影子运行（等真实样本）→ 评审收口 → 真实试运行</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">项目终点</div>
+        <div class="info-value">PMO真实试点中可用 + 书面反馈接受</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🛤️ 完整阶段路线图</div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot dot-done"></div>
+        <div class="timeline-title">阶段1-2：规则链路构建</div>
+        <div class="timeline-sub">完成字段解析 + 规则推理 + 状态机逻辑</div>
+        <div style="margin-top: 6px;"><span class="tag green">已完成</span> <span class="tag">可复用</span></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot dot-done"></div>
+        <div class="timeline-title">阶段3：四周试跑</div>
+        <div class="timeline-sub">用4周真实样本验证规则链路可行性</div>
+        <div style="margin-top: 6px;"><span class="tag green">已完成</span> <span class="tag">证据链已存档</span></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot dot-done"></div>
+        <div class="timeline-title">阶段4A-I：留出验证 + 压力验证</div>
+        <div class="timeline-sub">留出样本独立验证 + 早期/压力样本回归测试</div>
+        <div style="margin-top: 6px;"><span class="tag green">已完成</span> <span class="tag">偏差可控</span></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot dot-done"></div>
+        <div class="timeline-title">阶段4J-Q：扩大评审 + 影子运行准备</div>
+        <div class="timeline-sub">评审包准备 + 真实样本适配入口 + 影子运行启动卡</div>
+        <div style="margin-top: 6px;"><span class="tag green">已完成</span> <span class="tag">已卡片化</span></div>
+      </div>
+      <div class="timeline-item" style="border-left: 3px solid var(--primary); padding-left: 16px; margin-left: -3px;">
+        <div class="timeline-dot dot-current"></div>
+        <div class="timeline-title" style="color: var(--primary);">阶段4R：演示实物化 ← 当前（你在这里）</div>
+        <div class="timeline-sub">可见页面 + 可讨论结论 + 内部演示材料</div>
+        <div style="margin-top: 6px;"><span class="tag" style="background: var(--primary); color: white;">进行中</span> <span class="tag">本阶段产出</span></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot dot-next"></div>
+        <div class="timeline-title">阶段4S：真实样本影子运行</div>
+        <div class="timeline-sub">FB-001或S-001任一到位后，执行样本校验+影子运行</div>
+        <div style="margin-top: 6px;"><span class="tag blue">等待真实样本</span></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot dot-future"></div>
+        <div class="timeline-title">阶段5：评审收口</div>
+        <div class="timeline-sub">影子运行结果评审 + 规则迭代 + 评审通过</div>
+        <div style="margin-top: 6px;"><span class="tag gray">待触发</span></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot dot-future"></div>
+        <div class="timeline-title">阶段6：真实试运行</div>
+        <div class="timeline-sub">PMO真实试点接入 + 书面反馈收集</div>
+        <div style="margin-top: 6px;"><span class="tag gray">最终目标</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">👥 还需要哪些人参与哪些事</div>
+    <table>
+      <thead>
+        <tr>
+          <th>角色</th>
+          <th>需要做什么</th>
+          <th>在哪个阶段</th>
+          <th>当前状态</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>PMO / 业务方</strong></td>
+          <td>提供真实周报样本（FB-001或S-001）</td>
+          <td>影子运行前</td>
+          <td><span class="badge badge-red">等待中</span></td>
+        </tr>
+        <tr>
+          <td><strong>PMO / 业务方</strong></td>
+          <td>对演示页面和结论进行业务复核</td>
+          <td>当前（4R）</td>
+          <td><span class="badge badge-blue">待启动</span></td>
+        </tr>
+        <tr>
+          <td><strong>管理层</strong></td>
+          <td>审阅领导摘要，对黄灯/结项事项做决策</td>
+          <td>影子运行后</td>
+          <td><span class="badge badge-gray">待触发</span></td>
+        </tr>
+        <tr>
+          <td><strong>数字员工开发Agent</strong></td>
+          <td>接收真实样本，执行校验+影子运行</td>
+          <td>影子运行</td>
+          <td><span class="badge badge-gray">待触发</span></td>
+        </tr>
+        <tr>
+          <td><strong>数字员工项目总控Agent</strong></td>
+          <td>总协调+评审+迭代决策</td>
+          <td>全阶段</td>
+          <td><span class="badge badge-green">进行中</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📊 距离最终目标还有几轮</div>
+    <div style="display: flex; gap: 16px; font-size: 13px; flex-wrap: wrap;">
+      <div style="background: #f0fdf4; padding: 12px; border-radius: 8px; border: 1px solid #bbf7d0; text-align: center;">
+        <div style="font-size: 24px; font-weight: 700; color: var(--green);">5</div>
+        <div>已完成轮次</div>
+      </div>
+      <div style="background: #eff6ff; padding: 12px; border-radius: 8px; border: 1px solid #bfdbfe; text-align: center;">
+        <div style="font-size: 24px; font-weight: 700; color: var(--blue);">2</div>
+        <div>剩余关键轮次</div>
+      </div>
+      <div style="background: #fef9c3; padding: 12px; border-radius: 8px; border: 1px solid #fde68a; text-align: center;">
+        <div style="font-size: 24px; font-weight: 700; color: var(--yellow);">1</div>
+        <div>当前轮（演示实物化）</div>
+      </div>
+    </div>
+    <div style="margin-top: 12px; font-size: 13px; color: var(--text-muted);">
+      <strong>剩余2轮：</strong>①影子运行（等真实样本）→ ②真实试运行评审收口 → <strong>最终目标达成</strong>
+    </div>
+  </div>
+
+</div>
+
+</div><!-- /container -->
+
+<div class="footer">
+  组织执行力数字员工 · 一期原型演示页面 · 1208-1212期样本
+  <div class="footer-note">⚠️ 本页面为演示预览，不替代生产系统界面，不作正式管理决策依据</div>
+</div>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>

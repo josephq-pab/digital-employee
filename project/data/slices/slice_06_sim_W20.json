@@ -1,0 +1,32 @@
+{
+  "slice_id": "06_sim_W20",
+  "sample_id": "SIM-2026-W20-0512",
+  "period": "2026-05-12 / 2026-05-16",
+  "source": "推演样本包 2026W16_W20",
+  "scene_type": "持续稳定/扩围准备/收口阶段",
+  "period_status": "稳定周期",
+  "items": [
+    {"name":"重点行业授信投放推进（汽车零部件）","dept":"公司部行业推动组","status":"正常","risk":"低","progress":"投放保持稳定，新增净增17.1亿元，较阶段目标持续超额","reason":"净增17.1亿；持续超额","action":"转入常态跟踪","escalation":false},
+    {"name":"数字经营规划推进","dept":"结现部","status":"正常","risk":"低","progress":"启动会完成，交付节奏明确","reason":"启动会完成；交付节奏明确","action":"进入常态项目管理","escalation":false},
+    {"name":"六策合一·学校行业中试推进","dept":"行业推动组","status":"正常","risk":"低","progress":"中试首轮结果输出，准备进入扩围验证","reason":"首轮结果输出","action":"评估是否扩围","escalation":false},
+    {"name":"总行及分行战客\"一客一档\"","dept":"战略客户组","status":"正常","risk":"低","progress":"补录完成率94%，进入收口阶段","reason":"完成率94%","action":"完成收口并沉淀模板","escalation":false},
+    {"name":"双链融合专题后续执行","dept":"专题组","status":"正常","risk":"低","progress":"执行项完成率提升，未出现新增偏差","reason":"完成率提升；无新增偏差","action":"按月度节奏跟踪","escalation":false},
+    {"name":"基础经营分析月报优化","dept":"公司部经营分析组","status":"正常","risk":"低","progress":"按计划推进","reason":"无明显风险","action":"持续推进既有安排","escalation":false},
+    {"name":"供应链客群名单清洗","dept":"供应链金融组","status":"正常","risk":"低","progress":"本周完成字段核对与清洗规则校验","reason":"无明显风险","action":"进入下一步补录","escalation":false},
+    {"name":"存量客户画像补全","dept":"数据治理组","status":"正常","risk":"低","progress":"补全率持续提升","reason":"无明显风险","action":"按批次补全","escalation":false}
+  ],
+  "metrics": [
+    {"id":"M-001","name":"汽车零部件贷款余额净增","target":15,"current":17.1,"gap":2.1,"status":"持续达标","dept":"公司部行业推动组"},
+    {"id":"M-002","name":"战客口径人民币贷款余额","target":520,"current":531.6,"gap":11.6,"status":"达标","dept":"战略客户组"},
+    {"id":"M-003","name":"外币低息存款月日均净增","target":120,"current":129,"gap":9,"status":"达标","dept":"国际业务组"},
+    {"id":"M-004","name":"学校行业扩围准备完成率","target":100,"current":72,"gap":-28,"status":"正常推进","dept":"行业推动组"},
+    {"id":"M-005","name":"一客一档补录完成率","target":60,"current":94,"gap":34,"status":"收口阶段","dept":"战略客户组"},
+    {"id":"M-006","name":"双链融合执行项完成率","target":100,"current":58,"gap":-42,"status":"正常推进","dept":"专题组"}
+  ],
+  "focus_items": [],
+  "verdict": "本期继续保持<strong>稳定运行</strong>。汽车零部件贷款余额净增17.1亿，持续超额完成目标（+2.1亿）。战客一客一档进入收口阶段（94%）。学校行业中试准备扩围。<strong>整体风险等级：低风险（持续稳定）</strong>。",
+  "next_focus": ["汽车零部件：转入常态跟踪，保持稳定投放","数字经营：进入常态项目管理","学校行业中试：评估是否进入扩围验证","战客一客一档：完成收口并沉淀模板","双链融合后续：按月度节奏跟踪"],
+  "risk_level": "低风险",
+  "escalation_recommended": false,
+  "esg_metrics_trend": {"M-001":17.1,"M-002":531.6,"M-003":129,"M-004":72,"M-005":94,"M-006":58}
+}

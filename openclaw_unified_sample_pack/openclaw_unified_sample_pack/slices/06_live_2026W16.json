@@ -1,0 +1,135 @@
+{
+  "slice_id": "06_live_2026W16",
+  "period": "2026-04-14_2026-04-18",
+  "period_label": "2026-W16",
+  "source": {
+    "weekly_report": "normalized/weekly_reports/by_period/2026-04-14_2026-04-18.docx",
+    "ledger": "normalized/ledgers/snapshots/2026-04-14_2026-04-18.xlsx",
+    "metrics": "normalized/metrics/snapshots/2026-04-14_2026-04-18.xlsx"
+  },
+  "sample_type": "真实样本",
+  "input_status": {
+    "weekly_report": "到位",
+    "ledger": "到位",
+    "metrics": "到位"
+  },
+  "completeness": "完整齐套",
+  "items": [
+    {
+      "id": "L-001",
+      "project_name": "汽车零部件授信投放推进",
+      "owner_department": "公司部行业推动组",
+      "status": "关注",
+      "risk_level": "中",
+      "current_progress": "完成2户授信方案评审，余额净增6.8亿元，低于15亿元目标",
+      "next_action": "逐户梳理卡点并按周跟踪投放落地",
+      "planned_date": "2026-04-18",
+      "notes": "指标偏离场景"
+    },
+    {
+      "id": "L-002",
+      "project_name": "学校行业中试推进",
+      "owner_department": "行业协同小组",
+      "status": "关注",
+      "risk_level": "中",
+      "current_progress": "中试启动未完成，核心项目储备不足，计划顺延",
+      "next_action": "补充储备项目并重排时间",
+      "planned_date": "2026-04-18",
+      "notes": "黄灯持续"
+    },
+    {
+      "id": "L-003",
+      "project_name": "双链融合筛选专题汇报",
+      "owner_department": "专题工作组",
+      "status": "关注",
+      "risk_level": "中",
+      "current_progress": "汇报方案仍在整合，未按本周原计划完成",
+      "next_action": "锁定方案责任人与汇报时间",
+      "planned_date": "2026-04-18",
+      "notes": "专题逾期"
+    },
+    {
+      "id": "L-004",
+      "project_name": "战略客户样板复制推广",
+      "owner_department": "战略客户组",
+      "status": "正常",
+      "risk_level": "低",
+      "current_progress": "河钢样板复盘完成，复制推广方案形成初稿",
+      "next_action": "下周提交推广节奏表",
+      "planned_date": "2026-04-18",
+      "notes": "正常推进"
+    },
+    {
+      "id": "L-005",
+      "project_name": "总行及分行战客一客一档",
+      "owner_department": "客户经营组",
+      "status": "正常",
+      "risk_level": "低",
+      "current_progress": "本周新增事项，已启动模板整理",
+      "next_action": "明确分行覆盖范围和时点",
+      "planned_date": "2026-04-18",
+      "notes": "新增项目"
+    }
+  ],
+  "metrics": [
+    {
+      "id": "M-001",
+      "metric_name": "汽车零部件贷款余额净增",
+      "unit": "亿元",
+      "target_value": 15,
+      "current_value": 6.8,
+      "gap_value": -8.2,
+      "status": "偏离目标",
+      "owner_department": "公司部行业推动组"
+    },
+    {
+      "id": "M-002",
+      "metric_name": "战客口径人民币贷款余额",
+      "unit": "亿元",
+      "target_value": 500,
+      "current_value": 518.1,
+      "gap_value": 18.1,
+      "status": "已达成",
+      "owner_department": "战略客户组"
+    },
+    {
+      "id": "M-003",
+      "metric_name": "外币低息存款月日均净增",
+      "unit": "亿元",
+      "target_value": 100,
+      "current_value": 439,
+      "gap_value": 339,
+      "status": "已超目标",
+      "owner_department": "国际业务组"
+    }
+  ],
+  "summary": {
+    "total_items": 5,
+    "关注": 3,
+    "正常": 2,
+    "黄灯": 3,
+    "红灯": 0,
+    "延期": 0,
+    "新增": 1,
+    "申请结项": 0
+  },
+  "key_risks": [
+    {
+      "id": "R-001",
+      "description": "汽车零部件授信投放进度偏离目标，缺口8.2亿元，若后续两周未改善可能影响季度目标",
+      "risk_level": "中",
+      "related_item": "L-001",
+      "related_metric": "M-001"
+    }
+  ],
+  "escalation": {
+    "recommended": false,
+    "reason": "指标偏离在并行跟踪范围内，暂无正式升级申请"
+  },
+  "pmo_followup": [
+    "汽车零部件授信投放推进",
+    "学校行业中试推进"
+  ],
+  "run_timestamp": "2026-04-11T17:52:00+08:00",
+  "run_by": "数字员工实验室首周期并行运行"
+}

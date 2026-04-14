@@ -1,0 +1,36 @@
+{
+  "slice_id": "06_sim_W16",
+  "sample_id": "SIM-2026-W16-0414",
+  "period": "2026-04-14 / 2026-04-18",
+  "source": "推演样本包 2026W16_W20",
+  "scene_type": "指标偏离/黄灯持续/新增",
+  "period_status": "关注周期",
+  "items": [
+    {"name":"重点行业授信投放推进（汽车零部件）","dept":"公司部行业推动组","status":"关注","risk":"中","progress":"完成2户目标客户授信方案评审，新增储备客户3户；贷款余额净增6.8亿元，低于阶段目标15亿元","reason":"贷款余额净增6.8亿元；阶段目标15亿元；投放进度明显偏慢","action":"逐户梳理提款卡点，按周跟踪落地节奏","escalation":false},
+    {"name":"数字经营规划推进","dept":"结现部","status":"正常","risk":"低","progress":"完成需求范围确认和里程碑重排，立项材料初稿形成","reason":"需求范围确认；里程碑重排；立项材料初稿","action":"推进立项评审并锁定交付边界","escalation":false},
+    {"name":"六策合一·学校行业中试推进","dept":"行业推动组","status":"关注","risk":"中","progress":"储备项目补充1户，但中试仍未启动，较计划推迟","reason":"中试仍未启动；较计划推迟","action":"补足储备项目并明确中试启动节点","escalation":false},
+    {"name":"总行及分行战客\"一客一档\"","dept":"战略客户组","status":"正常","risk":"低","progress":"完成模板统一和首批客户名单收集，进入分行补录阶段","reason":"模板统一；名单收集完成","action":"督促分行补录并校验字段完整性","escalation":false},
+    {"name":"双链融合专题汇报","dept":"专题组","status":"关注","risk":"中","progress":"汇报提纲已成形，但正式汇报较原节点延后一周","reason":"正式汇报延后一周","action":"锁定汇报日期并完成材料会签","escalation":false},
+    {"name":"基础经营分析月报优化","dept":"公司部经营分析组","status":"正常","risk":"低","progress":"按计划推进","reason":"无明显风险","action":"持续推进既有安排","escalation":false},
+    {"name":"供应链客群名单清洗","dept":"供应链金融组","status":"正常","risk":"低","progress":"本周完成字段核对与清洗规则校验","reason":"无明显风险","action":"进入下一步补录","escalation":false},
+    {"name":"存量客户画像补全","dept":"数据治理组","status":"正常","risk":"低","progress":"补全率持续提升","reason":"无明显风险","action":"按批次补全","escalation":false}
+  ],
+  "metrics": [
+    {"id":"M-001","name":"汽车零部件贷款余额净增","target":15,"current":6.8,"gap":-8.2,"status":"偏离目标","dept":"公司部行业推动组"},
+    {"id":"M-002","name":"战客口径人民币贷款余额","target":520,"current":518.1,"gap":-1.9,"status":"接近目标","dept":"战略客户组"},
+    {"id":"M-003","name":"外币低息存款月日均净增","target":120,"current":108,"gap":-12,"status":"基本达标","dept":"国际业务组"},
+    {"id":"M-004","name":"学校行业储备项目数","target":4,"current":2,"gap":-2,"status":"偏低","dept":"行业推动组"},
+    {"id":"M-005","name":"一客一档补录完成率","target":60,"current":38,"gap":-22,"status":"偏慢","dept":"战略客户组"},
+    {"id":"M-006","name":"双链融合专题汇报完成率","target":100,"current":70,"gap":-30,"status":"延后","dept":"专题组"}
+  ],
+  "focus_items": [
+    {"name":"汽车零部件授信投放推进","reason":"贷款余额净增6.8亿，偏离目标15亿，缺口8.2亿","status":"关注（中）","action":"逐户梳理卡点，按周跟踪"},
+    {"name":"学校行业中试推进","reason":"中试仍未启动，计划较原节点推迟","status":"关注（中）","action":"补充项目储备，明确启动节点"},
+    {"name":"双链融合专题汇报","reason":"正式汇报较原节点延后一周","status":"关注（中）","action":"锁定汇报时间"}
+  ],
+  "verdict": "本期整体未出现失控偏离，但<strong>3项关注事项</strong>需重点跟踪。汽车零部件指标偏离最大（缺口8.2亿），学校行业中试和双链融合汇报需锁定责任人和时间节点。建议PMO继续并行跟踪。",
+  "next_focus": ["汽车零部件：逐户梳理卡点，按周跟踪投放落地节奏","学校行业：补足储备项目，明确中试启动前置条件","双链融合：锁定汇报日期，完成材料会签","战客一客一档：督促分行补录，校验字段完整性"],
+  "risk_level": "中风险（需关注）",
+  "escalation_recommended": false,
+  "esg_metrics_trend": {"M-001":6.8,"M-002":518.1,"M-003":108,"M-004":2,"M-005":38,"M-006":70}
+}

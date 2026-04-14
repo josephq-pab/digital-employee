@@ -1,0 +1,82 @@
+{
+  "slice_name": "baseline_transition_apr_jul",
+  "purpose": "从全绿灯到复杂化的早期演化样本，用于背景理解和规则解释",
+  "report_periods": [
+    "0421-0430",
+    "0506-0516",
+    "0519-0523",
+    "0526-0530",
+    "0602-0606",
+    "0609-0613",
+    "0616-0620",
+    "0623-0627",
+    "0630-0704",
+    "0707-0711"
+  ],
+  "includes": "weekly+ledger+metrics where available",
+  "items": [
+    {
+      "report_period": "0421-0430",
+      "report_file": "normalized/weekly_reports/by_period/2025-04-21_2025-04-30.json",
+      "ledger_snapshot_file": null,
+      "metrics_snapshot_file": null
+    },
+    {
+      "report_period": "0506-0516",
+      "report_file": "normalized/weekly_reports/by_period/2025-05-06_2025-05-16.json",
+      "ledger_snapshot_file": null,
+      "metrics_snapshot_file": null
+    },
+    {
+      "report_period": "0519-0523",
+      "report_file": "normalized/weekly_reports/by_period/2025-05-19_2025-05-23.json",
+      "ledger_snapshot_file": null,
+      "metrics_snapshot_file": null
+    },
+    {
+      "report_period": "0526-0530",
+      "report_file": "normalized/weekly_reports/by_period/2025-05-26_2025-05-30.json",
+      "ledger_snapshot_file": null,
+      "metrics_snapshot_file": "normalized/metrics/snapshots/2025-05-30.json"
+    },
+    {
+      "report_period": "0602-0606",
+      "report_file": "normalized/weekly_reports/by_period/2025-06-02_2025-06-06.json",
+      "ledger_snapshot_file": null,
+      "metrics_snapshot_file": "normalized/metrics/snapshots/2025-06-06.json"
+    },
+    {
+      "report_period": "0609-0613",
+      "report_file": "normalized/weekly_reports/by_period/2025-06-09_2025-06-13.json",
+      "ledger_snapshot_file": null,
+      "metrics_snapshot_file": "normalized/metrics/snapshots/2025-06-13.json"
+    },
+    {
+      "report_period": "0616-0620",
+      "report_file": "normalized/weekly_reports/by_period/2025-06-16_2025-06-20.json",
+      "ledger_snapshot_file": null,
+      "metrics_snapshot_file": "normalized/metrics/snapshots/2025-06-20.json"
+    },
+    {
+      "report_period": "0623-0627",
+      "report_file": "normalized/weekly_reports/by_period/2025-06-23_2025-06-27.json",
+      "ledger_snapshot_file": "normalized/ledgers/snapshots/2025-06-23_2025-06-27.json",
+      "metrics_snapshot_file": "normalized/metrics/snapshots/2025-06-27.json"
+    },
+    {
+      "report_period": "0630-0704",
+      "report_file": "normalized/weekly_reports/by_period/2025-06-30_2025-07-04.json",
+      "ledger_snapshot_file": "normalized/ledgers/snapshots/2025-06-30_2025-07-04.json",
+      "metrics_snapshot_file": "normalized/metrics/snapshots/2025-07-04.json"
+    },
+    {
+      "report_period": "0707-0711",
+      "report_file": "normalized/weekly_reports/by_period/2025-07-07_2025-07-11.json",
+      "ledger_snapshot_file": "normalized/ledgers/snapshots/2025-07-07_2025-07-11.json",
+      "metrics_snapshot_file": "normalized/metrics/snapshots/2025-07-11.json"
+    }
+  ],
+  "notes": [
+    "该切片前半段缺少同周期进展中台账快照，更多用于周报文本场景演化理解。"
+  ]
+}

@@ -1,0 +1,708 @@
+{
+  "normalized_items": [
+    {
+      "project_name": "学校行业",
+      "period": "1103-1107",
+      "source": "weekly_report",
+      "owner": "[待关联]",
+      "promised_items": "学校行业",
+      "current_progress": "学校行业，计划10月启动中试，因储备项目较少，推迟中试。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+      "risk_points": "[黄灯]学校行业，计划10月启动中试，因储备项目较少，推迟中试。项目逾期，黄灯继续提示。",
+      "escalation_requested": false,
+      "is_closure_request": false,
+      "is_yellow_alert": true,
+      "ledger_record_id": null
+    },
+    {
+      "project_name": "园区行业",
+      "period": "1103-1107",
+      "source": "weekly_report",
+      "owner": "[待关联]",
+      "promised_items": "园区行业",
+      "current_progress": "园区行业，计划10月末前小试，本周已向周行汇报、建议启动小试，待请示您。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+      "risk_points": "[黄灯]园区行业，计划10月末前小试，本周已向周行汇报、建议启动小试，待请示您。项目逾期，黄灯继续提示。",
+      "escalation_requested": false,
+      "is_closure_request": false,
+      "is_yellow_alert": true,
+      "ledger_record_id": null
+    },
+    {
+      "project_name": "汽车行业",
+      "period": "1103-1107",
+      "source": "weekly_report",
+      "owner": "[待关联]",
+      "promised_items": "汽车行业",
+      "current_progress": "汽车行业：计划10月末完成小试，尚未达成小试目标。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+      "risk_points": "[黄灯]汽车行业：计划10月末完成小试，尚未达成小试目标。项目逾期，黄灯继续提示。",
+      "escalation_requested": false,
+      "is_closure_request": false,
+      "is_yellow_alert": true,
+      "ledger_record_id": null
+    },
+    {
+      "project_name": "搭建战略客户样板",
+      "period": "1103-1107",
+      "source": "weekly_report",
+      "owner": "[待关联]",
+      "promised_items": "搭建战略客户样板",
+      "current_progress": "2、搭建战略客户样板存在逾期风险，进度滞后。",
+      "risk_points": "[黄灯]搭建战略客户样板：2、搭建战略客户样板",
+      "escalation_requested": false,
+      "is_closure_request": false,
+      "is_yellow_alert": true,
+      "ledger_record_id": null
+    },
+    {
+      "project_name": "北京分行战客专班建设",
+      "period": "1103-1107",
+      "source": "weekly_report",
+      "owner": "[待关联]",
+      "promised_items": "北京分行战客专班建设",
+      "current_progress": "北京分行战客专班建设，战客部预计本周内邮件汇报，但目前尚未汇报。项目逾期，黄灯提示。存在逾期风险，进度滞后。",
+      "risk_points": "[黄灯]北京分行战客专班建设，战客部预计本周内邮件汇报，但目前尚未汇报。项目逾期，黄灯提示。",
+      "escalation_requested": false,
+      "is_closure_request": false,
+      "is_yellow_alert": true,
+      "ledger_record_id": null
+    },
+    {
+      "project_name": "学校行业",
+      "period": "1110-1114",
+      "source": "weekly_report",
+      "owner": "[待关联]",
+      "promised_items": "学校行业",
+      "current_progress": "学校行业，计划10月启动中试，因储备项目较少，推迟中试。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+      "risk_points": "[黄灯]学校行业，计划10月启动中试，因储备项目较少，推迟中试。项目逾期，黄灯继续提示。",
+      "escalation_requested": false,
+      "is_closure_request": false,
+      "is_yellow_alert": true,
+      "ledger_record_id": null
+    },
+    {
+      "project_name": "园区行业",
+      "period": "1110-1114",
+      "source": "weekly_report",
+      "owner": "[待关联]",
+      "promised_items": "园区行业",
+      "current_progress": "园区行业，计划10月末前小试，上周已向周行汇报，宣导邮件征集风险意见中，预计下周小试宣导。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+      "risk_points": "[黄灯]园区行业，计划10月末前小试，上周已向周行汇报，宣导邮件征集风险意见中，预计下周小试宣导。项目逾期，黄灯继续提示。",
+      "escalation_requested": false,
+      "is_closure_request": false,
+      "is_yellow_alert": true,
+      "ledger_record_id": null
+    },
+    {
+      "project_name": "汽车行业",
+      "period": "1110-1114",
+      "source": "weekly_report",
+      "owner": "[待关联]",
+      "promised_items": "汽车行业",
+      "current_progress": "汽车行业：计划10月末完成小试，尚未达成小试目标。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+      "risk_points": "[黄灯]汽车行业：计划10月末完成小试，尚未达成小试目标。项目逾期，黄灯继续提示。",
+      "escalation_requested": false,
+      "is_closure_request": false,
+      "is_yellow_alert": true,
+      "ledger_record_id": null
+    },
+    {
+      "project_name": "2、“双链融合”筛选专题汇报",
+      "period": "1110-1114",
+      "source": "weekly_report",
+      "owner": "[待关联]",
+      "promised_items": "2、“双链融合”筛选专题汇报",
+      "current_progress": "2、“双链融合”筛选专题汇报，按照碰头会要求，应于11月上旬汇报，项目逾期，黄灯提示。存在逾期风险，进度滞后。",
+      "risk_points": "[黄灯]2、“双链融合”筛选专题汇报，按照碰头会要求，应于11月上旬汇报，项目逾期，黄灯提示。",
+      "escalation_requested": false,
+      "is_closure_request": false,
+      "is_yellow_alert": true,
+      "ledger_record_id": null
+    },
+    {
+      "project_name": "一、一个项目申请结项",
+      "period": "1110-1114",
+      "source": "weekly_report",
+      "owner": "[待关联]",
+      "promised_items": "一、一个项目申请结项",
+      "current_progress": "一、一个项目申请结项，请您批示：",
+      "risk_points": "",
+      "escalation_requested": false,
+      "is_closure_request": true,
+      "is_yellow_alert": false,
+      "ledger_record_id": null
+    },
+    {
+      "project_name": "搭建战略客户样板",
+      "period": "1110-1114",
+      "source": "weekly_report",
+      "owner": "[待关联]",
+      "promised_items": "搭建战略客户样板",
+      "current_progress": "1、搭建战略客户样板，战客部本周已邮件汇报河钢样板案例，并制定全面推广计划，后续“关系评估、战略研究+能力匹配+价值评估、高层站台、实施匹配、跟进落地”五步骤推进，申请结项。",
+      "risk_points": "",
+      "escalation_requested": false,
+      "is_closure_request": true,
+      "is_yellow_alert": false,
+      "ledger_record_id": null
+    },
+    {
+      "project_name": "学校行业",
+      "period": "1117-1121",
+      "source": "weekly_report",
+      "owner": "[待关联]",
+      "promised_items": "学校行业",
+      "current_progress": "学校行业，计划10月启动中试，因储备项目较少，推迟中试。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+      "risk_points": "[黄灯]学校行业，计划10月启动中试，因储备项目较少，推迟中试。项目逾期，黄灯继续提示。",
+      "escalation_requested": false,
+      "is_closure_request": false,
+      "is_yellow_alert": true,
+      "ledger_record_id": null
+    },
+    {
+      "project_name": "汽车行业",
+      "period": "1117-1121",
+      "source": "weekly_report",
+      "owner": "[待关联]",
+      "promised_items": "汽车行业",
+      "current_progress": "汽车行业：计划10月末完成小试，尚未达成小试目标。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+      "risk_points": "[黄灯]汽车行业：计划10月末完成小试，尚未达成小试目标。项目逾期，黄灯继续提示。",
+      "escalation_requested": false,
+      "is_closure_request": false,
+      "is_yellow_alert": true,
+      "ledger_record_id": null
+    },
+    {
+      "project_name": "2、“双链融合”筛选专题汇报",
+      "period": "1117-1121",
+      "source": "weekly_report",
+      "owner": "[待关联]",
+      "promised_items": "2、“双链融合”筛选专题汇报",
+      "current_progress": "2、“双链融合”筛选专题汇报，按照碰头会要求，应于11月上旬汇报，计划下周完成方案，12月5日前汇报。项目逾期，黄灯提示。存在逾期风险，进度滞后。",
+      "risk_points": "[黄灯]2、“双链融合”筛选专题汇报，按照碰头会要求，应于11月上旬汇报，计划下周完成方案，12月5日前汇报。项目逾期，黄灯提示。",
+      "escalation_requested": false,
+      "is_closure_request": false,
+      "is_yellow_alert": true,
+      "ledger_record_id": null
+    },
+    {
+      "project_name": "学校行业",
+      "period": "1124-1128",
+      "source": "weekly_report",
+      "owner": "[待关联]",
+      "promised_items": "学校行业",
+      "current_progress": "学校行业，计划10月启动中试，因储备项目较少，推迟中试。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+      "risk_points": "[黄灯]学校行业，计划10月启动中试，因储备项目较少，推迟中试。项目逾期，黄灯继续提示。",
+      "escalation_requested": false,
+      "is_closure_request": false,
+      "is_yellow_alert": true,
+      "ledger_record_id": null
+    },
+    {
+      "project_name": "汽车行业",
+      "period": "1124-1128",
+      "source": "weekly_report",
+      "owner": "[待关联]",
+      "promised_items": "汽车行业",
+      "current_progress": "汽车行业：计划10月末完成小试，尚未达成小试目标。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+      "risk_points": "[黄灯]汽车行业：计划10月末完成小试，尚未达成小试目标。项目逾期，黄灯继续提示。",
+      "escalation_requested": false,
+      "is_closure_request": false,
+      "is_yellow_alert": true,
+      "ledger_record_id": null
+    },
+    {
+      "project_name": "2、“双链融合”筛选专题汇报",
+      "period": "1124-1128",
+      "source": "weekly_report",
+      "owner": "[待关联]",
+      "promised_items": "2、“双链融合”筛选专题汇报",
+      "current_progress": "2、“双链融合”筛选专题汇报，按照碰头会要求，应于11月上旬汇报，计划下周汇报。项目逾期，黄灯提示。存在逾期风险，进度滞后。",
+      "risk_points": "[黄灯]2、“双链融合”筛选专题汇报，按照碰头会要求，应于11月上旬汇报，计划下周汇报。项目逾期，黄灯提示。",
+      "escalation_requested": false,
+      "is_closure_request": false,
+      "is_yellow_alert": true,
+      "ledger_record_id": null
+    }
+  ],
+  "engine_results": [
+    {
+      "project_name": "学校行业",
+      "status_summary": {
+        "overall": "关注",
+        "progress_text": "学校行业，计划10月启动中试，因储备项目较少，推迟中试。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+        "completion_estimate": "承诺事项存在无法按时完成的风险"
+      },
+      "risk_assessment": {
+        "level": "中",
+        "triggered_by": [],
+        "summary": "进度滞后是主要风险点"
+      },
+      "suggested_actions": [
+        "分析滞后根因，明确下一步行动和责任人"
+      ],
+      "escalation_recommended": false,
+      "reasoning": {
+        "facts_extracted": [
+          "承诺事项：学校行业",
+          "当前进展：学校行业，计划10月启动中试，因储备项目较少，推迟中试。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+          "风险自述：[黄灯]学校行业，计划10月启动中试，因储备项目较少，推迟中试。项目逾期，黄灯继续提示。"
+        ],
+        "rules_applied": [
+          "rule_进度滞后"
+        ],
+        "raw_signal": "进度滞后"
+      }
+    },
+    {
+      "project_name": "园区行业",
+      "status_summary": {
+        "overall": "关注",
+        "progress_text": "园区行业，计划10月末前小试，本周已向周行汇报、建议启动小试，待请示您。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+        "completion_estimate": "承诺事项存在无法按时完成的风险"
+      },
+      "risk_assessment": {
+        "level": "中",
+        "triggered_by": [],
+        "summary": "进度滞后是主要风险点"
+      },
+      "suggested_actions": [
+        "分析滞后根因，明确下一步行动和责任人"
+      ],
+      "escalation_recommended": false,
+      "reasoning": {
+        "facts_extracted": [
+          "承诺事项：园区行业",
+          "当前进展：园区行业，计划10月末前小试，本周已向周行汇报、建议启动小试，待请示您。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+          "风险自述：[黄灯]园区行业，计划10月末前小试，本周已向周行汇报、建议启动小试，待请示您。项目逾期，黄灯继续提示。"
+        ],
+        "rules_applied": [
+          "rule_进度滞后"
+        ],
+        "raw_signal": "进度滞后"
+      }
+    },
+    {
+      "project_name": "汽车行业",
+      "status_summary": {
+        "overall": "关注",
+        "progress_text": "汽车行业：计划10月末完成小试，尚未达成小试目标。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+        "completion_estimate": "承诺事项存在无法按时完成的风险"
+      },
+      "risk_assessment": {
+        "level": "中",
+        "triggered_by": [],
+        "summary": "进度滞后是主要风险点"
+      },
+      "suggested_actions": [
+        "分析滞后根因，明确下一步行动和责任人"
+      ],
+      "escalation_recommended": false,
+      "reasoning": {
+        "facts_extracted": [
+          "承诺事项：汽车行业",
+          "当前进展：汽车行业：计划10月末完成小试，尚未达成小试目标。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+          "风险自述：[黄灯]汽车行业：计划10月末完成小试，尚未达成小试目标。项目逾期，黄灯继续提示。"
+        ],
+        "rules_applied": [
+          "rule_进度滞后"
+        ],
+        "raw_signal": "进度滞后"
+      }
+    },
+    {
+      "project_name": "搭建战略客户样板",
+      "status_summary": {
+        "overall": "关注",
+        "progress_text": "2、搭建战略客户样板存在逾期风险，进度滞后。",
+        "completion_estimate": "承诺事项存在无法按时完成的风险"
+      },
+      "risk_assessment": {
+        "level": "中",
+        "triggered_by": [],
+        "summary": "进度滞后是主要风险点"
+      },
+      "suggested_actions": [
+        "分析滞后根因，明确下一步行动和责任人"
+      ],
+      "escalation_recommended": false,
+      "reasoning": {
+        "facts_extracted": [
+          "承诺事项：搭建战略客户样板",
+          "当前进展：2、搭建战略客户样板存在逾期风险，进度滞后。",
+          "风险自述：[黄灯]搭建战略客户样板：2、搭建战略客户样板"
+        ],
+        "rules_applied": [
+          "rule_进度滞后"
+        ],
+        "raw_signal": "进度滞后"
+      }
+    },
+    {
+      "project_name": "北京分行战客专班建设",
+      "status_summary": {
+        "overall": "关注",
+        "progress_text": "北京分行战客专班建设，战客部预计本周内邮件汇报，但目前尚未汇报。项目逾期，黄灯提示。存在逾期风险，进度滞后。",
+        "completion_estimate": "承诺事项存在无法按时完成的风险"
+      },
+      "risk_assessment": {
+        "level": "中",
+        "triggered_by": [],
+        "summary": "进度滞后是主要风险点"
+      },
+      "suggested_actions": [
+        "分析滞后根因，明确下一步行动和责任人"
+      ],
+      "escalation_recommended": false,
+      "reasoning": {
+        "facts_extracted": [
+          "承诺事项：北京分行战客专班建设",
+          "当前进展：北京分行战客专班建设，战客部预计本周内邮件汇报，但目前尚未汇报。项目逾期，黄灯提示。存在逾期风险，进度滞后。",
+          "风险自述：[黄灯]北京分行战客专班建设，战客部预计本周内邮件汇报，但目前尚未汇报。项目逾期，黄灯提示。"
+        ],
+        "rules_applied": [
+          "rule_进度滞后"
+        ],
+        "raw_signal": "进度滞后"
+      }
+    },
+    {
+      "project_name": "学校行业",
+      "status_summary": {
+        "overall": "关注",
+        "progress_text": "学校行业，计划10月启动中试，因储备项目较少，推迟中试。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+        "completion_estimate": "承诺事项存在无法按时完成的风险"
+      },
+      "risk_assessment": {
+        "level": "中",
+        "triggered_by": [],
+        "summary": "进度滞后是主要风险点"
+      },
+      "suggested_actions": [
+        "分析滞后根因，明确下一步行动和责任人"
+      ],
+      "escalation_recommended": false,
+      "reasoning": {
+        "facts_extracted": [
+          "承诺事项：学校行业",
+          "当前进展：学校行业，计划10月启动中试，因储备项目较少，推迟中试。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+          "风险自述：[黄灯]学校行业，计划10月启动中试，因储备项目较少，推迟中试。项目逾期，黄灯继续提示。"
+        ],
+        "rules_applied": [
+          "rule_进度滞后"
+        ],
+        "raw_signal": "进度滞后"
+      }
+    },
+    {
+      "project_name": "园区行业",
+      "status_summary": {
+        "overall": "关注",
+        "progress_text": "园区行业，计划10月末前小试，上周已向周行汇报，宣导邮件征集风险意见中，预计下周小试宣导。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+        "completion_estimate": "承诺事项存在无法按时完成的风险"
+      },
+      "risk_assessment": {
+        "level": "中",
+        "triggered_by": [
+          "责任人自述风险"
+        ],
+        "summary": "进度滞后是主要风险点 责任人已主动识别风险"
+      },
+      "suggested_actions": [
+        "分析滞后根因，明确下一步行动和责任人",
+        "对自述风险进行深入分析，制定缓释措施"
+      ],
+      "escalation_recommended": false,
+      "reasoning": {
+        "facts_extracted": [
+          "承诺事项：园区行业",
+          "当前进展：园区行业，计划10月末前小试，上周已向周行汇报，宣导邮件征集风险意见中，预计下周小试宣导。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+          "风险自述：[黄灯]园区行业，计划10月末前小试，上周已向周行汇报，宣导邮件征集风险意见中，预计下周小试宣导。项目逾期，黄灯继续提示。"
+        ],
+        "rules_applied": [
+          "rule_进度滞后",
+          "rule_risk_self_reported"
+        ],
+        "raw_signal": "责任人自述风险；进度滞后"
+      }
+    },
+    {
+      "project_name": "汽车行业",
+      "status_summary": {
+        "overall": "关注",
+        "progress_text": "汽车行业：计划10月末完成小试，尚未达成小试目标。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+        "completion_estimate": "承诺事项存在无法按时完成的风险"
+      },
+      "risk_assessment": {
+        "level": "中",
+        "triggered_by": [],
+        "summary": "进度滞后是主要风险点"
+      },
+      "suggested_actions": [
+        "分析滞后根因，明确下一步行动和责任人"
+      ],
+      "escalation_recommended": false,
+      "reasoning": {
+        "facts_extracted": [
+          "承诺事项：汽车行业",
+          "当前进展：汽车行业：计划10月末完成小试，尚未达成小试目标。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+          "风险自述：[黄灯]汽车行业：计划10月末完成小试，尚未达成小试目标。项目逾期，黄灯继续提示。"
+        ],
+        "rules_applied": [
+          "rule_进度滞后"
+        ],
+        "raw_signal": "进度滞后"
+      }
+    },
+    {
+      "project_name": "2、“双链融合”筛选专题汇报",
+      "status_summary": {
+        "overall": "关注",
+        "progress_text": "2、“双链融合”筛选专题汇报，按照碰头会要求，应于11月上旬汇报，项目逾期，黄灯提示。存在逾期风险，进度滞后。",
+        "completion_estimate": "承诺事项存在无法按时完成的风险"
+      },
+      "risk_assessment": {
+        "level": "中",
+        "triggered_by": [],
+        "summary": "进度滞后是主要风险点"
+      },
+      "suggested_actions": [
+        "分析滞后根因，明确下一步行动和责任人"
+      ],
+      "escalation_recommended": false,
+      "reasoning": {
+        "facts_extracted": [
+          "承诺事项：2、“双链融合”筛选专题汇报",
+          "当前进展：2、“双链融合”筛选专题汇报，按照碰头会要求，应于11月上旬汇报，项目逾期，黄灯提示。存在逾期风险，进度滞后。",
+          "风险自述：[黄灯]2、“双链融合”筛选专题汇报，按照碰头会要求，应于11月上旬汇报，项目逾期，黄灯提示。"
+        ],
+        "rules_applied": [
+          "rule_进度滞后"
+        ],
+        "raw_signal": "进度滞后"
+      }
+    },
+    {
+      "project_name": "一、一个项目申请结项",
+      "status_summary": {
+        "overall": "正常",
+        "progress_text": "一、一个项目申请结项，请您批示：",
+        "completion_estimate": "当前未发现明显进度风险"
+      },
+      "risk_assessment": {
+        "level": "低",
+        "triggered_by": [],
+        "summary": "未发现显著风险"
+      },
+      "suggested_actions": [
+        "继续保持当前节奏，定期更新进展"
+      ],
+      "escalation_recommended": false,
+      "reasoning": {
+        "facts_extracted": [
+          "承诺事项：一、一个项目申请结项",
+          "当前进展：一、一个项目申请结项，请您批示："
+        ],
+        "rules_applied": [],
+        "raw_signal": "无明显风险信号"
+      }
+    },
+    {
+      "project_name": "搭建战略客户样板",
+      "status_summary": {
+        "overall": "正常",
+        "progress_text": "1、搭建战略客户样板，战客部本周已邮件汇报河钢样板案例，并制定全面推广计划，后续“关系评估、战略研究+能力匹配+价值评估、高层站台、实施匹配、跟进落地”五步骤推进，申请结项。",
+        "completion_estimate": "当前未发现明显进度风险"
+      },
+      "risk_assessment": {
+        "level": "低",
+        "triggered_by": [],
+        "summary": "未发现显著风险"
+      },
+      "suggested_actions": [
+        "继续保持当前节奏，定期更新进展"
+      ],
+      "escalation_recommended": false,
+      "reasoning": {
+        "facts_extracted": [
+          "承诺事项：搭建战略客户样板",
+          "当前进展：1、搭建战略客户样板，战客部本周已邮件汇报河钢样板案例，并制定全面推广计划，后续“关系评估、战略研究+能力匹配+价值评估、高层站台、实施匹配、跟进落地”五步骤推进，申请结项。"
+        ],
+        "rules_applied": [],
+        "raw_signal": "无明显风险信号"
+      }
+    },
+    {
+      "project_name": "学校行业",
+      "status_summary": {
+        "overall": "关注",
+        "progress_text": "学校行业，计划10月启动中试，因储备项目较少，推迟中试。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+        "completion_estimate": "承诺事项存在无法按时完成的风险"
+      },
+      "risk_assessment": {
+        "level": "中",
+        "triggered_by": [],
+        "summary": "进度滞后是主要风险点"
+      },
+      "suggested_actions": [
+        "分析滞后根因，明确下一步行动和责任人"
+      ],
+      "escalation_recommended": false,
+      "reasoning": {
+        "facts_extracted": [
+          "承诺事项：学校行业",
+          "当前进展：学校行业，计划10月启动中试，因储备项目较少，推迟中试。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+          "风险自述：[黄灯]学校行业，计划10月启动中试，因储备项目较少，推迟中试。项目逾期，黄灯继续提示。"
+        ],
+        "rules_applied": [
+          "rule_进度滞后"
+        ],
+        "raw_signal": "进度滞后"
+      }
+    },
+    {
+      "project_name": "汽车行业",
+      "status_summary": {
+        "overall": "关注",
+        "progress_text": "汽车行业：计划10月末完成小试，尚未达成小试目标。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+        "completion_estimate": "承诺事项存在无法按时完成的风险"
+      },
+      "risk_assessment": {
+        "level": "中",
+        "triggered_by": [],
+        "summary": "进度滞后是主要风险点"
+      },
+      "suggested_actions": [
+        "分析滞后根因，明确下一步行动和责任人"
+      ],
+      "escalation_recommended": false,
+      "reasoning": {
+        "facts_extracted": [
+          "承诺事项：汽车行业",
+          "当前进展：汽车行业：计划10月末完成小试，尚未达成小试目标。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+          "风险自述：[黄灯]汽车行业：计划10月末完成小试，尚未达成小试目标。项目逾期，黄灯继续提示。"
+        ],
+        "rules_applied": [
+          "rule_进度滞后"
+        ],
+        "raw_signal": "进度滞后"
+      }
+    },
+    {
+      "project_name": "2、“双链融合”筛选专题汇报",
+      "status_summary": {
+        "overall": "关注",
+        "progress_text": "2、“双链融合”筛选专题汇报，按照碰头会要求，应于11月上旬汇报，计划下周完成方案，12月5日前汇报。项目逾期，黄灯提示。存在逾期风险，进度滞后。",
+        "completion_estimate": "承诺事项存在无法按时完成的风险"
+      },
+      "risk_assessment": {
+        "level": "中",
+        "triggered_by": [],
+        "summary": "进度滞后是主要风险点"
+      },
+      "suggested_actions": [
+        "分析滞后根因，明确下一步行动和责任人"
+      ],
+      "escalation_recommended": false,
+      "reasoning": {
+        "facts_extracted": [
+          "承诺事项：2、“双链融合”筛选专题汇报",
+          "当前进展：2、“双链融合”筛选专题汇报，按照碰头会要求，应于11月上旬汇报，计划下周完成方案，12月5日前汇报。项目逾期，黄灯提示。存在逾期风险，进度滞后。",
+          "风险自述：[黄灯]2、“双链融合”筛选专题汇报，按照碰头会要求，应于11月上旬汇报，计划下周完成方案，12月5日前汇报。项目逾期，黄灯提示。"
+        ],
+        "rules_applied": [
+          "rule_进度滞后"
+        ],
+        "raw_signal": "进度滞后"
+      }
+    },
+    {
+      "project_name": "学校行业",
+      "status_summary": {
+        "overall": "关注",
+        "progress_text": "学校行业，计划10月启动中试，因储备项目较少，推迟中试。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+        "completion_estimate": "承诺事项存在无法按时完成的风险"
+      },
+      "risk_assessment": {
+        "level": "中",
+        "triggered_by": [],
+        "summary": "进度滞后是主要风险点"
+      },
+      "suggested_actions": [
+        "分析滞后根因，明确下一步行动和责任人"
+      ],
+      "escalation_recommended": false,
+      "reasoning": {
+        "facts_extracted": [
+          "承诺事项：学校行业",
+          "当前进展：学校行业，计划10月启动中试，因储备项目较少，推迟中试。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+          "风险自述：[黄灯]学校行业，计划10月启动中试，因储备项目较少，推迟中试。项目逾期，黄灯继续提示。"
+        ],
+        "rules_applied": [
+          "rule_进度滞后"
+        ],
+        "raw_signal": "进度滞后"
+      }
+    },
+    {
+      "project_name": "汽车行业",
+      "status_summary": {
+        "overall": "关注",
+        "progress_text": "汽车行业：计划10月末完成小试，尚未达成小试目标。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+        "completion_estimate": "承诺事项存在无法按时完成的风险"
+      },
+      "risk_assessment": {
+        "level": "中",
+        "triggered_by": [],
+        "summary": "进度滞后是主要风险点"
+      },
+      "suggested_actions": [
+        "分析滞后根因，明确下一步行动和责任人"
+      ],
+      "escalation_recommended": false,
+      "reasoning": {
+        "facts_extracted": [
+          "承诺事项：汽车行业",
+          "当前进展：汽车行业：计划10月末完成小试，尚未达成小试目标。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+          "风险自述：[黄灯]汽车行业：计划10月末完成小试，尚未达成小试目标。项目逾期，黄灯继续提示。"
+        ],
+        "rules_applied": [
+          "rule_进度滞后"
+        ],
+        "raw_signal": "进度滞后"
+      }
+    },
+    {
+      "project_name": "2、“双链融合”筛选专题汇报",
+      "status_summary": {
+        "overall": "关注",
+        "progress_text": "2、“双链融合”筛选专题汇报，按照碰头会要求，应于11月上旬汇报，计划下周汇报。项目逾期，黄灯提示。存在逾期风险，进度滞后。",
+        "completion_estimate": "承诺事项存在无法按时完成的风险"
+      },
+      "risk_assessment": {
+        "level": "中",
+        "triggered_by": [],
+        "summary": "进度滞后是主要风险点"
+      },
+      "suggested_actions": [
+        "分析滞后根因，明确下一步行动和责任人"
+      ],
+      "escalation_recommended": false,
+      "reasoning": {
+        "facts_extracted": [
+          "承诺事项：2、“双链融合”筛选专题汇报",
+          "当前进展：2、“双链融合”筛选专题汇报，按照碰头会要求，应于11月上旬汇报，计划下周汇报。项目逾期，黄灯提示。存在逾期风险，进度滞后。",
+          "风险自述：[黄灯]2、“双链融合”筛选专题汇报，按照碰头会要求，应于11月上旬汇报，计划下周汇报。项目逾期，黄灯提示。"
+        ],
+        "rules_applied": [
+          "rule_进度滞后"
+        ],
+        "raw_signal": "进度滞后"
+      }
+    }
+  ],
+  "slice": "02_holdout_validation_november",
+  "periods": [
+    "1103-1107",
+    "1110-1114",
+    "1117-1121",
+    "1124-1128"
+  ]
+}

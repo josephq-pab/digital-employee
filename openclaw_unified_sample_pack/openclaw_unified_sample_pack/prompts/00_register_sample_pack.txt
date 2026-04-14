@@ -1,0 +1,25 @@
+你现在开始使用统一样本包工作。
+
+你的唯一数据入口优先级如下：
+1. 本样本包 normalized/ 目录下的结构化样本
+2. 本样本包 slices/ 中定义的推荐切片
+3. 本样本包 templates/ 中的生产替换模板
+
+工作原则：
+- 所有开发阶段默认先使用 `slices/01_dev_core_december.json`
+- 做 Week 3 新样本验证时，默认使用 `slices/02_holdout_validation_november.json`
+- 做压力/回归时，默认使用 `slices/03_stress_regression_aug_sep.json`
+- 切换到正式试运行/生产数据时，只替换 templates 对应格式的数据，不改变字段和输出口径
+- 如果样本缺失或某周没有同周期台账快照，必须显式声明，不得伪造
+
+请先读取：
+1. README.md
+2. docs/SCHEMA_AND_SLICE_RULES.md
+3. normalized/index/source_manifest.json
+4. slices/01_dev_core_december.json
+
+然后输出《样本包加载确认》，格式为：
+一、已读取文件
+二、推荐默认切片
+三、可用于开发/演示/试运行的样本边界
+四、当前建议动作

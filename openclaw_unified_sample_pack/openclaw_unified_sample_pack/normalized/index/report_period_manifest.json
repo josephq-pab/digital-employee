@@ -1,0 +1,466 @@
+[
+  {
+    "report_period": "1222-1226",
+    "report_type": "周报",
+    "start_date": "2025-12-22",
+    "end_date": "2025-12-26",
+    "overview": {
+      "as_of": "12月26日",
+      "total_items": 60,
+      "one_plus_three_items": 12,
+      "other_key_items": 48
+    },
+    "has_ledger_snapshot": true,
+    "ledger_project_count": 20,
+    "has_metrics_snapshot": true,
+    "metrics_count": 31
+  },
+  {
+    "report_period": "1215-1219",
+    "report_type": "周报",
+    "start_date": "2025-12-15",
+    "end_date": "2025-12-19",
+    "overview": {
+      "as_of": "12月19日",
+      "total_items": 59,
+      "one_plus_three_items": 12,
+      "other_key_items": 47
+    },
+    "has_ledger_snapshot": true,
+    "ledger_project_count": 19,
+    "has_metrics_snapshot": true,
+    "metrics_count": 34
+  },
+  {
+    "report_period": "1208-1212",
+    "report_type": "周报",
+    "start_date": "2025-12-08",
+    "end_date": "2025-12-12",
+    "overview": {
+      "as_of": "12月12日",
+      "total_items": 59,
+      "one_plus_three_items": 12,
+      "other_key_items": 47
+    },
+    "has_ledger_snapshot": true,
+    "ledger_project_count": 19,
+    "has_metrics_snapshot": true,
+    "metrics_count": 34
+  },
+  {
+    "report_period": "1201-1205",
+    "report_type": "周报",
+    "start_date": "2025-12-01",
+    "end_date": "2025-12-05",
+    "overview": {
+      "as_of": "12月5日",
+      "total_items": 59,
+      "one_plus_three_items": 12,
+      "other_key_items": 47
+    },
+    "has_ledger_snapshot": true,
+    "ledger_project_count": 19,
+    "has_metrics_snapshot": true,
+    "metrics_count": 34
+  },
+  {
+    "report_period": "1124-1128",
+    "report_type": "周报",
+    "start_date": "2025-11-24",
+    "end_date": "2025-11-28",
+    "overview": {
+      "as_of": "11月28日",
+      "total_items": 57,
+      "one_plus_three_items": 12,
+      "other_key_items": 45
+    },
+    "has_ledger_snapshot": true,
+    "ledger_project_count": 17,
+    "has_metrics_snapshot": true,
+    "metrics_count": 34
+  },
+  {
+    "report_period": "1117-1121",
+    "report_type": "周报",
+    "start_date": "2025-11-17",
+    "end_date": "2025-11-21",
+    "overview": {
+      "as_of": "11月21日",
+      "total_items": 56,
+      "one_plus_three_items": 12,
+      "other_key_items": 44
+    },
+    "has_ledger_snapshot": true,
+    "ledger_project_count": 17,
+    "has_metrics_snapshot": true,
+    "metrics_count": 33
+  },
+  {
+    "report_period": "1110-1114",
+    "report_type": "周报",
+    "start_date": "2025-11-10",
+    "end_date": "2025-11-14",
+    "overview": {
+      "as_of": "11月14日",
+      "total_items": 55,
+      "one_plus_three_items": 12,
+      "other_key_items": 43
+    },
+    "has_ledger_snapshot": true,
+    "ledger_project_count": 17,
+    "has_metrics_snapshot": true,
+    "metrics_count": 32
+  },
+  {
+    "report_period": "1103-1107",
+    "report_type": "周报",
+    "start_date": "2025-11-03",
+    "end_date": "2025-11-07",
+    "overview": {
+      "as_of": "11月7日",
+      "total_items": 55,
+      "one_plus_three_items": 12,
+      "other_key_items": 43
+    },
+    "has_ledger_snapshot": true,
+    "ledger_project_count": 17,
+    "has_metrics_snapshot": true,
+    "metrics_count": 32
+  },
+  {
+    "report_period": "1027-1031",
+    "report_type": "周报",
+    "start_date": "2025-10-27",
+    "end_date": "2025-10-31",
+    "overview": {
+      "as_of": "10月31日",
+      "total_items": 54
+    },
+    "has_ledger_snapshot": true,
+    "ledger_project_count": 17,
+    "has_metrics_snapshot": true,
+    "metrics_count": 32
+  },
+  {
+    "report_period": "1020-1024",
+    "report_type": "周报",
+    "start_date": "2025-10-20",
+    "end_date": "2025-10-24",
+    "overview": {
+      "as_of": "10月24日",
+      "total_items": 53
+    },
+    "has_ledger_snapshot": true,
+    "ledger_project_count": 16,
+    "has_metrics_snapshot": true,
+    "metrics_count": 32
+  },
+  {
+    "report_period": "1013-1017",
+    "report_type": "周报",
+    "start_date": "2025-10-13",
+    "end_date": "2025-10-17",
+    "overview": {
+      "as_of": "10月17日",
+      "total_items": 53
+    },
+    "has_ledger_snapshot": true,
+    "ledger_project_count": 16,
+    "has_metrics_snapshot": true,
+    "metrics_count": 32
+  },
+  {
+    "report_period": "0922-0926",
+    "report_type": "周报",
+    "start_date": "2025-09-22",
+    "end_date": "2025-09-26",
+    "overview": {
+      "as_of": "9月26日",
+      "total_items": 52
+    },
+    "has_ledger_snapshot": true,
+    "ledger_project_count": 16,
+    "has_metrics_snapshot": true,
+    "metrics_count": 32
+  },
+  {
+    "report_period": "0915-0919",
+    "report_type": "周报",
+    "start_date": "2025-09-15",
+    "end_date": "2025-09-19",
+    "overview": {
+      "as_of": "9月19日",
+      "total_items": 52
+    },
+    "has_ledger_snapshot": true,
+    "ledger_project_count": 16,
+    "has_metrics_snapshot": true,
+    "metrics_count": 31
+  },
+  {
+    "report_period": "0908-0912",
+    "report_type": "周报",
+    "start_date": "2025-09-08",
+    "end_date": "2025-09-12",
+    "overview": {
+      "as_of": "9月12日",
+      "total_items": 49
+    },
+    "has_ledger_snapshot": true,
+    "ledger_project_count": 14,
+    "has_metrics_snapshot": true,
+    "metrics_count": 31
+  },
+  {
+    "report_period": "0901-0905",
+    "report_type": "周报",
+    "start_date": "2025-09-01",
+    "end_date": "2025-09-05",
+    "overview": {
+      "as_of": "9月5日",
+      "total_items": 49
+    },
+    "has_ledger_snapshot": true,
+    "ledger_project_count": 14,
+    "has_metrics_snapshot": true,
+    "metrics_count": 31
+  },
+  {
+    "report_period": "0825-0829",
+    "report_type": "周报",
+    "start_date": "2025-08-25",
+    "end_date": "2025-08-29",
+    "overview": {
+      "as_of": "8月29日",
+      "total_items": 49
+    },
+    "has_ledger_snapshot": true,
+    "ledger_project_count": 14,
+    "has_metrics_snapshot": true,
+    "metrics_count": 31
+  },
+  {
+    "report_period": "0818-0822",
+    "report_type": "周报",
+    "start_date": "2025-08-18",
+    "end_date": "2025-08-22",
+    "overview": {
+      "as_of": "8月22日",
+      "total_items": 49
+    },
+    "has_ledger_snapshot": true,
+    "ledger_project_count": 14,
+    "has_metrics_snapshot": true,
+    "metrics_count": 33
+  },
+  {
+    "report_period": "0811-0815",
+    "report_type": "周报",
+    "start_date": "2025-08-11",
+    "end_date": "2025-08-15",
+    "overview": {
+      "as_of": "8月15日",
+      "total_items": 45
+    },
+    "has_ledger_snapshot": true,
+    "ledger_project_count": 11,
+    "has_metrics_snapshot": true,
+    "metrics_count": 31
+  },
+  {
+    "report_period": "0804-0808",
+    "report_type": "周报",
+    "start_date": "2025-08-04",
+    "end_date": "2025-08-08",
+    "overview": {
+      "as_of": "8月8日",
+      "total_items": 45
+    },
+    "has_ledger_snapshot": true,
+    "ledger_project_count": 11,
+    "has_metrics_snapshot": true,
+    "metrics_count": 31
+  },
+  {
+    "report_period": "0728-0801",
+    "report_type": "周报",
+    "start_date": "2025-07-28",
+    "end_date": "2025-08-01",
+    "overview": {
+      "as_of": "8月1日",
+      "total_items": 44
+    },
+    "has_ledger_snapshot": true,
+    "ledger_project_count": 11,
+    "has_metrics_snapshot": true,
+    "metrics_count": 31
+  },
+  {
+    "report_period": "0721-0725",
+    "report_type": "周报",
+    "start_date": "2025-07-21",
+    "end_date": "2025-07-25",
+    "overview": {
+      "as_of": "7月25日",
+      "total_items": 43
+    },
+    "has_ledger_snapshot": true,
+    "ledger_project_count": 10,
+    "has_metrics_snapshot": true,
+    "metrics_count": 29
+  },
+  {
+    "report_period": "0714-0718",
+    "report_type": "周报",
+    "start_date": "2025-07-14",
+    "end_date": "2025-07-18",
+    "overview": {
+      "as_of": "7月18日",
+      "total_items": 42
+    },
+    "has_ledger_snapshot": true,
+    "ledger_project_count": 9,
+    "has_metrics_snapshot": true,
+    "metrics_count": 27
+  },
+  {
+    "report_period": "0707-0711",
+    "report_type": "周报",
+    "start_date": "2025-07-07",
+    "end_date": "2025-07-11",
+    "overview": {
+      "as_of": "7月11日",
+      "total_items": 37
+    },
+    "has_ledger_snapshot": true,
+    "ledger_project_count": 9,
+    "has_metrics_snapshot": true,
+    "metrics_count": 24
+  },
+  {
+    "report_period": "0630-0704",
+    "report_type": "周报",
+    "start_date": "2025-06-30",
+    "end_date": "2025-07-04",
+    "overview": {
+      "as_of": "7月4日",
+      "total_items": 37
+    },
+    "has_ledger_snapshot": true,
+    "ledger_project_count": 9,
+    "has_metrics_snapshot": true,
+    "metrics_count": 22
+  },
+  {
+    "report_period": "0623-0627",
+    "report_type": "周报",
+    "start_date": "2025-06-23",
+    "end_date": "2025-06-27",
+    "overview": {
+      "as_of": "6月27日",
+      "total_items": 38
+    },
+    "has_ledger_snapshot": true,
+    "ledger_project_count": 8,
+    "has_metrics_snapshot": true,
+    "metrics_count": 22
+  },
+  {
+    "report_period": "0616-0620",
+    "report_type": "周报",
+    "start_date": "2025-06-16",
+    "end_date": "2025-06-20",
+    "overview": {
+      "as_of": "6月20日",
+      "total_items": 32
+    },
+    "has_ledger_snapshot": false,
+    "ledger_project_count": 0,
+    "has_metrics_snapshot": true,
+    "metrics_count": 11
+  },
+  {
+    "report_period": "0609-0613",
+    "report_type": "周报",
+    "start_date": "2025-06-09",
+    "end_date": "2025-06-13",
+    "overview": {
+      "as_of": "6月13日",
+      "total_items": 32
+    },
+    "has_ledger_snapshot": false,
+    "ledger_project_count": 0,
+    "has_metrics_snapshot": true,
+    "metrics_count": 10
+  },
+  {
+    "report_period": "0602-0606",
+    "report_type": "周报",
+    "start_date": "2025-06-02",
+    "end_date": "2025-06-06",
+    "overview": {
+      "as_of": "6月6日",
+      "total_items": 31
+    },
+    "has_ledger_snapshot": false,
+    "ledger_project_count": 0,
+    "has_metrics_snapshot": true,
+    "metrics_count": 9
+  },
+  {
+    "report_period": "0526-0530",
+    "report_type": "周报",
+    "start_date": "2025-05-26",
+    "end_date": "2025-05-30",
+    "overview": {
+      "as_of": "5月30日",
+      "total_items": 26
+    },
+    "has_ledger_snapshot": false,
+    "ledger_project_count": 0,
+    "has_metrics_snapshot": true,
+    "metrics_count": 10
+  },
+  {
+    "report_period": "0519-0523",
+    "report_type": "周报",
+    "start_date": "2025-05-19",
+    "end_date": "2025-05-23",
+    "overview": {
+      "as_of": "5月23日",
+      "total_items": 26
+    },
+    "has_ledger_snapshot": false,
+    "ledger_project_count": 0,
+    "has_metrics_snapshot": false,
+    "metrics_count": 0
+  },
+  {
+    "report_period": "0506-0516",
+    "report_type": "双周报",
+    "start_date": "2025-05-06",
+    "end_date": "2025-05-16",
+    "overview": {
+      "as_of": "5月16日",
+      "total_items": 25
+    },
+    "has_ledger_snapshot": false,
+    "ledger_project_count": 0,
+    "has_metrics_snapshot": false,
+    "metrics_count": 0
+  },
+  {
+    "report_period": "0421-0430",
+    "report_type": "双周报",
+    "start_date": "2025-04-21",
+    "end_date": "2025-04-30",
+    "overview": {
+      "as_of": "4月30日",
+      "total_items": 24
+    },
+    "has_ledger_snapshot": false,
+    "ledger_project_count": 0,
+    "has_metrics_snapshot": false,
+    "metrics_count": 0
+  }
+]

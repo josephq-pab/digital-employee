@@ -1,0 +1,30 @@
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+
+# Node (if any)
+node_modules/
+
+# Temp files
+*.tmp
+*.swp
+*.swo
+
+# OpenClaw internal
+/openclaw.json
+/openclaw.json.bak*
+/completions/
+/delivery-queue/
+/devices/
+/media/
+/cron/

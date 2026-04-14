@@ -1,0 +1,106 @@
+{
+  "snapshot_date": "2025-05-30",
+  "metric_row_count": 10,
+  "metrics": [
+    {
+      "project_name": "制定贷款促投放提升方案，有序压降票证规模",
+      "detail": "增贷款",
+      "canonical_key": "制定贷款促投放提升方案，有序压降票证规模增贷款",
+      "metric_name": "战客口径人民币贷款",
+      "target": 500,
+      "unit": "亿元",
+      "value": "114亿",
+      "gap_note": null
+    },
+    {
+      "project_name": "制定贷款促投放提升方案，有序压降票证规模",
+      "detail": null,
+      "canonical_key": "制定贷款促投放提升方案，有序压降票证规模",
+      "metric_name": "银团贷款",
+      "target": 200,
+      "unit": "亿元",
+      "value": "56.06亿",
+      "gap_note": null
+    },
+    {
+      "project_name": "制定贷款促投放提升方案，有序压降票证规模",
+      "detail": null,
+      "canonical_key": "制定贷款促投放提升方案，有序压降票证规模",
+      "metric_name": "并购贷款",
+      "target": 180,
+      "unit": "亿元",
+      "value": "69.11亿",
+      "gap_note": null
+    },
+    {
+      "project_name": "制定贷款促投放提升方案，有序压降票证规模",
+      "detail": null,
+      "canonical_key": "制定贷款促投放提升方案，有序压降票证规模",
+      "metric_name": "项目贷款（非房）",
+      "target": 200,
+      "unit": "亿元",
+      "value": "-17亿",
+      "gap_note": null
+    },
+    {
+      "project_name": "制定贷款促投放提升方案，有序压降票证规模",
+      "detail": null,
+      "canonical_key": "制定贷款促投放提升方案，有序压降票证规模",
+      "metric_name": "普惠贷款",
+      "target": 51,
+      "unit": "亿元",
+      "value": "-2亿",
+      "gap_note": null
+    },
+    {
+      "project_name": "制定贷款促投放提升方案，有序压降票证规模",
+      "detail": null,
+      "canonical_key": "制定贷款促投放提升方案，有序压降票证规模",
+      "metric_name": "供应链金融",
+      "target": 200,
+      "unit": "亿元",
+      "value": "125亿",
+      "gap_note": null
+    },
+    {
+      "project_name": "制定贷款促投放提升方案，有序压降票证规模",
+      "detail": null,
+      "canonical_key": "制定贷款促投放提升方案，有序压降票证规模",
+      "metric_name": "跨境人民币贷款（不含一、二级福费廷）",
+      "target": 150,
+      "unit": "亿元",
+      "value": 29,
+      "gap_note": null
+    },
+    {
+      "project_name": "制定贷款促投放提升方案，有序压降票证规模",
+      "detail": null,
+      "canonical_key": "制定贷款促投放提升方案，有序压降票证规模",
+      "metric_name": "—Q2压降",
+      "target": 400,
+      "unit": "亿元",
+      "value": "票证余额4012亿，\n较年初压降270亿",
+      "gap_note": null
+    },
+    {
+      "project_name": "提高中长期贷款（并购、银团、非房项目贷款）绝对规模和市场份额",
+      "detail": null,
+      "canonical_key": "提高中长期贷款并购银团非房项目贷款绝对规模和市场份额",
+      "metric_name": "并购市场份额",
+      "target": "暂无数据",
+      "unit": "名",
+      "value": "对标行第6",
+      "gap_note": null
+    },
+    {
+      "project_name": "提高中长期贷款（并购、银团、非房项目贷款）绝对规模和市场份额",
+      "detail": "银团",
+      "canonical_key": "提高中长期贷款并购银团非房项目贷款绝对规模和市场份额银团",
+      "metric_name": "银团市场份额",
+      "target": "暂无数据",
+      "unit": "名",
+      "value": "对标行第7",
+      "gap_note": null
+    }
+  ]
+}

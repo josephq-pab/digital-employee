@@ -1,0 +1,64 @@
+{
+  "sample_type": "pmo_weekly_report",
+  "sample_version": "v1",
+  "is_desensitized": true,
+  "report_meta": {
+    "report_id": "PMO-WR-2025-1215-1219",
+    "report_period": "1215-1219",
+    "report_date_text": "二零二五年十二月十九日",
+    "reporting_unit": "某总行条线PMO",
+    "report_scope": "重点项目推进周报"
+  },
+  "project_overview": {
+    "total_items": 59,
+    "category_1_plus_3_items": 12,
+    "other_key_items": 47,
+    "closed_or_paused_or_terminated": 43,
+    "in_progress_items": 16,
+    "status_light": "green"
+  },
+  "key_requests": {
+    "closure_requests": [
+      {
+        "project_name": "成立“对公资产方案中心”",
+        "raw": "成立“对公资产方案中心”，建立运行机制，对公资产方案中心已成立并建立运行机制，战客部申请结项。"
+      },
+      {
+        "project_name": "完善组织策略",
+        "raw": "完善组织策略，已在对公改革规划K3-4队伍管理与考核中体现，后续与销售队伍“1+3”转型方案合并追踪，申请结项。"
+      }
+    ],
+    "delay_requests": [],
+    "termination_requests": []
+  },
+  "key_alerts": [
+    {
+      "project_name": "汽车行业",
+      "alert_level": "yellow",
+      "raw": "汽车行业：计划11月启动中试。项目逾期，黄灯继续提示。"
+    }
+  ],
+  "new_items": [],
+  "management_summary": {
+    "overall_judgment": null,
+    "completed_or_resolved": [],
+    "delayed_items": [
+      "汽车行业"
+    ],
+    "no_clear_progress_items": [],
+    "items_requiring_leadership_attention": [
+      "汽车行业"
+    ]
+  },
+  "source_note": {
+    "source_form": "邮件式周报整理",
+    "removed_content": [
+      "称呼",
+      "收发件人",
+      "抄送",
+      "邮件链",
+      "邮箱地址",
+      "签名信息"
+    ]
+  }
+}

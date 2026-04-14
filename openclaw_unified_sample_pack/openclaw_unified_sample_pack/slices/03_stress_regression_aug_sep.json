@@ -1,0 +1,76 @@
+{
+  "slice_name": "stress_regression_aug_sep",
+  "purpose": "高黄灯/高逾期/高复杂度压力回归集",
+  "report_periods": [
+    "0728-0801",
+    "0804-0808",
+    "0811-0815",
+    "0818-0822",
+    "0825-0829",
+    "0901-0905",
+    "0908-0912",
+    "0915-0919",
+    "0922-0926"
+  ],
+  "includes": "weekly+ledger+metrics where available",
+  "items": [
+    {
+      "report_period": "0728-0801",
+      "report_file": "normalized/weekly_reports/by_period/2025-07-28_2025-08-01.json",
+      "ledger_snapshot_file": "normalized/ledgers/snapshots/2025-07-28_2025-08-01.json",
+      "metrics_snapshot_file": "normalized/metrics/snapshots/2025-08-01.json"
+    },
+    {
+      "report_period": "0804-0808",
+      "report_file": "normalized/weekly_reports/by_period/2025-08-04_2025-08-08.json",
+      "ledger_snapshot_file": "normalized/ledgers/snapshots/2025-08-04_2025-08-08.json",
+      "metrics_snapshot_file": "normalized/metrics/snapshots/2025-08-08.json"
+    },
+    {
+      "report_period": "0811-0815",
+      "report_file": "normalized/weekly_reports/by_period/2025-08-11_2025-08-15.json",
+      "ledger_snapshot_file": "normalized/ledgers/snapshots/2025-08-11_2025-08-15.json",
+      "metrics_snapshot_file": "normalized/metrics/snapshots/2025-08-15.json"
+    },
+    {
+      "report_period": "0818-0822",
+      "report_file": "normalized/weekly_reports/by_period/2025-08-18_2025-08-22.json",
+      "ledger_snapshot_file": "normalized/ledgers/snapshots/2025-08-18_2025-08-22.json",
+      "metrics_snapshot_file": "normalized/metrics/snapshots/2025-08-22.json"
+    },
+    {
+      "report_period": "0825-0829",
+      "report_file": "normalized/weekly_reports/by_period/2025-08-25_2025-08-29.json",
+      "ledger_snapshot_file": "normalized/ledgers/snapshots/2025-08-25_2025-08-29.json",
+      "metrics_snapshot_file": "normalized/metrics/snapshots/2025-08-29.json"
+    },
+    {
+      "report_period": "0901-0905",
+      "report_file": "normalized/weekly_reports/by_period/2025-09-01_2025-09-05.json",
+      "ledger_snapshot_file": "normalized/ledgers/snapshots/2025-09-01_2025-09-05.json",
+      "metrics_snapshot_file": "normalized/metrics/snapshots/2025-09-05.json"
+    },
+    {
+      "report_period": "0908-0912",
+      "report_file": "normalized/weekly_reports/by_period/2025-09-08_2025-09-12.json",
+      "ledger_snapshot_file": "normalized/ledgers/snapshots/2025-09-08_2025-09-12.json",
+      "metrics_snapshot_file": "normalized/metrics/snapshots/2025-09-12.json"
+    },
+    {
+      "report_period": "0915-0919",
+      "report_file": "normalized/weekly_reports/by_period/2025-09-15_2025-09-19.json",
+      "ledger_snapshot_file": "normalized/ledgers/snapshots/2025-09-15_2025-09-19.json",
+      "metrics_snapshot_file": "normalized/metrics/snapshots/2025-09-19.json"
+    },
+    {
+      "report_period": "0922-0926",
+      "report_file": "normalized/weekly_reports/by_period/2025-09-22_2025-09-26.json",
+      "ledger_snapshot_file": "normalized/ledgers/snapshots/2025-09-22_2025-09-26.json",
+      "metrics_snapshot_file": "normalized/metrics/snapshots/2025-09-26.json"
+    }
+  ],
+  "notes": [
+    "用于压力回归与风险提取验证。",
+    "映射和数据口径复杂度较高，更适合回归和稳态测试。"
+  ]
+}

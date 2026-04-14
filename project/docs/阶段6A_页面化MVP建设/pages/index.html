@@ -1,0 +1,1745 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>组织执行力数字员工 · 并行运行MVP</title>
+<style>
+  :root {
+    --bg: #f5f6fa;
+    --card: #ffffff;
+    --border: #e2e8f0;
+    --text: #1a202c;
+    --text-muted: #718096;
+    --primary: #4f46e5;
+    --green: #22c55e;
+    --yellow: #eab308;
+    --red: #ef4444;
+    --blue: #3b82f6;
+    --violet: #7c3aed;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.6; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+
+  /* Nav tabs */
+  .nav-tabs { display: flex; gap: 4px; background: var(--card); border-radius: 12px; padding: 6px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); flex-wrap: wrap; }
+  .nav-tabs .tab { padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 13px; font-weight: 500; color: var(--text-muted); transition: all 0.2s; border: none; background: none; text-decoration: none; }
+  .nav-tabs .tab:hover { color: var(--primary); }
+  .nav-tabs .tab.active { background: var(--primary); color: white; }
+
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* Page header */
+  .page-header { margin-bottom: 24px; }
+  .page-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary); margin-bottom: 6px; }
+  .page-title { font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+  .page-subtitle { color: var(--text-muted); font-size: 13px; }
+
+  /* Cards */
+  .card { background: var(--card); border-radius: 12px; padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid var(--border); }
+  .card-title { font-size: 14px; font-weight: 600; margin-bottom: 12px; color: var(--text); display: flex; align-items: center; gap: 8px; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 11px; font-weight: 600; }
+  .badge-green { background: #dcfce7; color: #166534; }
+  .badge-yellow { background: #fef9c3; color: #854d0e; }
+  .badge-orange { background: #ffedd5; color: #9a3412; }
+  .badge-red { background: #fee2e2; color: #991b1b; }
+  .badge-blue { background: #dbeafe; color: #1e40af; }
+  .badge-violet { background: #ede9fe; color: #5b21b6; }
+  .badge-gray { background: #f1f5f9; color: #475569; }
+  .badge-orange { background: #ffedd5; color: #9a3412; }
+
+  /* Grid */
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 16px; }
+  .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 16px; }
+  .stat-card { background: var(--card); border-radius: 12px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid var(--border); text-align: center; }
+  .stat-num { font-size: 32px; font-weight: 700; color: var(--primary); }
+  .stat-num.green { color: var(--green); }
+  .stat-num.yellow { color: var(--yellow); }
+  .stat-num.red { color: var(--red); }
+  .stat-label { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+  /* Alert rows */
+  .alert-box { border-left: 4px solid var(--yellow); background: #fffbeb; padding: 12px 16px; border-radius: 0 8px 8px 0; margin-bottom: 12px; }
+  .alert-box.red { border-left-color: var(--red); background: #fef2f2; }
+  .alert-box.green { border-left-color: var(--green); background: #f0fdf4; }
+  .alert-title { font-weight: 600; font-size: 13px; margin-bottom: 4px; }
+  .alert-desc { font-size: 12px; color: var(--text-muted); }
+  .alert-meta { display: flex; gap: 16px; margin-top: 8px; font-size: 12px; color: var(--text-muted); flex-wrap: wrap; }
+
+  /* Tables */
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { background: #f8fafc; padding: 10px 12px; text-align: left; font-weight: 600; color: var(--text-muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 2px solid var(--border); }
+  td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #f8fafc; }
+  .light-row td { background: #fffbeb; }
+  .red-row td { background: #fef2f2; }
+  .green-row td { background: #f0fdf4; }
+
+  /* Buttons */
+  .btn { display: inline-block; padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 500; cursor: pointer; border: none; text-decoration: none; transition: all 0.2s; }
+  .btn-primary { background: var(--primary); color: white; }
+  .btn-primary:hover { background: #4338ca; }
+  .btn-secondary { background: var(--bg); color: var(--text); border: 1px solid var(--border); }
+  .btn-secondary:hover { background: var(--border); }
+  .btn-sm { padding: 4px 10px; font-size: 12px; }
+
+  /* Sample switcher */
+  .sample-switcher { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; align-items: center; }
+  .sample-switcher label { font-size: 13px; font-weight: 600; color: var(--text-muted); }
+  .sample-btn { padding: 6px 14px; border-radius: 8px; border: 1px solid var(--border); background: white; cursor: pointer; font-size: 12px; transition: all 0.2s; }
+  .sample-btn:hover { border-color: var(--primary); color: var(--primary); }
+  .sample-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+  /* Notice */
+  .notice { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 12px 16px; font-size: 13px; color: #1e40af; margin-bottom: 16px; }
+  .notice strong { font-weight: 600; }
+
+  /* Phase indicator */
+  .phase-bar { display: flex; align-items: center; gap: 0; margin-bottom: 24px; background: var(--card); border-radius: 12px; padding: 16px 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid var(--border); overflow-x: auto; }
+  .phase-item { display: flex; flex-direction: column; align-items: center; min-width: 80px; flex: 1; position: relative; }
+  .phase-item::after { content: ''; position: absolute; top: 14px; right: -12px; width: 24px; height: 2px; background: var(--border); }
+  .phase-item:last-child::after { display: none; }
+  .phase-dot { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; margin-bottom: 6px; border: 2px solid white; box-shadow: 0 0 0 2px var(--border); }
+  .phase-dot.done { background: var(--green); color: white; box-shadow: 0 0 0 2px var(--green); }
+  .phase-dot.current { background: var(--primary); color: white; box-shadow: 0 0 0 2px var(--primary); }
+  .phase-dot.next { background: var(--blue); color: white; box-shadow: 0 0 0 2px var(--blue); }
+  .phase-dot.future { background: var(--border); color: var(--text-muted); }
+  .phase-name { font-size: 10px; text-align: center; color: var(--text-muted); font-weight: 500; white-space: nowrap; }
+  .phase-name.active { color: var(--primary); font-weight: 600; }
+
+  /* Section */
+  .section-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 12px; margin-top: 20px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+  .section-title:first-child { margin-top: 0; }
+
+  /* Info list */
+  .info-row { display: flex; gap: 16px; margin-bottom: 8px; font-size: 13px; }
+  .info-label { font-weight: 600; color: var(--text-muted); min-width: 100px; }
+  .info-value { color: var(--text); }
+
+  /* Status pill */
+  .status-pill { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 20px; font-size: 11px; font-weight: 600; }
+  .status-pill.green { background: #dcfce7; color: #166534; }
+  .status-pill.yellow { background: #fef9c3; color: #854d0e; }
+  .status-pill.red { background: #fee2e2; color: #991b1b; }
+  .status-pill.blue { background: #dbeafe; color: #1e40af; }
+  .status-pill.gray { background: #f1f5f9; color: #475569; }
+  .status-pill.violet { background: #ede9fe; color: #5b21b6; }
+
+  /* Footer */
+  .footer { text-align: center; color: var(--text-muted); font-size: 12px; padding: 24px 0; margin-top: 24px; border-top: 1px solid var(--border); }
+
+  @media (max-width: 768px) {
+    .grid-3 { grid-template-columns: repeat(2, 1fr); }
+    .grid-2 { grid-template-columns: 1fr; }
+    .nav-tabs { gap: 2px; }
+    .nav-tabs .tab { padding: 6px 10px; font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- Navigation -->
+<div class="nav-tabs">
+  <a href="#" class="tab active" data-tab="home">🏠 首页</a>
+  <a href="#" class="tab" data-tab="data">📥 数据接入</a>
+  <a href="#" class="tab" data-tab="summary">📋 领导摘要</a>
+  <a href="#" class="tab" data-tab="tracker">📊 事项总台账</a>
+  <a href="#" class="tab" data-tab="risks">⚠️ 风险清单</a>
+  <a href="#" class="tab" data-tab="review">✅ 复核与ABC决策</a>
+  <a href="#" class="tab" data-tab="history">📜 历史运行</a>
+</div>
+
+<!-- ===== TAB: HOME ===== -->
+<div id="tab-home" class="tab-content active">
+  <!-- 6E优化：首页首屏改为"本期结论卡" -->
+  <div id="home-conclusion-card" style="margin-bottom:24px;">
+    <div style="background:linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%); border-radius:16px; padding:24px; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; flex-wrap:wrap; gap:12px;">
+        <div>
+          <div style="font-size:11px; text-transform:uppercase; letter-spacing:0.1em; opacity:0.7; margin-bottom:4px;">Phase 6E · 并行运行系统</div>
+          <div style="font-size:20px; font-weight:700;" id="home-period-title">2026-04-14 / 04-18 本周期结论</div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:11px; opacity:0.7; margin-bottom:4px;">样本状态</div>
+          <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,0.15); padding:6px 12px; border-radius:20px; font-size:13px; font-weight:600;" id="home-sample-status">
+            <span id="home-sample-status-icon">✅</span>
+            <span id="home-sample-status-text">已齐套</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 结论核心区 -->
+      <div style="background:rgba(255,255,255,0.1); border-radius:12px; padding:16px; margin-bottom:16px;">
+        <div style="font-size:12px; opacity:0.7; margin-bottom:8px;">📌 整体判断</div>
+        <div style="font-size:15px; line-height:1.7;" id="home-verdict-text">
+          本周58项事项中，3项需重点跟踪（汽车零部件投放缺口8.2亿、学校行业中试未启动、双链融合汇报延期）。整体可控，但指标缺口最大，需优先介入。
+        </div>
+      </div>
+
+      <!-- 数字指标行 -->
+      <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:12px; margin-bottom:16px;">
+        <div style="text-align:center;">
+          <div style="font-size:28px; font-weight:700;" id="home-stat-total">58</div>
+          <div style="font-size:11px; opacity:0.7;">总事项数</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:28px; font-weight:700; color:#fbbf24;" id="home-stat-focus">3</div>
+          <div style="font-size:11px; opacity:0.7;">需重点跟踪</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:28px; font-weight:700; color:#f87171;" id="home-stat-gap">8.2亿</div>
+          <div style="font-size:11px; opacity:0.7;">M-001指标缺口</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:28px; font-weight:700; color:#86efac;" id="home-stat-close">40</div>
+          <div style="font-size:11px; opacity:0.7;">已关闭</div>
+        </div>
+      </div>
+
+      <!-- 风险等级 -->
+      <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+        <div style="font-size:12px; opacity:0.7;">风险等级：</div>
+        <div style="display:inline-flex; align-items:center; gap:6px;">
+          <span style="width:10px; height:10px; border-radius:50%; background:#eab308; display:inline-block;"></span>
+          <span style="font-weight:600; font-size:14px;" id="home-risk-level">中风险（需关注）</span>
+        </div>
+        <div style="font-size:12px; opacity:0.7; margin-left:16px;" id="home-risk-desc">汽车零部件贷款余额净增缺口8.2亿元</div>
+      </div>
+
+      <!-- 下一步动作 -->
+      <div style="background:rgba(255,255,255,0.08); border-radius:10px; padding:12px 16px;">
+        <div style="font-size:12px; opacity:0.7; margin-bottom:6px;">▶ 下一步动作</div>
+        <div style="font-size:13px;" id="home-next-action">
+          ① 本周：逐户梳理汽车零部件已授信未投放客户，明确卡点责任人<br>
+          ② 尽快：补充学校行业中试储备项目清单<br>
+          ③ 04/18前：锁定双链融合汇报方案完成时间
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 快速操作区 -->
+  <div style="display:flex; gap:10px; margin-bottom:20px; flex-wrap:wrap;">
+    <button class="btn btn-primary" onclick="showTab('summary');return false;" style="padding:10px 20px; font-size:14px;">
+      📋 查看领导摘要
+    </button>
+    <button class="btn btn-secondary" onclick="showTab('tracker');return false;" style="padding:10px 20px; font-size:14px;">
+      📊 事项总台账
+    </button>
+    <button class="btn btn-secondary" onclick="showTab('risks');return false;" style="padding:10px 20px; font-size:14px;">
+      ⚠️ 风险清单
+    </button>
+    <button class="btn btn-secondary" onclick="showTab('review');return false;" style="padding:10px 20px; font-size:14px;">
+      ✅ 复核与决策
+    </button>
+  </div>
+
+  <!-- 样本切换（缩小） -->
+  <div style="margin-bottom:16px;">
+    <div style="font-size:12px; color:var(--text-muted); margin-bottom:8px; font-weight:600;">🔄 切换样本查看不同周期</div>
+    <div class="sample-switcher" style="margin-bottom:0;">
+      <button class="sample-btn active" onclick="switchSample('6BLIVE')">6BLIVE真实：0414-0418</button>
+      <button class="sample-btn" onclick="switchSample('SIMW16')">推演W16：0414-0418</button>
+      <button class="sample-btn" onclick="switchSample('SIMW17')">推演W17：0421-0425</button>
+      <button class="sample-btn" onclick="switchSample('SIMW18')">推演W18：0428-0502</button>
+      <button class="sample-btn" onclick="switchSample('SIMW19')">推演W19：0505-0509</button>
+      <button class="sample-btn" onclick="switchSample('SIMW20')">推演W20：0512-0516</button>
+      <button class="sample-btn" onclick="switchSample('5CR')">历史1：1117-1121</button>
+      <button class="sample-btn" onclick="switchSample('5CS')">历史2：1208-1212</button>
+    </div>
+  </div>
+
+  <!-- 系统定位（弱化，不抢占首屏） -->
+  <div style="background:#f8fafc; border-radius:10px; padding:14px 16px; border:1px solid var(--border); margin-top:16px;">
+    <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+      <span style="font-size:16px;">ℹ️</span>
+      <span style="font-weight:600; font-size:13px; color:var(--text);">系统定位说明</span>
+    </div>
+    <div style="font-size:12px; color:var(--text-muted); line-height:1.8;">
+      本系统为<strong>PMO并行运行辅助工具</strong>，与人工周报并行，输出领导摘要/台账/风险清单。<strong>不替代人工决策</strong>，最终判断以人工为准。
+      人工职责：最终管理决策 / 与业务方沟通 / 风险升级处置。
+    </div>
+  </div>
+
+  <!-- 样本对比（移到下方） -->
+  <div class="card" style="margin-top:16px;">
+    <div class="card-title">🔄 历史样本说明</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; font-size:12px;">
+      <div style="background:#fffbeb; padding:12px; border-radius:8px;">
+        <div style="font-weight:600; margin-bottom:6px;">样本1（1117-1121）</div>
+        <div style="color:var(--text-muted); line-height:1.8;">
+          <span class="badge badge-orange" style="font-size:10px;">延期1</span>
+          <span class="badge badge-yellow" style="font-size:10px;">黄灯3</span>
+          <span class="badge badge-blue" style="font-size:10px;">新增1</span>
+          <div style="margin-top:4px;">典型：延期+黄灯+新增同周期</div>
+        </div>
+      </div>
+      <div style="background:#f0fdf4; padding:12px; border-radius:8px;">
+        <div style="font-weight:600; margin-bottom:6px;">样本2（1208-1212）</div>
+        <div style="color:var(--text-muted); line-height:1.8;">
+          <span class="badge badge-green" style="font-size:10px;">结项3</span>
+          <span class="badge badge-yellow" style="font-size:10px;">黄灯2</span>
+          <div style="margin-top:4px;">典型：结项集中+黄灯并存</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== TAB: DATA ===== -->
+<div id="tab-data" class="tab-content">
+  <div class="page-header">
+    <div class="page-title">📥 数据接入</div>
+    <div class="page-subtitle">提交样本包，系统自动切片并运行</div>
+  </div>
+
+  <!-- 6E优化：主入口设计 -->
+  <input type="file" id="main-upload-input" accept=".zip" style="display:none;" onchange="handleMainUpload(this)">
+  <input type="file" id="sup-upload-input" accept=".docx,.xlsx" multiple style="display:none;" onchange="handleSupUpload(this)">
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px;">
+    <!-- 主入口：上传样本包 -->
+    <div style="background:linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%); border-radius:14px; padding:20px; color:white;">
+      <div style="font-size:14px; font-weight:700; margin-bottom:8px;">📦 主入口：上传本周样本包</div>
+      <div style="font-size:12px; opacity:0.8; margin-bottom:16px; line-height:1.6;">
+        将周报(.docx)、台账(.xlsx)、指标(.xlsx)打包为zip，上传后系统自动识别并切片运行。
+      </div>
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <button class="btn btn-primary" style="background:white; color:#1e3a5f; font-size:13px;" onclick="document.getElementById('main-upload-input').click();return false;">
+          📤 上传样本包(zip)
+        </button>
+        <span id="main-upload-filename" style="font-size:12px;opacity:0.8;align-self:center;"></span>
+        <button class="btn" style="background:rgba(255,255,255,0.15); color:white; border:1px solid rgba(255,255,255,0.3); font-size:13px;" onclick="showTab('summary');return false;">
+          📋 查看已有结果
+        </button>
+      </div>
+    </div>
+
+    <!-- 次入口：补传缺失文件 -->
+    <div style="background:white; border-radius:14px; padding:20px; border:2px dashed #cbd5e1;">
+      <div style="font-size:14px; font-weight:700; margin-bottom:8px; color:var(--text);">📝 次入口：补传缺失文件</div>
+      <div style="font-size:12px; color:var(--text-muted); margin-bottom:16px; line-height:1.6;">
+        若已有部分文件到位，单独补传缺失项。系统会识别哪些已存在、哪些需要补传。
+      </div>
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <button class="btn btn-secondary" style="font-size:13px;" onclick="document.getElementById('sup-upload-input').click();return false;">
+          📤 补传缺失文件
+        </button>
+        <span id="sup-upload-filename" style="font-size:12px;color:var(--text-muted);align-self:center;"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6E优化：样本完整性状态卡 -->
+  <div class="card" style="border-left:4px solid var(--primary); margin-bottom:16px;">
+    <div class="card-title">📊 本周样本完整性状态</div>
+    <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; margin-bottom:16px;">
+      <div id="completeness-zhoubao" style="background:#f0fdf4; padding:14px; border-radius:10px; text-align:center;">
+        <div style="font-size:24px; margin-bottom:6px;">📄</div>
+        <div style="font-weight:600; font-size:13px; margin-bottom:4px;">周报</div>
+        <div style="font-size:12px;" id="zhoubao-status"><span style="color:#22c55e;">✅ 已到位</span></div>
+      </div>
+      <div style="background:#f0fdf4; padding:14px; border-radius:10px; text-align:center;">
+        <div style="font-size:24px; margin-bottom:6px;">📋</div>
+        <div style="font-weight:600; font-size:13px; margin-bottom:4px;">台账</div>
+        <div style="font-size:12px;" id="dangzhang-status"><span style="color:#22c55e;">✅ 已到位</span></div>
+      </div>
+      <div style="background:#f0fdf4; padding:14px; border-radius:10px; text-align:center;">
+        <div style="font-size:24px; margin-bottom:6px;">📈</div>
+        <div style="font-weight:600; font-size:13px; margin-bottom:4px;">指标</div>
+        <div style="font-size:12px;" id="zhibiao-status"><span style="color:#22c55e;">✅ 已到位</span></div>
+      </div>
+    </div>
+    <div id="data-completeness-summary" style="text-align:center; padding:12px; background:#eff6ff; border-radius:8px; font-size:13px;">
+      <span style="color:#1e40af; font-weight:600;">✅ 三份齐套</span> — 可进入系统运行
+    </div>
+  </div>
+
+  <!-- 6E优化：接入后下一步提示 -->
+  <div class="card" style="border-left:4px solid var(--green); margin-bottom:16px;">
+    <div class="card-title">▶ 接入后下一步</div>
+    <div style="display:flex; flex-direction:column; gap:10px;">
+      <div style="display:flex; align-items:center; gap:12px; font-size:13px;">
+        <div style="width:28px; height:28px; border-radius:50%; background:#22c55e; color:white; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; flex-shrink:0;">1</div>
+        <div>
+          <div style="font-weight:600;">接入完成</div>
+          <div style="color:var(--text-muted); font-size:12px;">系统检测到三份文件齐套，确认接入</div>
+        </div>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px; font-size:13px;">
+        <div style="width:28px; height:28px; border-radius:50%; background:#3b82f6; color:white; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; flex-shrink:0;">2</div>
+        <div>
+          <div style="font-weight:600;">系统运行（约2-4小时）</div>
+          <div style="color:var(--text-muted); font-size:12px;">自动切片 → 生成领导摘要/台账/风险清单/运行日志</div>
+        </div>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px; font-size:13px;">
+        <div style="width:28px; height:28px; border-radius:50%; background:#f59e0b; color:white; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; flex-shrink:0;">3</div>
+        <div>
+          <div style="font-weight:600;">业务复核（24小时内）</div>
+          <div style="color:var(--text-muted); font-size:12px;">PMO协调人对照原始周报，评估系统判断准确性</div>
+        </div>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px; font-size:13px;">
+        <div style="width:28px; height:28px; border-radius:50%; background:#7c3aed; color:white; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; flex-shrink:0;">4</div>
+        <div>
+          <div style="font-weight:600;">周五16:00前收口</div>
+          <div style="color:var(--text-muted); font-size:12px;">填写ABC决策，完成本周运行收口</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 角色说明（压缩） -->
+  <details style="margin-bottom:16px;">
+    <summary style="cursor:pointer; font-size:13px; font-weight:600; color:var(--text-muted); padding:8px 0;">📋 查看各角色职责说明 ▾</summary>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:12px; margin-top:12px;">
+      <div style="background:#f8fafc; padding:12px; border-radius:8px; font-size:12px;">
+        <strong style="color:var(--primary);">数据提供方</strong>
+        <ul style="margin:6px 0 0 16px; color:var(--text-muted); line-height:1.8;">
+          <li>提供周报+台账+指标</li>
+          <li>放入 data/raw/ 目录</li>
+        </ul>
+      </div>
+      <div style="background:#f8fafc; padding:12px; border-radius:8px; font-size:12px;">
+        <strong style="color:var(--green);">系统/Agent</strong>
+        <ul style="margin:6px 0 0 16px; color:var(--text-muted); line-height:1.8;">
+          <li>检测后自动切片</li>
+          <li>4小时内完成运行</li>
+        </ul>
+      </div>
+      <div style="background:#f8fafc; padding:12px; border-radius:8px; font-size:12px;">
+        <strong style="color:#f59e0b;">PMO协调人</strong>
+        <ul style="margin:6px 0 0 16px; color:var(--text-muted); line-height:1.8;">
+          <li>24小时内复核</li>
+          <li>填写ABC决策</li>
+        </ul>
+      </div>
+      <div style="background:#f8fafc; padding:12px; border-radius:8px; font-size:12px;">
+        <strong style="color:var(--violet);">业务方</strong>
+        <ul style="margin:6px 0 0 16px; color:var(--text-muted); line-height:1.8;">
+          <li>查看摘要和台账</li>
+          <li>反馈具体问题</li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <div class="sample-switcher" style="margin-bottom:20px;">
+    <label>选择样本：</label>
+    <button class="sample-btn" onclick="switchSample('6BLIVE')">6BLIVE真实：0414-0418</button>
+    <button class="sample-btn" onclick="switchSample('SIMW16')">推演W16：0414-0418</button>
+    <button class="sample-btn" onclick="switchSample('SIMW17')">推演W17：0421-0425</button>
+    <button class="sample-btn" onclick="switchSample('SIMW18')">推演W18：0428-0502</button>
+    <button class="sample-btn" onclick="switchSample('SIMW19')">推演W19：0505-0509</button>
+    <button class="sample-btn" onclick="switchSample('SIMW20')">推演W20：0512-0516</button>
+    <button class="sample-btn" onclick="switchSample('5CR')">历史1：1117-1121</button>
+    <button class="sample-btn" onclick="switchSample('5CS')">历史2：1208-1212</button>
+  </div>
+
+  <div class="card">
+    <div class="card-title">可用样本列表</div>
+    <table>
+      <thead>
+        <tr>
+          <th>样本ID</th>
+          <th>周期</th>
+          <th>场景类型</th>
+          <th>周报</th>
+          <th>台账</th>
+          <th>指标</th>
+          <th>状态</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>REAL-HIST-PMO-2025-1117-1121</td>
+          <td>2025-11-17~21</td>
+          <td><span class="badge badge-orange">延期1+黄灯3+新增1</span></td>
+          <td><span class="status-pill green">✅ 完整</span></td>
+          <td><span class="status-pill green">✅ 完整</span></td>
+          <td><span class="status-pill green">✅ 完整</span></td>
+          <td><span class="status-pill violet">已接入</span></td>
+        </tr>
+        <tr>
+          <td>REAL-HIST-PMO-2025-1208-1212</td>
+          <td>2025-12-08~12</td>
+          <td><span class="badge badge-green">结项3+黄灯2并存</span></td>
+          <td><span class="status-pill green">✅ 完整</span></td>
+          <td><span class="status-pill green">✅ 完整</span></td>
+          <td><span class="status-pill green">✅ 完整</span></td>
+          <td><span class="status-pill violet">已接入</span></td>
+        </tr>
+        <tr style="background:#f0fdf4;" id="row-0414">
+          <td>LIVE-2026-W16-REAL</td>
+          <td>2026-04-14~18 ✅</td>
+          <td><span class="badge badge-yellow">指标偏离+黄灯持续</span></td>
+          <td><span class="status-pill green">✅ 完整</span></td>
+          <td><span class="status-pill green">✅ 完整</span></td>
+          <td><span class="status-pill green">✅ 完整</span></td>
+          <td><span class="status-pill green">✅ 已接入（6BLIVE）</span></td>
+        </tr>
+        <tr style="background:#eff6ff;" id="row-simw16">
+          <td>SIM-2026-W16-0414</td>
+          <td>2026-04-14~18 推演</td>
+          <td><span class="badge badge-yellow">指标偏离+黄灯3项</span></td>
+          <td><span class="status-pill green">✅ 完整</span></td>
+          <td><span class="status-pill green">✅ 完整</span></td>
+          <td><span class="status-pill green">✅ 完整</span></td>
+          <td><span class="status-pill blue">✅ 已接入（SIMW16）</span></td>
+        </tr>
+        <tr style="background:#f5f0ff;" id="row-simw17">
+          <td>SIM-2026-W17-0421</td>
+          <td>2026-04-21~25 推演</td>
+          <td><span class="badge badge-yellow">指标改善+黄灯2项</span></td>
+          <td><span class="status-pill green">✅ 完整</span></td>
+          <td><span class="status-pill green">✅ 完整</span></td>
+          <td><span class="status-pill green">✅ 完整</span></td>
+          <td><span class="status-pill violet">✅ 已接入（SIMW17）</span></td>
+        </tr>
+        <tr style="background:#fff7f0;" id="row-simw18">
+          <td>SIM-2026-W18-0428</td>
+          <td>2026-04-28~05-02 推演</td>
+          <td><span class="badge badge-orange">接近达标+黄灯1项</span></td>
+          <td><span class="status-pill green">✅ 完整</span></td>
+          <td><span class="status-pill green">✅ 完整</span></td>
+          <td><span class="status-pill green">✅ 完整</span></td>
+          <td><span class="status-pill violet">✅ 已接入（SIMW18）</span></td>
+        </tr>
+        <tr style="background:#f0fdf4;" id="row-simw19">
+          <td>SIM-2026-W19-0505</td>
+          <td>2026-05-05~09 推演</td>
+          <td><span class="badge badge-green">全部达标+无黄灯</span></td>
+          <td><span class="status-pill green">✅ 完整</span></td>
+          <td><span class="status-pill green">✅ 完整</span></td>
+          <td><span class="status-pill green">✅ 完整</span></td>
+          <td><span class="status-pill green">✅ 已接入（SIMW19）</span></td>
+        </tr>
+        <tr style="background:#f0fdf4;" id="row-simw20">
+          <td>SIM-2026-W20-0512</td>
+          <td>2026-05-12~16 推演</td>
+          <td><span class="badge badge-green">持续稳定+收口阶段</span></td>
+          <td><span class="status-pill green">✅ 完整</span></td>
+          <td><span class="status-pill green">✅ 完整</span></td>
+          <td><span class="status-pill green">✅ 完整</span></td>
+          <td><span class="status-pill green">✅ 已接入（SIMW20）</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title">当前选中样本详情</div>
+    <div class="info-row"><span class="info-label">样本ID</span><span class="info-value" id="data-sample-id">LIVE-2026-W16-REAL</span></div>
+    <div class="info-row"><span class="info-label">报告周期</span><span class="info-value" id="data-period">2026-04-14 / 2026-04-18</span></div>
+    <div class="info-row"><span class="info-label">数据提供方</span><span class="info-value">公司金融管理委员会秘书处</span></div>
+    <div class="info-row"><span class="info-label">场景类型</span><span class="info-value" id="data-scene-type">指标偏离/黄灯持续/新增</span></div>
+    <div class="info-row"><span class="info-label">数据完整性</span><span class="info-value"><span class="status-pill green" id="data-completeness">✅ 周报+台账+指标均完整</span></span></div>
+    <div class="info-row"><span class="info-label">样本用途</span><span class="info-value"><strong>真实样本首周期并行运行（2026-04-11接入）</strong></span></div>
+    <div class="info-row"><span class="info-label">切片路径</span><span class="info-value">slices/06_live_2026W16.json</span></div>
+    <div class="info-row"><span class="info-label">指标偏离</span><span class="info-value"><span class="badge badge-yellow">M-001 汽车零部件贷款余额净增：偏离8.2亿元（关注）</span></span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📊 指标快照（本期样本）</div>
+    <table>
+      <thead><tr><th>指标ID</th><th>指标名称</th><th>目标</th><th>当前值</th><th>差额</th><th>状态</th><th>责任部门</th></tr></thead>
+      <tbody>
+        <tr style="background:#fef9c3;">
+          <td>M-001</td><td>汽车零部件贷款余额净增（亿元）</td><td>15.0</td><td>6.8</td><td style="color:#ef4444;">-8.2</td><td><span class="badge badge-yellow">偏离目标</span></td><td>公司部行业推动组</td>
+        </tr>
+        <tr style="background:#f0fdf4;">
+          <td>M-002</td><td>战客口径人民币贷款余额（亿元）</td><td>500.0</td><td>518.1</td><td style="color:#22c55e;">+18.1</td><td><span class="badge badge-green">已达成</span></td><td>战略客户组</td>
+        </tr>
+        <tr style="background:#f0fdf4;">
+          <td>M-003</td><td>外币低息存款月日均净增（亿元）</td><td>100.0</td><td>439.0</td><td style="color:#22c55e;">+339.0</td><td><span class="badge badge-green">已超目标</span></td><td>国际业务组</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ===== TAB: SUMMARY ===== -->
+<div id="tab-summary" class="tab-content">
+  <div class="page-header">
+    <div class="page-title">📋 领导摘要</div>
+    <div class="page-subtitle">按模板A格式输出，管理层一眼看懂整体状态</div>
+  </div>
+
+  <div class="sample-switcher" style="margin-bottom:20px;">
+    <label>选择样本：</label>
+    <button class="sample-btn" onclick="switchSample('6BLIVE')">6BLIVE真实：0414-0418</button>
+    <button class="sample-btn" onclick="switchSample('SIMW16')">推演W16：0414-0418</button>
+    <button class="sample-btn" onclick="switchSample('SIMW17')">推演W17：0421-0425</button>
+    <button class="sample-btn" onclick="switchSample('SIMW18')">推演W18：0428-0502</button>
+    <button class="sample-btn" onclick="switchSample('SIMW19')">推演W19：0505-0509</button>
+    <button class="sample-btn" onclick="switchSample('SIMW20')">推演W20：0512-0516</button>
+    <button class="sample-btn" onclick="switchSample('5CR')">历史1：1117-1121</button>
+    <button class="sample-btn" onclick="switchSample('5CS')">历史2：1208-1212</button>
+  </div>
+
+  <!-- Summary content will be injected by JS -->
+  <div id="summary-content"></div>
+</div>
+
+<!-- ===== TAB: TRACKER ===== -->
+<div id="tab-tracker" class="tab-content">
+  <div class="page-header">
+    <div class="page-title">📊 事项总台账</div>
+    <div class="page-subtitle">全量事项列表，可筛选重点关注事项</div>
+  </div>
+
+  <div class="sample-switcher" style="margin-bottom:20px;">
+    <label>选择样本：</label>
+    <button class="sample-btn" onclick="switchSample('6BLIVE')">6BLIVE真实：0414-0418</button>
+    <button class="sample-btn" onclick="switchSample('SIMW16')">推演W16：0414-0418</button>
+    <button class="sample-btn" onclick="switchSample('SIMW17')">推演W17：0421-0425</button>
+    <button class="sample-btn" onclick="switchSample('SIMW18')">推演W18：0428-0502</button>
+    <button class="sample-btn" onclick="switchSample('SIMW19')">推演W19：0505-0509</button>
+    <button class="sample-btn" onclick="switchSample('SIMW20')">推演W20：0512-0516</button>
+    <button class="sample-btn" onclick="switchSample('5CR')">历史1：1117-1121</button>
+    <button class="sample-btn" onclick="switchSample('5CS')">历史2：1208-1212</button>
+  </div>
+
+  <!-- Tracker content will be injected by JS -->
+  <div id="tracker-content"></div>
+</div>
+
+<!-- ===== TAB: RISKS ===== -->
+<div id="tab-risks" class="tab-content">
+  <div class="page-header">
+    <div class="page-title">⚠️ 风险清单</div>
+    <div class="page-subtitle">黄灯/延期/指标偏离/重点关注事项清单</div>
+  </div>
+
+  <div class="sample-switcher" style="margin-bottom:20px;">
+    <label>选择样本：</label>
+    <button class="sample-btn" onclick="switchSample('6BLIVE')">6BLIVE真实：0414-0418</button>
+    <button class="sample-btn" onclick="switchSample('SIMW16')">推演W16：0414-0418</button>
+    <button class="sample-btn" onclick="switchSample('SIMW17')">推演W17：0421-0425</button>
+    <button class="sample-btn" onclick="switchSample('SIMW18')">推演W18：0428-0502</button>
+    <button class="sample-btn" onclick="switchSample('SIMW19')">推演W19：0505-0509</button>
+    <button class="sample-btn" onclick="switchSample('SIMW20')">推演W20：0512-0516</button>
+    <button class="sample-btn" onclick="switchSample('5CR')">历史1：1117-1121</button>
+    <button class="sample-btn" onclick="switchSample('5CS')">历史2：1208-1212</button>
+  </div>
+
+  <!-- Risks content will be injected by JS -->
+  <div id="risks-content"></div>
+</div>
+
+<!-- ===== TAB: REVIEW ===== -->
+<div id="tab-review" class="tab-content">
+  <div class="page-header">
+    <div class="page-title">✅ 复核与ABC决策</div>
+    <div class="page-subtitle">PMO协调人专用：复核系统输出 → 填写判断 → 做出决策</div>
+  </div>
+
+  <!-- 6E优化：本页是操作页而非浏览页的视觉引导 -->
+  <div style="background:#f0fdf4; border-left:4px solid #22c55e; padding:14px 16px; border-radius:0 8px 8px 0; margin-bottom:20px;">
+    <div style="font-size:13px; font-weight:600; color:#166534; margin-bottom:4px;">📌 本页是操作页，不是浏览页</div>
+    <div style="font-size:12px; color:#166534;">请按顺序填写下方5个问题，然后选择ABC决策并提交。</div>
+  </div>
+
+  <!-- 6E优化：表单化复核 -->
+  <div style="display:flex; flex-direction:column; gap:16px;">
+    <!-- Q1: 本期是否跑通 -->
+    <div class="card" style="border-left:4px solid #3b82f6;">
+      <div style="font-weight:700; font-size:14px; margin-bottom:12px;">
+        <span style="background:#3b82f6; color:white; border-radius:50%; width:24px; height:24px; display:inline-flex; align-items:center; justify-content:center; font-size:12px; margin-right:8px;">1</span>
+        本期系统是否跑通？
+      </div>
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <button class="btn btn-secondary" onclick="selectRadio('q1','yes')" id="q1-yes">✅ 是，跑通了</button>
+        <button class="btn btn-secondary" onclick="selectRadio('q1','partial')" id="q1-partial">⚠️ 部分跑通（缺失部分输入）</button>
+        <button class="btn btn-secondary" onclick="selectRadio('q1','no')" id="q1-no">❌ 否，未跑通</button>
+      </div>
+      <div id="q1-result" style="margin-top:10px; font-size:13px; display:none;"></div>
+    </div>
+
+    <!-- Q2: 是否体现价值 -->
+    <div class="card" style="border-left:4px solid #22c55e;">
+      <div style="font-weight:700; font-size:14px; margin-bottom:12px;">
+        <span style="background:#22c55e; color:white; border-radius:50%; width:24px; height:24px; display:inline-flex; align-items:center; justify-content:center; font-size:12px; margin-right:8px;">2</span>
+        系统输出对管理是否有价值？
+      </div>
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <button class="btn btn-secondary" onclick="selectRadio('q2','yes')" id="q2-yes">✅ 有价值</button>
+        <button class="btn btn-secondary" onclick="selectRadio('q2','partial')" id="q2-partial">⚠️ 部分有价值</button>
+        <button class="btn btn-secondary" onclick="selectRadio('q2','no')" id="q2-no">❌ 无价值</button>
+      </div>
+      <div style="margin-top:8px; font-size:12px; color:var(--text-muted);">评价维度：指标偏离识别 / 风险分流准确性 / 结论可读性</div>
+      <div id="q2-result" style="margin-top:10px; font-size:13px; display:none;"></div>
+    </div>
+
+    <!-- Q3: 是否减轻工作 -->
+    <div class="card" style="border-left:4px solid #7c3aed;">
+      <div style="font-weight:700; font-size:14px; margin-bottom:12px;">
+        <span style="background:#7c3aed; color:white; border-radius:50%; width:24px; height:24px; display:inline-flex; align-items:center; justify-content:center; font-size:12px; margin-right:8px;">3</span>
+        系统输出是否减轻了你的工作？
+      </div>
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <button class="btn btn-secondary" onclick="selectRadio('q3','yes')" id="q3-yes">✅ 减轻了</button>
+        <button class="btn btn-secondary" onclick="selectRadio('q3','partial')" id="q3-partial">⚠️ 部分减轻</button>
+        <button class="btn btn-secondary" onclick="selectRadio('q3','no')" id="q3-no">❌ 没减轻</button>
+      </div>
+      <div id="q3-result" style="margin-top:10px; font-size:13px; display:none;"></div>
+    </div>
+
+    <!-- Q4: 是否存在偏差 -->
+    <div class="card" style="border-left:4px solid #eab308;">
+      <div style="font-weight:700; font-size:14px; margin-bottom:12px;">
+        <span style="background:#eab308; color:white; border-radius:50%; width:24px; height:24px; display:inline-flex; align-items:center; justify-content:center; font-size:12px; margin-right:8px;">4</span>
+        本期是否存在偏差？（人工判断与系统判断不一致的事项）
+      </div>
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <button class="btn btn-secondary" onclick="selectRadio('q4','none')" id="q4-none">✅ 无偏差</button>
+        <button class="btn btn-secondary" onclick="selectRadio('q4','few')" id="q4-few">⚠️ 少量偏差（1-2项）</button>
+        <button class="btn btn-secondary" onclick="selectRadio('q4','many')" id="q4-many">❌ 较多偏差（3项以上）</button>
+      </div>
+      <!-- 偏差填写区 -->
+      <div id="q4-deviation-area" style="margin-top:12px; display:none;">
+        <div style="background:#fef9c3; border-radius:8px; padding:12px; font-size:12px; color:#854d0e; margin-bottom:10px;">
+          ⚠️ 请在下方填写具体偏差事项，不要填抽象评价。
+        </div>
+        <textarea id="q4-deviation-text" placeholder="格式：事项名称 | 系统判断 | 人工判断 | 偏差说明" style="width:100%; padding:10px; border-radius:8px; border:1px solid var(--border); font-size:13px; resize:vertical; min-height:80px; font-family:inherit;"></textarea>
+      </div>
+      <div id="q4-result" style="margin-top:10px; font-size:13px; display:none;"></div>
+    </div>
+
+    <!-- Q5: ABC决策 -->
+    <div class="card" style="border-left:4px solid #1e3a5f; background:linear-gradient(to right, #f8fafc, white);">
+      <div style="font-weight:700; font-size:14px; margin-bottom:12px;">
+        <span style="background:#1e3a5f; color:white; border-radius:50%; width:24px; height:24px; display:inline-flex; align-items:center; justify-content:center; font-size:12px; margin-right:8px;">5</span>
+        选择本期ABC决策
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; margin-bottom:16px;">
+        <div id="abc-A" onclick="selectABC('A')" style="background:white; border:2px solid var(--border); border-radius:10px; padding:14px; cursor:pointer; text-align:center; transition:all 0.2s;">
+          <div style="font-size:20px; font-weight:700; color:#22c55e; margin-bottom:4px;">A</div>
+          <div style="font-weight:600; font-size:13px; margin-bottom:4px;">接受</div>
+          <div style="font-size:11px; color:var(--text-muted);">系统输出可直接使用，无需修改</div>
+        </div>
+        <div id="abc-B" onclick="selectABC('B')" style="background:white; border:2px solid var(--border); border-radius:10px; padding:14px; cursor:pointer; text-align:center; transition:all 0.2s;">
+          <div style="font-size:20px; font-weight:700; color:#f59e0b; margin-bottom:4px;">B</div>
+          <div style="font-weight:600; font-size:13px; margin-bottom:4px;">修改后接受</div>
+          <div style="font-size:11px; color:var(--text-muted);">需要人工修改部分内容后使用</div>
+        </div>
+        <div id="abc-C" onclick="selectABC('C')" style="background:white; border:2px solid var(--border); border-radius:10px; padding:14px; cursor:pointer; text-align:center; transition:all 0.2s;">
+          <div style="font-size:20px; font-weight:700; color:#ef4444; margin-bottom:4px;">C</div>
+          <div style="font-weight:600; font-size:13px; margin-bottom:4px;">不接受</div>
+          <div style="font-size:11px; color:var(--text-muted);">存在重大偏差，不适合作为参考</div>
+        </div>
+      </div>
+
+      <!-- 具体问题填写区（仅B/C时显示） -->
+      <div id="q5-problem-area" style="display:none; margin-bottom:16px;">
+        <div style="background:#fef2f2; border-radius:8px; padding:12px; font-size:12px; color:#991b1b; margin-bottom:10px;">
+          ⚠️ 请填写具体问题，不要填抽象评价。格式：问题描述 | 影响范围 | 建议。
+        </div>
+        <textarea id="q5-problem-text" placeholder="具体问题描述（必填，当选择B或C时）" style="width:100%; padding:10px; border-radius:8px; border:1px solid #fecaca; font-size:13px; resize:vertical; min-height:80px; font-family:inherit;"></textarea>
+      </div>
+
+      <!-- 提交按钮 -->
+      <button class="btn btn-primary" id="review-submit-btn" onclick="submitReview()" style="padding:12px 24px; font-size:14px; opacity:0.5; cursor:not-allowed;" disabled>
+        ✅ 提交复核结论
+      </button>
+      <div id="review-submit-result" style="margin-top:12px; display:none;"></div>
+    </div>
+  </div>
+
+  <!-- 历史决策记录（保持不变，但简化） -->
+  <div class="card" style="margin-top:20px;">
+    <div class="card-title">📜 历史决策记录</div>
+    <table>
+      <thead>
+        <tr>
+          <th>周期</th>
+          <th>一致率</th>
+          <th>决策</th>
+          <th>状态</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>5C-R（1117-1121）</td>
+          <td><span class="status-pill green">100%</span></td>
+          <td><span class="status-pill violet">历史验证通过</span></td>
+          <td><span class="status-pill violet">已收口</span></td>
+        </tr>
+        <tr>
+          <td>5C-S（1208-1212）</td>
+          <td><span class="status-pill green">100%</span></td>
+          <td><span class="status-pill violet">历史验证通过</span></td>
+          <td><span class="status-pill violet">已收口</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ===== TAB: HISTORY ===== -->
+<div id="tab-history" class="tab-content">
+  <div class="page-header">
+    <div class="page-title">📜 历史运行记录</div>
+    <div class="page-subtitle">已跑过的所有周期，可追溯和复盘</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">历史周期列表</div>
+    <table>
+      <thead>
+        <tr>
+          <th>周期ID</th>
+          <th>运行日期</th>
+          <th>样本类型</th>
+          <th>主要场景</th>
+          <th>判断一致率</th>
+          <th>ABC决策</th>
+          <th>收口状态</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>5C-R-HIST-001</td>
+          <td>2026-04-10</td>
+          <td><span class="badge badge-violet">真实历史样本</span></td>
+          <td>延期1+黄灯3+新增1</td>
+          <td><span class="status-pill green">100%（10/10）</span></td>
+          <td><span class="status-pill green">无ABC决策触发</span></td>
+          <td><span class="status-pill violet">已收口</span></td>
+        </tr>
+        <tr>
+          <td>5C-S-HIST-001</td>
+          <td>2026-04-10</td>
+          <td><span class="badge badge-violet">真实历史样本</span></td>
+          <td>结项3+黄灯2并存</td>
+          <td><span class="status-pill green">100%（10/10）</span></td>
+          <td><span class="status-pill green">无ABC决策触发</span></td>
+          <td><span class="status-pill violet">已收口</span></td>
+        </tr>
+        <tr style="background:#f0fdf4;">
+          <td>6B-RUN-001</td>
+          <td>2026-04-14（已完成）</td>
+          <td><span class="badge badge-blue">04/14真实样本</span></td>
+          <td>指标偏离+黄灯3项+新增1项</td>
+          <td><span class="status-pill gray">—</span></td>
+          <td><span class="status-pill gray">—</span></td>
+          <td><span class="status-pill violet">已接入</span></td>
+        </tr>
+        <tr style="background:#eff6ff;">
+          <td>SIM-RUN-W16</td>
+          <td>2026-04-14</td>
+          <td><span class="badge badge-violet">推演样本W16</span></td>
+          <td>指标偏离+黄灯3项</td>
+          <td><span class="status-pill gray">—</span></td>
+          <td><span class="status-pill gray">—</span></td>
+          <td><span class="status-pill blue">已接入</span></td>
+        </tr>
+        <tr style="background:#f5f0ff;">
+          <td>SIM-RUN-W17</td>
+          <td>2026-04-21</td>
+          <td><span class="badge badge-violet">推演样本W17</span></td>
+          <td>指标改善+黄灯2项</td>
+          <td><span class="status-pill gray">—</span></td>
+          <td><span class="status-pill gray">—</span></td>
+          <td><span class="status-pill blue">已接入</span></td>
+        </tr>
+        <tr style="background:#fff7f0;">
+          <td>SIM-RUN-W18</td>
+          <td>2026-04-28</td>
+          <td><span class="badge badge-orange">推演样本W18</span></td>
+          <td>接近达标+黄灯1项</td>
+          <td><span class="status-pill gray">—</span></td>
+          <td><span class="status-pill gray">—</span></td>
+          <td><span class="status-pill blue">已接入</span></td>
+        </tr>
+        <tr style="background:#f0fdf4;">
+          <td>SIM-RUN-W19</td>
+          <td>2026-05-05</td>
+          <td><span class="badge badge-green">推演样本W19</span></td>
+          <td>全部达标+无黄灯</td>
+          <td><span class="status-pill gray">—</span></td>
+          <td><span class="status-pill gray">—</span></td>
+          <td><span class="status-pill green">已接入</span></td>
+        </tr>
+        <tr style="background:#f0fdf4;">
+          <td>SIM-RUN-W20</td>
+          <td>2026-05-12</td>
+          <td><span class="badge badge-green">推演样本W20</span></td>
+          <td>持续稳定+收口阶段</td>
+          <td><span class="status-pill gray">—</span></td>
+          <td><span class="status-pill gray">—</span></td>
+          <td><span class="status-pill green">已接入</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title">统计概览</div>
+    <div class="grid-3" style="gap:12px;">
+      <div class="stat-card" style="padding:16px;">
+        <div class="stat-num">2</div>
+        <div class="stat-label">已跑周期数</div>
+      </div>
+      <div class="stat-card" style="padding:16px;">
+        <div class="stat-num green">2</div>
+        <div class="stat-label">已收口周期数</div>
+      </div>
+      <div class="stat-card" style="padding:16px;">
+        <div class="stat-num">0</div>
+        <div class="stat-label">触发ABC决策数</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">双样本验证核心发现</div>
+    <div class="alert-box green">
+      <div class="alert-title">✅ 结项与风险分流机制验证有效</div>
+      <div class="alert-desc">样本2（1208-1212）中3项申请结项事项正确排除在风险清单之外，仅2项黄灯进入风险清单。分流机制稳健。</div>
+    </div>
+    <div class="alert-box green" style="margin-top:8px;">
+      <div class="alert-title">✅ 并存场景清晰可读</div>
+      <div class="alert-desc">结项3项+黄灯2项同周期存在时，台账分模块列出，无混淆。</div>
+    </div>
+    <div class="alert-box" style="margin-top:8px;">
+      <div class="alert-title">⚠️ 尚未覆盖：指标偏离场景</div>
+      <div class="alert-desc">偶发场景，当前两个历史样本均未包含。04/14真实样本接入时需关注。</div>
+    </div>
+  </div>
+
+  <div class="card" style="border-left:4px solid #f59e0b;">
+    <div class="card-title">📌 阶段6B执行原则</div>
+    <ul style="font-size:13px; color:var(--text-muted); margin:0 0 0 20px; line-height:2;">
+      <li><strong>样本到位即运行</strong>：04/14周报到位后直接触发，不讨论</li>
+      <li><strong>部分齐套运行</strong>：周报到+台账/指标未齐时，先运行并显式标注缺失项</li>
+      <li><strong>输入未到位记录</strong>：周报未到时记录"输入未到位，等待补充"，不虚构完成</li>
+      <li><strong>仅记录事实</strong>：复核时只记一致点/偏差点/减负/价值/ABC，不做抽象评价</li>
+      <li><strong>04/18收口只看事实</strong>：输入齐套/输出完成/偏差可控/有价值/ABC决策</li>
+    </ul>
+  </div>
+</div>
+
+<div class="footer">
+  数字员工并行运行系统 · MVP版本 · 阶段6E+P1体验优化版 · 2026-04-14（5期推演样本已接入）<br>
+  <span style="color:var(--text-muted); font-size:11px;">
+    6D P1优化已完成 | 首页结论卡/数据接入重设计/复核表单化 | 6E优化已落地
+  </span>
+</div>
+
+</div>
+
+<script>
+// ============ DATA ============
+var DATA = {
+  "6BLIVE": {
+    "sample_id": "LIVE-2026-W16-REAL",
+    "period": "2026-04-14 / 2026-04-18",
+    "scene_type": "指标偏离/黄灯持续/新增",
+    "total": 58,
+    "core3": 14,
+    "other_key": 44,
+    "closed": 40,
+    "in_progress": 17,
+    "defer": 0,
+    "defer_items": [],
+    "yellow": 3,
+    "yellow_items": [
+      {"name":"汽车零部件授信投放推进","reason":"贷款余额净增6.8亿元，偏离阶段目标15亿元，缺口8.2亿元","status":"\u201c关注（中）\u201d","action":"逐户梳理卡点，按周跟踪投放落地；关注季度目标达成","item_type":"关注","dept":"公司部行业推动组"},
+      {"name":"学校行业中试推进","reason":"中试启动仍未完成，核心项目储备不足，计划顺延","status":"\u201c关注（中）\u201d","action":"补充项目储备计划，明确中试前置条件","item_type":"关注","dept":"行业协同小组"},
+      {"name":"双链融合筛选专题汇报","reason":"原计划本周形成汇报方案，材料仍在整合","status":"\u201c关注（中）\u201d","action":"锁定方案完成责任人与汇报时间","item_type":"关注","dept":"专题工作组"}
+    ],
+    "close": 0,
+    "close_items": [],
+    "new_items": [
+      {"name":"总行及分行战客一客一档","reason":"本周新增事项，已启动模板整理","action":"明确分行覆盖范围和时点"}
+    ],
+    "verdict": "本期整体未出现失控偏离，但<strong>3项关注事项</strong>需纳入重点跟踪。<strong>汽车零部件授信投放</strong>指标偏离最大（缺口8.2亿元），建议逐户梳理卡点；学校行业中试和双链融合汇报需锁定责任人和时间节点。<strong>暂无延期或正式升级申请</strong>，建议PMO继续并行跟踪。",
+    "next_focus": [
+      "汽车零部件：逐户梳理卡点，按周跟踪投放落地，关注季度目标达成",
+      "学校行业：补充项目储备计划，明确中试前置条件",
+      "双链融合：锁定方案完成责任人与汇报时间节点",
+      "战客一客一档：明确分行覆盖范围和完成时点",
+      "指标偏离（M-001）持续跟踪，04/18前复盘投放改善情况"
+    ],
+    "metrics": [
+      {"id":"M-001","name":"汽车零部件贷款余额净增","target":15,"current":6.8,"gap":-8.2,"status":"偏离目标","dept":"公司部行业推动组"},
+      {"id":"M-002","name":"战客口径人民币贷款余额","target":500,"current":518.1,"gap":18.1,"status":"已达成","dept":"战略客户组"},
+      {"id":"M-003","name":"外币低息存款月日均净增","target":100,"current":439,"gap":339,"status":"已超目标","dept":"国际业务组"}
+    ],
+    "escalation": {"recommended":false,"reason":"暂无正式升级申请，继续并行跟踪"},
+    "pmo_followup": ["汽车零部件授信投放推进","学校行业中试推进"]
+  },
+  "SIMW16": {
+    "sample_id": "SIM-2026-W16-0414",
+    "period": "2026-04-14 / 2026-04-18",
+    "scene_type": "指标偏离/黄灯持续",
+    "total": 18, "core3": 5, "other_key": 13, "closed": 0, "in_progress": 18,
+    "defer": 0, "defer_items": [],
+    "yellow": 3,
+    "yellow_items": [
+      {"name":"汽车零部件授信投放推进","reason":"贷款余额净增6.8亿元，偏离目标15亿元，缺口8.2亿元","status":"\u201c关注（中）\u201d","action":"逐户梳理提款卡点，按周跟踪落地节奏","item_type":"关注","dept":"公司部行业推动组"},
+      {"name":"六策合一·学校行业中试推进","reason":"中试仍未启动，较计划推迟","status":"\u201c关注（中）\u201d","action":"补足储备项目并明确中试启动节点","item_type":"关注","dept":"行业推动组"},
+      {"name":"双链融合专题汇报","reason":"正式汇报较原节点延后一周","status":"\u201c关注（中）\u201d","action":"锁定汇报日期并完成材料会签","item_type":"关注","dept":"专题组"}
+    ],
+    "close": 0, "close_items": [],
+    "new_items": [],
+    "verdict": "本期整体未出现失控偏离，但<strong>3项关注事项</strong>需重点跟踪。汽车零部件指标偏离最大（缺口8.2亿），学校行业中试和双链融合汇报需锁定责任人和时间节点。建议PMO继续并行跟踪。",
+    "next_focus": [
+      "汽车零部件：逐户梳理卡点，按周跟踪投放落地节奏",
+      "学校行业：补足储备项目，明确中试启动前置条件",
+      "双链融合：锁定汇报日期，完成材料会签",
+      "战客一客一档：督促分行补录，校验字段完整性"
+    ],
+    "metrics": [
+      {"id":"M-001","name":"汽车零部件贷款余额净增","target":15,"current":6.8,"gap":-8.2,"status":"偏离目标","dept":"公司部行业推动组"},
+      {"id":"M-002","name":"战客口径人民币贷款余额","target":520,"current":518.1,"gap":-1.9,"status":"接近目标","dept":"战略客户组"},
+      {"id":"M-003","name":"外币低息存款月日均净增","target":120,"current":108,"gap":-12,"status":"基本达标","dept":"国际业务组"},
+      {"id":"M-004","name":"学校行业储备项目数","target":4,"current":2,"gap":-2,"status":"偏低","dept":"行业推动组"},
+      {"id":"M-005","name":"一客一档补录完成率","target":60,"current":38,"gap":-22,"status":"偏慢","dept":"战略客户组"},
+      {"id":"M-006","name":"双链融合专题汇报完成率","target":100,"current":70,"gap":-30,"status":"延后","dept":"专题组"}
+    ],
+    "escalation": {"recommended":false,"reason":"暂无正式升级申请"},
+    "pmo_followup": ["汽车零部件授信投放推进","学校行业中试推进"]
+  },
+  "SIMW17": {
+    "sample_id": "SIM-2026-W17-0421",
+    "period": "2026-04-21 / 2026-04-25",
+    "scene_type": "指标改善中/黄灯收尾",
+    "total": 18, "core3": 5, "other_key": 13, "closed": 0, "in_progress": 18,
+    "defer": 0, "defer_items": [],
+    "yellow": 2,
+    "yellow_items": [
+      {"name":"汽车零部件授信投放推进","reason":"贷款余额净增9.5亿，较上周改善+2.7亿，但仍低于目标15亿","status":"\u201c关注（中）\u201d","action":"推动待提款客户尽快落地，分户跟踪审批与提款","item_type":"关注","dept":"公司部行业推动组"},
+      {"name":"六策合一·学校行业中试推进","reason":"储备项目从2户增至4户达标，预计下周启动中试","status":"\u201c关注（中）\u201d","action":"完成中试前方案确认","item_type":"关注","dept":"行业推动组"}
+    ],
+    "close": 0, "close_items": [],
+    "new_items": [],
+    "verdict": "本期较上周明显改善。<strong>汽车零部件贷款净增从6.8亿提升至9.5亿</strong>，学校行业储备项目从2户增至4户达标，双链融合汇报材料内审完成。<strong>整体风险等级从\u201c中风险\u201d降至\u201c低风险\u201d</strong>。",
+    "next_focus": [
+      "汽车零部件：推动待提款客户尽快落地，下周期争取达标",
+      "学校行业：完成中试前方案确认，下周启动中试",
+      "双链融合：锁定正式汇报时间",
+      "战客一客一档：推进第二批客户补录"
+    ],
+    "metrics": [
+      {"id":"M-001","name":"汽车零部件贷款余额净增","target":15,"current":9.5,"gap":-5.5,"status":"偏离目标","dept":"公司部行业推动组"},
+      {"id":"M-002","name":"战客口径人民币贷款余额","target":520,"current":523.4,"gap":3.4,"status":"达标","dept":"战略客户组"},
+      {"id":"M-003","name":"外币低息存款月日均净增","target":120,"current":116,"gap":-4,"status":"基本达标","dept":"国际业务组"},
+      {"id":"M-004","name":"学校行业储备项目数","target":4,"current":4,"gap":0,"status":"达标","dept":"行业推动组"},
+      {"id":"M-005","name":"一客一档补录完成率","target":60,"current":62,"gap":2,"status":"达标","dept":"战略客户组"},
+      {"id":"M-006","name":"双链融合专题汇报完成率","target":100,"current":90,"gap":-10,"status":"接近完成","dept":"专题组"}
+    ],
+    "escalation": {"recommended":false,"reason":"风险等级下降，无升级需求"},
+    "pmo_followup": ["汽车零部件授信投放推进"]
+  },
+  "SIMW18": {
+    "sample_id": "SIM-2026-W18-0428",
+    "period": "2026-04-28 / 2026-05-02",
+    "scene_type": "指标接近达标/中试启动/双链完成",
+    "total": 17, "core3": 5, "other_key": 12, "closed": 0, "in_progress": 17,
+    "defer": 0, "defer_items": [],
+    "yellow": 1,
+    "yellow_items": [
+      {"name":"汽车零部件授信投放推进","reason":"贷款余额净增13.2亿，距目标仅差1.8亿，下周期有望达标","status":"\u201c关注（中）\u201d","action":"继续跟进两户大额提款客户，争取下周期达标","item_type":"关注","dept":"公司部行业推动组"}
+    ],
+    "close": 0, "close_items": [],
+    "new_items": [],
+    "verdict": "本期<strong>汽车零部件指标持续改善</strong>（9.5亿→13.2亿，差距缩小至1.8亿），学校行业中试正式启动，双链融合汇报完成。<strong>整体由\u201c中风险\u201d过渡至\u201c可控\u201d状态</strong>。",
+    "next_focus": [
+      "汽车零部件：跟进两户大额提款客户，下周期争取达标",
+      "数字经营：完成立项收口材料归档",
+      "学校行业中试：跟踪中试结果输出",
+      "战客一客一档：推进第三批客户补录"
+    ],
+    "metrics": [
+      {"id":"M-001","name":"汽车零部件贷款余额净增","target":15,"current":13.2,"gap":-1.8,"status":"接近目标","dept":"公司部行业推动组"},
+      {"id":"M-002","name":"战客口径人民币贷款余额","target":520,"current":526.0,"gap":6.0,"status":"达标","dept":"战略客户组"},
+      {"id":"M-003","name":"外币低息存款月日均净增","target":120,"current":123,"gap":3,"status":"达标","dept":"国际业务组"},
+      {"id":"M-004","name":"学校行业储备项目数","target":4,"current":5,"gap":1,"status":"达标","dept":"行业推动组"},
+      {"id":"M-005","name":"一客一档补录完成率","target":60,"current":76,"gap":16,"status":"达标","dept":"战略客户组"},
+      {"id":"M-006","name":"双链融合专题汇报完成率","target":100,"current":100,"gap":0,"status":"完成","dept":"专题组"}
+    ],
+    "escalation": {"recommended":false,"reason":"风险持续收敛"},
+    "pmo_followup": []
+  },
+  "SIMW19": {
+    "sample_id": "SIM-2026-W19-0505",
+    "period": "2026-05-05 / 2026-05-09",
+    "scene_type": "指标全部达标/无新增黄灯",
+    "total": 17, "core3": 5, "other_key": 12, "closed": 0, "in_progress": 17,
+    "defer": 0, "defer_items": [],
+    "yellow": 0, "yellow_items": [],
+    "close": 0, "close_items": [],
+    "new_items": [],
+    "verdict": "本期<strong>6项指标全部达标</strong>。汽车零部件贷款余额净增15.6亿，超额完成阶段目标（+0.6亿）。学校行业中试平稳运行。双链融合进入后续执行阶段。<strong>整体风险等级：低风险（无新增黄灯）</strong>。",
+    "next_focus": [
+      "汽车零部件：转入后续稳定投放跟踪",
+      "数字经营：安排启动会并锁定计划",
+      "学校行业中试：形成阶段观察报告",
+      "战客一客一档：完成抽样校验并收口",
+      "双链融合后续执行：按周跟踪执行项闭环"
+    ],
+    "metrics": [
+      {"id":"M-001","name":"汽车零部件贷款余额净增","target":15,"current":15.6,"gap":0.6,"status":"达标","dept":"公司部行业推动组"},
+      {"id":"M-002","name":"战客口径人民币贷款余额","target":520,"current":529.2,"gap":9.2,"status":"达标","dept":"战略客户组"},
+      {"id":"M-003","name":"外币低息存款月日均净增","target":120,"current":127,"gap":7,"status":"达标","dept":"国际业务组"},
+      {"id":"M-004","name":"学校行业储备项目数","target":4,"current":5,"gap":1,"status":"达标","dept":"行业推动组"},
+      {"id":"M-005","name":"一客一档补录完成率","target":60,"current":88,"gap":28,"status":"达标","dept":"战略客户组"},
+      {"id":"M-006","name":"双链融合执行项完成率","target":100,"current":35,"gap":-65,"status":"正常推进","dept":"专题组"}
+    ],
+    "escalation": {"recommended":false,"reason":"全部指标达标"},
+    "pmo_followup": []
+  },
+  "SIMW20": {
+    "sample_id": "SIM-2026-W20-0512",
+    "period": "2026-05-12 / 2026-05-16",
+    "scene_type": "持续稳定/扩围准备/收口阶段",
+    "total": 16, "core3": 5, "other_key": 11, "closed": 0, "in_progress": 16,
+    "defer": 0, "defer_items": [],
+    "yellow": 0, "yellow_items": [],
+    "close": 0, "close_items": [],
+    "new_items": [],
+    "verdict": "本期继续保持<strong>稳定运行</strong>。汽车零部件贷款余额净增17.1亿，持续超额完成目标（+2.1亿）。战客一客一档进入收口阶段（94%）。学校行业中试准备扩围。<strong>整体风险等级：低风险（持续稳定）</strong>。",
+    "next_focus": [
+      "汽车零部件：转入常态跟踪，保持稳定投放",
+      "数字经营：进入常态项目管理",
+      "学校行业中试：评估是否进入扩围验证",
+      "战客一客一档：完成收口并沉淀模板",
+      "双链融合后续：按月度节奏跟踪"
+    ],
+    "metrics": [
+      {"id":"M-001","name":"汽车零部件贷款余额净增","target":15,"current":17.1,"gap":2.1,"status":"持续达标","dept":"公司部行业推动组"},
+      {"id":"M-002","name":"战客口径人民币贷款余额","target":520,"current":531.6,"gap":11.6,"status":"达标","dept":"战略客户组"},
+      {"id":"M-003","name":"外币低息存款月日均净增","target":120,"current":129,"gap":9,"status":"达标","dept":"国际业务组"},
+      {"id":"M-004","name":"学校行业扩围准备完成率","target":100,"current":72,"gap":-28,"status":"正常推进","dept":"行业推动组"},
+      {"id":"M-005","name":"一客一档补录完成率","target":60,"current":94,"gap":34,"status":"收口阶段","dept":"战略客户组"},
+      {"id":"M-006","name":"双链融合执行项完成率","target":100,"current":58,"gap":-42,"status":"正常推进","dept":"专题组"}
+    ],
+    "escalation": {"recommended":false,"reason":"持续稳定运行"},
+    "pmo_followup": []
+  },
+  "5CR": {
+    "sample_id": "REAL-HIST-PMO-2025-1117-1121",
+    "period": "2025-11-17 / 2025-11-21",
+    "scene_type": "延期/黄灯/新增",
+    "total": 56, "core3": 12, "other_key": 44, "closed": 37, "in_progress": 19,
+    "defer": 1, "defer_items": [{"name":"数字经营规划推进","reason":"监管检查+新核心切换","new_date":"12月上旬","action":"确认延期后新节点和交付物范围；下周期重点跟踪"}],
+    "yellow": 3,
+    "yellow_items": [
+      {"name":"六策合一·学校行业","reason":"储备项目不足，中试推迟近2个月","status":"项目逾期","action":"明确中试启动前置条件；补充项目储备计划","item_type":"黄灯","dept":"行业推动组"},
+      {"name":"六策合一·汽车行业","reason":"10月末小试目标未达成","status":"项目逾期","action":"明确小试未达成原因；重排推进计划","item_type":"黄灯","dept":"行业推动组"},
+      {"name":"双链融合筛选专题汇报","reason":"应于11月上旬汇报，计划12月5日前完成","status":"计划逾期","action":"锁定下周方案完成责任人和节点","item_type":"黄灯","dept":"专题工作组"}
+    ],
+    "new_items": [{"name":"本周期新增项目","reason":"信息未完整提供","action":"下周期跟踪新增项目详情录入"}],
+    "close_items": [],
+    "verdict": "本期整体以正常推进为主，<strong>1项延期申请、3项黄灯警示需纳入下周期重点跟踪</strong>。已关闭/暂停/终止37项，完结比例约66%，整体未出现失控偏离，但重点事项需持续跟踪。",
+    "next_focus": ["数字经营：确认延期后的新节点（12月上旬）和交付物范围","学校行业：储备项目数量确认，中试启动前置条件是否满足","汽车行业：小试未达成原因分析，12月推进计划确认","双链融合：方案完成节点锁定，12月5日前汇报是否具备条件","新增项目：确认新增项目详情及责任人"]
+  },
+  "5CS": {
+    "sample_id": "REAL-HIST-PMO-2025-1208-1212",
+    "period": "2025-12-08 / 2025-12-12",
+    "scene_type": "结项集中/黄灯并存",
+    "total": 59, "core3": 12, "other_key": 47, "closed": 41, "in_progress": 18,
+    "defer": 0, "defer_items": [],
+    "close": 3,
+    "close_items": [
+      {"name":"「六策合一」新行业扫描","reason":"已形成行业库，后续转常态检视","action":"推进结项流程，转常态化检视"},
+      {"name":"「数字经营」规划推进","reason":"专题汇报并获同意，后续推进立项及交付","action":"推进立项及后续交付"},
+      {"name":"香港分行战略发展规划","reason":"联动业务显著提升，后续转常态化推进","action":"转常态化推进，建立长效跟踪"}
+    ],
+    "yellow": 2,
+    "yellow_items": [
+      {"name":"「六策合一」学校行业","reason":"计划9月末完成小试，预计中试推迟至12月末","status":"黄灯持续，推迟约3个月","action":"确认12月末中试启动是否可达；储备项目数量跟进","item_type":"黄灯","dept":"行业推动组"},
+      {"name":"「六策合一」汽车行业","reason":"计划11月启动中试，项目已逾期","status":"项目已逾期","action":"确认11月未启动原因；重排12月中试推进计划","item_type":"黄灯","dept":"行业推动组"}
+    ],
+    "new_items": [],
+    "verdict": "本期以<strong>结项申请为主</strong>，3项申请结项，2项黄灯持续。<strong>结项和黄灯并存</strong>是本期核心场景，系统正确将结项申请排除在风险清单之外，整体未出现失控偏离。",
+    "next_focus": ["六策合一新行业：推进结项流程，转常态化检视","数字经营规划：推进立项及后续交付","港分战略：转常态化推进，建立长效跟踪","学校行业：确认12月末中试启动是否可达","汽车行业：确认11月未启动原因；重排12月推进计划"]
+  }
+};
+
+var currentSample = "6BLIVE";
+
+// ============ TAB NAVIGATION ============
+document.querySelectorAll('.nav-tabs .tab').forEach(function(tab){
+  tab.addEventListener('click', function(e){
+    e.preventDefault();
+    var target = this.getAttribute('data-tab');
+    showTab(target);
+  });
+});
+
+function showTab(name) {
+  document.querySelectorAll('.tab-content').forEach(function(el){ el.classList.remove('active'); });
+  document.querySelectorAll('.nav-tabs .tab').forEach(function(el){ el.classList.remove('active'); });
+  document.getElementById('tab-' + name).classList.add('active');
+  document.querySelector('.nav-tabs .tab[data-tab="'+name+'"]').classList.add('active');
+  window.scrollTo(0,0);
+}
+
+// ============ P1-002 样本接入流程优化 ============
+// 样本齐套检查函数
+function checkSampleCompleteness() {
+  var d = DATA[currentSample];
+  var statusBanner = document.getElementById('sample-status-banner');
+  var statusIcon = document.getElementById('status-icon');
+  var statusTitle = document.getElementById('status-title');
+  var statusSummary = document.getElementById('status-summary');
+  var sampleCheckResult = document.getElementById('sample-check-result');
+  var sampleNextAction = document.getElementById('sample-next-action');
+  var nextActionText = document.getElementById('next-action-text');
+  var dataCompleteness = document.getElementById('data-completeness');
+
+  // 模拟样本齐套检测（实际场景中应调用后端API）
+  // 当前6BLIVE样本是已接入状态
+  var isComplete = (currentSample === '6BLIVE' || currentSample === '5CR' || currentSample === '5CS');
+
+  if (isComplete) {
+    // 已齐套状态
+    statusBanner.style.background = '#f0fdf4';
+    statusBanner.style.borderColor = '#86efac';
+    statusBanner.style.color = '#166534';
+    statusIcon.textContent = '✅';
+    statusTitle.textContent = '样本已齐套';
+    statusSummary.innerHTML = '周报(.docx) + 台账(.xlsx) + 指标(.xlsx) 三份输入均已到位。<br>切片ID：' + d.sample_id + ' | 可进入系统运行。';
+
+    sampleCheckResult.innerHTML = '<div style="margin-bottom:8px;"><span style="color:#22c55e;">✅ 周报（周报_' + d.period.replace(/[^0-9]/g,'') + '.docx）：已到位</span></div>' +
+                                   '<div style="margin-bottom:8px;"><span style="color:#22c55e;">✅ 台账（台账_' + d.period.replace(/[^0-9]/g,'') + '.xlsx）：已到位</span></div>' +
+                                   '<div style="margin-bottom:8px;"><span style="color:#22c55e;">✅ 指标（指标_' + d.period.replace(/[^0-9]/g,'') + '.xlsx）：已到位</span></div>';
+
+    dataCompleteness.innerHTML = '<span class="status-pill green">✅ 周报+台账+指标均完整</span>';
+
+    sampleNextAction.style.display = 'block';
+    nextActionText.textContent = '样本已齐套，可进入系统运行。前往【领导摘要】查看输出。';
+
+  } else {
+    // 未齐套状态
+    statusBanner.style.background = '#fef2f2';
+    statusBanner.style.borderColor = '#fecaca';
+    statusBanner.style.color = '#991b1b';
+    statusIcon.textContent = '⚠️';
+    statusTitle.textContent = '样本未齐套';
+    statusSummary.innerHTML = '部分文件缺失，请联系数据提供方补齐。<br><strong>齐套标准：</strong>周报(.docx) + 台账(.xlsx) + 指标(.xlsx) 三份必须全部到位';
+
+    sampleCheckResult.innerHTML = '<div style="margin-bottom:8px;"><span style="color:#ef4444;">❌ 周报（周报_YYYYMMDD-YYYYMMDD.docx）：缺失 → 联系数据提供方</span></div>' +
+                                   '<div style="margin-bottom:8px;"><span style="color:#22c55e;">✅ 台账（台账_YYYYMMDD-YYYYMMDD.xlsx）：已到位</span></div>' +
+                                   '<div style="margin-bottom:8px;"><span style="color:#eab308;">⏳ 指标（指标_YYYYMMDD-YYYYMMDD.xlsx）：等待中</span></div>';
+
+    dataCompleteness.innerHTML = '<span class="status-pill yellow">⚠️ 样本不齐套</span>';
+
+    sampleNextAction.style.display = 'block';
+    nextActionText.textContent = '补齐缺失文件后，点击"重新检查"按钮重新验证齐套状态。';
+  }
+}
+
+// ============ SAMPLE SWITCH ============
+function switchSample(sample) {
+  currentSample = sample;
+  document.querySelectorAll('.sample-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.querySelectorAll('.sample-btn').forEach(function(b){
+    if ((sample === '6BLIVE' && b.textContent.includes('6BLIVE真实')) ||
+        (sample === 'SIMW16' && b.textContent.includes('推演W16')) ||
+        (sample === 'SIMW17' && b.textContent.includes('推演W17')) ||
+        (sample === 'SIMW18' && b.textContent.includes('推演W18')) ||
+        (sample === 'SIMW19' && b.textContent.includes('推演W19')) ||
+        (sample === 'SIMW20' && b.textContent.includes('推演W20')) ||
+        (sample === '5CR' && b.textContent.includes('历史1')) ||
+        (sample === '5CS' && b.textContent.includes('历史2'))) {
+      b.classList.add('active');
+    }
+  });
+  renderAll();
+  checkSampleCompleteness();
+}
+
+function renderAll() {
+  var d = DATA[currentSample];
+  // Stats
+  document.getElementById('home-stat-total').textContent = d.total;
+  document.getElementById('home-stat-focus').textContent = d.yellow;
+  document.getElementById('home-stat-gap').textContent = d.defer;
+  document.getElementById('home-stat-close').textContent = d.close || 0;
+  document.getElementById('home-stat-total').textContent = d.new_items ? d.new_items.length : 0;
+  document.getElementById('home-stat-total').textContent = d.in_progress;
+
+  // Data tab
+  document.getElementById('data-sample-id').textContent = d.sample_id;
+  document.getElementById('data-period').textContent = d.period;
+  document.getElementById('data-scene-type').textContent = d.scene_type;
+
+  // 6E: Update data completeness card
+  updateDataCompletenessCard(d);
+
+  // 6E: Update homepage conclusion card dynamically
+  renderHomepage(d);
+
+  // Review tab
+  document.getElementById('home-period-title').textContent = currentSample === '6BLIVE' ? '6B-LIVE-W16-001' : (currentSample === '5CR' ? '5C-R-HIST-001' : '5C-S-HIST-001');
+  document.getElementById('home-sample-status-text').textContent = d.sample_id;
+
+  // Key alert
+  var alertEl5CR = document.getElementById('key-alert-5CR');
+  var alertEl5CS = document.getElementById('key-alert-5CS');
+  alertEl5CR.style.display = 'none';
+  alertEl5CS.style.display = 'none';
+  try { document.getElementById('key-alert-6BLIVE').style.display = 'none'; } catch(e){}
+  if (currentSample === '5CR') {
+    alertEl5CR.style.display = 'block';
+    var texts = [];
+    if (d.defer_items.length) texts.push(d.defer_items.length + '项延期（' + d.defer_items[0].name + '）');
+    if (d.yellow_items.length) texts.push(d.yellow_items.length + '项黄灯（' + d.yellow_items.map(function(x){return x.name}).join('、') + '）');
+    if (d.new_items && d.new_items.length) texts.push('1项新增项目');
+    document.getElementById('key-alert-text-5CR').textContent = texts.join(' | ');
+  } else if (currentSample === '5CS') {
+    alertEl5CS.style.display = 'block';
+    document.getElementById('key-alert-text-5CS').textContent =
+      d.close_items.length + '项申请结项（' + d.close_items.map(function(x){return x.name}).join('、') + '） | ' +
+      d.yellow_items.length + '项黄灯（' + d.yellow_items.map(function(x){return x.name}).join('、') + '）';
+  } else if (currentSample === '6BLIVE') {
+    document.getElementById('key-alert-6BLIVE').style.display = 'block';
+    var liveTexts = [];
+    liveTexts.push(d.yellow + '项关注（中）：' + d.yellow_items.map(function(x){return x.name}).join('、'));
+    if (d.new_items && d.new_items.length) liveTexts.push('1项新增（' + d.new_items[0].name + '）');
+    liveTexts.push('指标偏离1项（M-001：汽车零部件贷款余额净增，偏离8.2亿元）');
+    document.getElementById('key-alert-text-6BLIVE').textContent = liveTexts.join(' | ');
+  }
+
+  renderSummary(d);
+  renderTracker(d);
+  renderRisks(d);
+}
+
+// ============ 6E: HOMEPAGE CONCLUSION CARD ============
+// ============ 6E: DATA COMPLETENESS CARD ============
+function updateDataCompletenessCard(d) {
+  // Zhoubao status
+  document.getElementById('zhoubao-status').innerHTML = '<span style="color:#22c55e;">✅ 已到位</span>';
+  document.getElementById('dangzhang-status').innerHTML = '<span style="color:#22c55e;">✅ 已到位</span>';
+  document.getElementById('zhibiao-status').innerHTML = '<span style="color:#22c55e;">✅ 已到位</span>';
+  document.getElementById('data-completeness-summary').innerHTML = '<span style="color:#1e40af; font-weight:600;">✅ 三份齐套</span> — 可进入系统运行';
+}
+
+function renderHomepage(d) {
+  // Period title
+  var periodTitle = d.period + ' 本周期结论';
+  document.getElementById('home-period-title').textContent = periodTitle;
+
+  // Stats
+  document.getElementById('home-stat-total').textContent = d.total;
+  document.getElementById('home-stat-close').textContent = d.closed;
+
+  // Focus items count
+  var focusCount = d.yellow + d.defer + (d.close_items && d.close_items.length ? d.close_items.length : 0);
+  document.getElementById('home-stat-focus').textContent = focusCount;
+
+  // M-001 gap (show for any non-zero gap, positive means over-achieved)
+  var gapText = '—';
+  if (d.metrics && d.metrics.length > 0) {
+    for (var i = 0; i < d.metrics.length; i++) {
+      if (d.metrics[i].id === 'M-001' && d.metrics[i].gap !== 0) {
+        var gap = d.metrics[i].gap;
+        if (gap < 0) {
+          gapText = Math.abs(gap) + '亿（缺）';
+        } else {
+          gapText = gap + '亿（超）';
+        }
+        break;
+      }
+    }
+  }
+  document.getElementById('home-stat-gap').textContent = gapText;
+
+  // Verdict text
+  document.getElementById('home-verdict-text').textContent = d.verdict.replace(/<[^>]+>/g, '');
+
+  // Sample status
+  document.getElementById('home-sample-status-icon').textContent = '✅';
+  document.getElementById('home-sample-status-text').textContent = '已齐套';
+
+  // Risk level
+  var riskLevel = '可控';
+  var riskColor = '#86efac';
+  if (currentSample === '6BLIVE' || (currentSample === 'SIMW16')) {
+    riskLevel = d.yellow > 2 ? '中风险（需关注）' : '低风险';
+    riskColor = '#eab308';
+  } else if (currentSample === 'SIMW17') {
+    riskLevel = '低风险（改善中）';
+    riskColor = '#fbbf24';
+  } else if (currentSample === 'SIMW18') {
+    riskLevel = '可控（接近达标）';
+    riskColor = '#fb923c';
+  } else if (currentSample === 'SIMW19' || currentSample === 'SIMW20') {
+    riskLevel = '低风险（稳定运行）';
+    riskColor = '#86efac';
+  } else if (currentSample === '5CR' && d.defer > 0) {
+    riskLevel = '中风险（延期存在）';
+    riskColor = '#eab308';
+  } else if (currentSample === '5CS' && d.yellow > 0) {
+    riskLevel = '低风险（黄灯并存）';
+    riskColor = '#fbbf24';
+  }
+  document.getElementById('home-risk-level').textContent = riskLevel;
+  var riskDot = document.querySelector('#home-risk-level').parentElement.querySelector('span');
+  if (riskDot) riskDot.style.background = riskColor;
+
+  // Risk desc
+  var riskDesc = '';
+  if (d.yellow_items && d.yellow_items.length > 0) {
+    riskDesc = d.yellow_items[0].name + '：' + d.yellow_items[0].reason.substring(0, 20) + '...';
+  }
+  document.getElementById('home-risk-desc').textContent = riskDesc;
+
+  // Next action
+  var nextActions = [];
+  if (d.next_focus && d.next_focus.length > 0) {
+    for (var j = 0; j < Math.min(3, d.next_focus.length); j++) {
+      nextActions.push(' ' + (j + 1) + ' ' + d.next_focus[j]);
+    }
+  }
+  document.getElementById('home-next-action').innerHTML = nextActions.join('<br>');
+}
+
+function renderSummary(d) {
+  var html = '';
+  // Overall stats
+  html += '<div class="card"><div class="card-title">一、周期总览统计</div><table><thead><tr><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody>';
+  html += '<tr><td>推进中事项</td><td><strong>' + d.in_progress + '项</strong></td><td>整体未出现节点失控偏离</td></tr>';
+  html += '<tr><td>申请延期</td><td><strong>' + d.defer + '项</strong></td><td>' + (d.defer_items.length ? d.defer_items[0].name + '（延期至' + d.defer_items[0].new_date + '）' : '—') + '</td></tr>';
+  html += '<tr><td>黄灯警示</td><td><strong>' + d.yellow + '项</strong></td><td>' + d.yellow_items.map(function(x){return x.name}).join('、') + '</td></tr>';
+  if (d.close_items && d.close_items.length) {
+    html += '<tr><td>申请结项</td><td><strong>' + d.close_items.length + '项</strong></td><td>' + d.close_items.map(function(x){return x.name}).join('、') + '</td></tr>';
+  }
+  if (d.new_items && d.new_items.length) {
+    html += '<tr><td>新增项目</td><td><strong>' + d.new_items.length + '项</strong></td><td>本周期新增项目（详情待补充）</td></tr>';
+  }
+  html += '<tr><td>已关闭/暂停/终止</td><td><strong>' + d.closed + '项</strong></td><td>本周期完结比例' + Math.round(d.closed/d.total*100) + '%</td></tr>';
+  html += '</tbody></table></div>';
+
+  // Overall verdict
+  html += '<div class="card"><div class="card-title">二、整体判断</div><div class="alert-box"><div class="alert-title">📌 系统整体判断</div><div class="alert-desc" style="font-size:13px; margin-top:8px;">' + d.verdict + '</div></div></div>';
+
+  // Key items
+  html += '<div class="card"><div class="card-title">三、本周期重点事项</div>';
+  if (d.defer_items.length) {
+    html += '<div class="section-title" style="margin-top:0;">延期申请（' + d.defer + '项）</div>';
+    d.defer_items.forEach(function(item){
+      html += '<div class="alert-box" style="margin-bottom:8px;"><div class="alert-title">▋ ' + item.name + '</div>';
+      html += '<div class="alert-meta"><span>延期原因：' + item.reason + '</span></div>';
+      html += '<div class="alert-meta"><span>新节点：' + item.new_date + '</span></div>';
+      html += '<div class="alert-meta"><span>建议：' + item.action + '</span></div></div>';
+    });
+  }
+  if (d.yellow_items.length) {
+    html += '<div class="section-title">关注/黄灯事项（' + d.yellow + '项）</div>';
+    d.yellow_items.forEach(function(item){
+      var sumBoxClass = item.item_type === '关注' ? 'orange' : 'yellow';
+      var sumItemBadge = item.item_type === '关注' ? ' <span class="badge badge-orange" style="font-size:10px;">关注</span>' : '';
+      html += '<div class="alert-box ' + sumBoxClass + '" style="margin-bottom:8px;"><div class="alert-title">▋ ' + item.name + sumItemBadge + '</div>';
+      html += '<div class="alert-meta"><span>黄灯原因：' + item.reason + '</span></div>';
+      html += '<div class="alert-meta"><span>当前状态：' + item.status + '</span></div>';
+      html += '<div class="alert-meta"><span>建议动作：' + item.action + '</span></div></div>';
+    });
+  }
+  if (d.close_items && d.close_items.length) {
+    html += '<div class="section-title">申请结项（' + d.close_items.length + '项）</div>';
+    d.close_items.forEach(function(item){
+      html += '<div class="alert-box green" style="margin-bottom:8px;"><div class="alert-title">▋ ' + item.name + '</div>';
+      html += '<div class="alert-meta"><span>结项理由：' + item.reason + '</span></div>';
+      html += '<div class="alert-meta"><span>后续建议：' + item.action + '</span></div></div>';
+    });
+  }
+  if (d.new_items && d.new_items.length) {
+    html += '<div class="section-title">新增项目（' + d.new_items.length + '项）</div>';
+    d.new_items.forEach(function(item){
+      html += '<div class="alert-box blue" style="margin-bottom:8px;"><div class="alert-title">▋ ' + item.name + '</div>';
+      html += '<div class="alert-meta"><span>说明：' + item.reason + '</span></div>';
+      html += '<div class="alert-meta"><span>建议：' + item.action + '</span></div></div>';
+    });
+  }
+  html += '</div>';
+
+  // Next focus
+  html += '<div class="card"><div class="card-title">四、下周期重点跟踪</div><ul style="margin:0 0 0 20px; font-size:13px; color:var(--text-muted);">';
+  d.next_focus.forEach(function(item){
+    html += '<li style="margin-bottom:6px;">' + item + '</li>';
+  });
+  html += '</ul></div>';
+
+  // Stats check
+  html += '<div class="card"><div class="card-title">五、周期统计核对</div><table><thead><tr><th>统计项</th><th>原文数值</th><th>系统输出</th><th>状态</th></tr></thead><tbody>';
+  var checks = [
+    ["总事项数", d.total, d.total],
+    ["核心+三类", d.core3, d.core3],
+    ["其他关键", d.other_key, d.other_key],
+    ["已关闭/暂停/终止", d.closed, d.closed],
+    ["推进中", d.in_progress, d.in_progress]
+  ];
+  checks.forEach(function(row){
+    html += '<tr><td>' + row[0] + '</td><td>' + row[1] + '项</td><td>' + row[2] + '项</td><td><span class="status-pill green">✅ 一致</span></td></tr>';
+  });
+  html += '</tbody></table></div>';
+
+  // Source note
+  html += '<div class="notice">⚠️ <strong>数据来源说明</strong>：本输出基于样本 <code>' + d.sample_id + '</code>（' + d.period + '），用于并行运行MVP演示，<strong>非当前生产运行数据</strong>。</div>';
+
+  document.getElementById('summary-content').innerHTML = html;
+}
+
+function renderTracker(d) {
+  var html = '';
+  // Stats
+  html += '<div class="grid-3" style="gap:12px; margin-bottom:16px;">';
+  html += '<div class="stat-card" style="padding:16px;"><div class="stat-num">' + d.total + '</div><div class="stat-label">总事项数</div></div>';
+  html += '<div class="stat-card" style="padding:16px;"><div class="stat-num yellow">' + d.yellow + '</div><div class="stat-label">黄灯</div></div>';
+  html += '<div class="stat-card" style="padding:16px;"><div class="stat-num">' + d.defer + '</div><div class="stat-label">延期</div></div>';
+  html += '</div>';
+
+  // Filter buttons
+  html += '<div style="margin-bottom:16px; display:flex; gap:8px; flex-wrap:wrap;">';
+  html += '<button class="btn btn-primary btn-sm" onclick="filterTracker(\'all\')">全部</button>';
+  if (d.defer > 0) html += '<button class="btn btn-secondary btn-sm" onclick="filterTracker(\'defer\')">延期</button>';
+  if (d.yellow > 0) html += '<button class="btn btn-secondary btn-sm" onclick="filterTracker(\'yellow\')">黄灯</button>';
+  if (d.close_items && d.close_items.length) html += '<button class="btn btn-secondary btn-sm" onclick="filterTracker(\'close\')">申请结项</button>';
+  if (d.new_items && d.new_items.length) html += '<button class="btn btn-secondary btn-sm" onclick="filterTracker(\'new\')">新增</button>';
+  html += '</div>';
+
+  // Items table
+  var items = [];
+  d.defer_items.forEach(function(i){ items.push({name:i.name, type:'延期', status:'申请延期', reason:i.reason, dept:'待补充', node:'待确认'}); });
+  d.yellow_items.forEach(function(i){ items.push({name:i.name, type:i.item_type || '黄灯', status:i.status, reason:i.reason, dept:i.dept || '行业条线', node:i.node || '待确认'}); });
+  if (d.close_items) d.close_items.forEach(function(i){ items.push({name:i.name, type:'申请结项', status:'申请结项', reason:i.reason, dept:'待确认', node:'—'}); });
+  if (d.new_items) d.new_items.forEach(function(i){ items.push({name:i.name, type:'新增', status:'新增', reason:i.reason, dept:'待补充', node:'—'}); });
+
+  // Add some in-progress items as placeholder
+  var inprogress_items = [
+    {name:'待补充事项（推进中）', type:'推进中', status:'推进中', reason:'原始样本未列出具体名称', dept:'待补充', node:'待确认'}
+  ];
+
+  html += '<div class="card"><table id="tracker-table"><thead><tr><th>事项名称</th><th>类型</th><th>状态</th><th>主责部门</th><th>计划节点</th><th>系统判断</th></tr></thead><tbody>';
+  items.forEach(function(item){
+    var rowClass = item.type === '关注' ? 'light-row' : (item.type === '黄灯' ? 'light-row' : (item.type === '延期' ? 'red-row' : (item.type === '申请结项' ? 'green-row' : '')));
+    var typeBadge = item.type === '关注' ? 'badge-orange' : (item.type === '黄灯' ? 'badge-yellow' : (item.type === '延期' ? 'badge-red' : (item.type === '申请结项' ? 'badge-green' : (item.type === '新增' ? 'badge-blue' : 'badge-gray'))));
+    html += '<tr class="' + rowClass + '"><td>' + item.name + '</td><td><span class="badge ' + typeBadge + '">' + item.type + '</span></td><td>' + item.status + '</td><td>' + item.dept + '</td><td>' + item.node + '</td><td style="font-size:12px; color:var(--text-muted);">' + item.reason + '</td></tr>';
+  });
+  // Show placeholder for in-progress
+  html += '<tr style="background:#f8fafc;"><td colspan="6" style="text-align:center; color:var(--text-muted); font-size:12px; padding:16px;">剩余 ' + d.in_progress + ' 项推进中事项（原始样本未列出具体名称，详情需参考原始周报全文）</td></tr>';
+  html += '</tbody></table></div>';
+
+  html += '<div class="notice">⚠️ <strong>数据说明</strong>：上表列出了重点关注事项（延期/黄灯/申请结项/新增），推进中事项的名称详情需参考原始周报。系统输出已尽量完整标注数据来源。</div>';
+
+  document.getElementById('tracker-content').innerHTML = html;
+}
+
+function renderRisks(d) {
+  var html = '';
+
+  // Stats
+  html += '<div class="grid-3" style="gap:12px; margin-bottom:16px;">';
+  html += '<div class="stat-card" style="padding:16px;"><div class="stat-num yellow">' + d.yellow + '</div><div class="stat-label">黄灯持续</div></div>';
+  html += '<div class="stat-card" style="padding:16px;"><div class="stat-num red">' + d.defer + '</div><div class="stat-label">延期申请</div></div>';
+  if (d.close_items && d.close_items.length) {
+    html += '<div class="stat-card" style="padding:16px;"><div class="stat-num green">' + d.close_items.length + '</div><div class="stat-label">申请结项（不进风险清单）</div></div>';
+  }
+  html += '</div>';
+
+  // Notice about close items
+  if (d.close_items && d.close_items.length) {
+    html += '<div class="alert-box green"><div class="alert-title">📌 结项申请不进风险清单说明</div>';
+    html += '<div class="alert-desc">申请结项是正常生命周期，不是风险。本页<strong>仅展示黄灯和延期</strong>，3项申请结项事项已在领导摘要和台账中单独列出。</div></div>';
+  }
+
+  // Yellow items
+  if (d.yellow_items.length) {
+    var riskTitle = d.yellow_items.some(function(i){return i.item_type === '关注';}) ? '🟠 关注事项' : '🔴 黄灯警示（持续）';
+    html += '<div class="card"><div class="card-title">' + riskTitle + '</div>';
+    d.yellow_items.forEach(function(item, i){
+      var boxClass = item.item_type === '关注' ? 'orange' : 'yellow';
+      html += '<div class="alert-box ' + boxClass + '" style="margin-bottom:' + (i < d.yellow_items.length-1 ? '12px' : '0') + ';">';
+      var itemBadge = item.item_type === '关注' ? ' <span class="badge badge-orange" style="font-size:10px;">关注</span>' : '';
+      html += '<div class="alert-title">▋ ' + item.name + itemBadge + '</div>';
+      html += '<div class="alert-meta"><span>📌 判断依据：</span><span>' + item.reason + '</span></div>';
+      html += '<div class="alert-meta"><span>📍 当前状态：</span><span>' + item.status + '</span></div>';
+      html += '<div class="alert-meta"><span>✅ 建议动作：</span><span>' + item.action + '</span></div>';
+      html += '</div>';
+    });
+    html += '</div>';
+  }
+
+  // Defer items
+  if (d.defer_items.length) {
+    html += '<div class="card"><div class="card-title">🟠 延期申请</div>';
+    d.defer_items.forEach(function(item, i){
+      html += '<div class="alert-box red" style="margin-bottom:' + (i < d.defer_items.length-1 ? '12px' : '0') + ';">';
+      html += '<div class="alert-title">▋ ' + item.name + '</div>';
+      html += '<div class="alert-meta"><span>📌 判断依据：</span><span>' + item.reason + '</span></div>';
+      html += '<div class="alert-meta"><span>📍 新节点：</span><span>' + item.new_date + '</span></div>';
+      html += '<div class="alert-meta"><span>✅ 建议动作：</span><span>' + item.action + '</span></div>';
+      html += '</div>';
+    });
+    html += '</div>';
+  }
+
+  if (!d.yellow_items.length && !d.defer_items.length) {
+    html += '<div class="card"><div class="alert-box green"><div class="alert-title">✅ 本周期无黄灯或延期事项</div><div class="alert-desc">系统未识别到需要进入风险清单的事项。</div></div></div>';
+  }
+
+  html += '<div class="notice">⚠️ <strong>数据来源</strong>：本页面基于样本 <code>' + d.sample_id + '</code>，<strong>非当前生产运行数据</strong>。</div>';
+  document.getElementById('risks-content').innerHTML = html;
+}
+
+function filterTracker(type) {
+  // For MVP, we just re-render with filter logic
+  // In a full implementation this would filter the table
+  alert('筛选功能：显示类型为 "' + type + '" 的事项。完整筛选功能可在后续迭代中实现。');
+}
+
+// 6E: Review form handling
+var reviewState = { q1: null, q2: null, q3: null, q4: null, abc: null };
+
+function selectRadio(q, val) {
+  reviewState[q] = val;
+  // Reset all buttons for this question
+  var labels = {
+    q1: { yes: '✅ 是，跑通了', partial: '⚠️ 部分跑通（缺失部分输入）', no: '❌ 否，未跑通' },
+    q2: { yes: '✅ 有价值', partial: '⚠️ 部分有价值', no: '❌ 无价值' },
+    q3: { yes: '✅ 减轻了', partial: '⚠️ 部分减轻', no: '❌ 没减轻' },
+    q4: { none: '✅ 无偏差', few: '⚠️ 少量偏差（1-2项）', many: '❌ 较多偏差（3项以上）' }
+  };
+  var colors = {
+    q1: { yes: '#22c55e', partial: '#f59e0b', no: '#ef4444' },
+    q2: { yes: '#22c55e', partial: '#f59e0b', no: '#ef4444' },
+    q3: { yes: '#22c55e', partial: '#f59e0b', no: '#ef4444' },
+    q4: { none: '#22c55e', few: '#f59e0b', many: '#ef4444' }
+  };
+  var opts = ['yes','partial','no','none','few','many'].filter(Boolean);
+  // Q4 special handling
+  if (q === 'q4') { opts = ['none','few','many']; }
+  opts.forEach(function(v) {
+    var btn = document.getElementById(q + '-' + v);
+    if (btn) {
+      if (v === val) {
+        btn.className = 'btn btn-primary';
+        btn.style.background = colors[q][v];
+        btn.style.color = 'white';
+        btn.style.borderColor = colors[q][v];
+      } else {
+        btn.className = 'btn btn-secondary';
+        btn.style.background = '';
+        btn.style.color = '';
+        btn.style.borderColor = '';
+      }
+    }
+  });
+  var resultEl = document.getElementById(q + '-result');
+  if (resultEl) {
+    resultEl.style.display = 'block';
+    resultEl.style.color = colors[q][val];
+    resultEl.textContent = '已选择：' + labels[q][val];
+  }
+  // Q4 deviation area
+  if (q === 'q4') {
+    var devArea = document.getElementById('q4-deviation-area');
+    if (devArea) devArea.style.display = (val === 'few' || val === 'many') ? 'block' : 'none';
+  }
+  checkReviewComplete();
+}
+
+function selectABC(abc) {
+  reviewState.abc = abc;
+  ['A','B','C'].forEach(function(a) {
+    var el = document.getElementById('abc-' + a);
+    if (el) {
+      if (a === abc) {
+        var borderColor = a === 'A' ? '#22c55e' : a === 'B' ? '#f59e0b' : '#ef4444';
+        el.style.borderColor = borderColor;
+        el.style.background = a === 'A' ? '#f0fdf4' : a === 'B' ? '#fffbeb' : '#fef2f2';
+      } else {
+        el.style.borderColor = '';
+        el.style.background = '';
+      }
+    }
+  });
+  var problemArea = document.getElementById('q5-problem-area');
+  if (problemArea) {
+    problemArea.style.display = (abc === 'B' || abc === 'C') ? 'block' : 'none';
+  }
+  checkReviewComplete();
+}
+
+function checkReviewComplete() {
+  var allAnswered = reviewState.q1 && reviewState.q2 && reviewState.q3 && reviewState.q4 && reviewState.abc;
+  var btn = document.getElementById('review-submit-btn');
+  if (btn) {
+    if (allAnswered) {
+      btn.disabled = false;
+      btn.style.opacity = '1';
+      btn.style.cursor = 'pointer';
+    } else {
+      btn.disabled = true;
+      btn.style.opacity = '0.5';
+      btn.style.cursor = 'not-allowed';
+    }
+  }
+}
+
+function submitReview() {
+  var q4dev = reviewState.q4 === 'few' || reviewState.q4 === 'many'
+    ? document.getElementById('q4-deviation-text').value : '无';
+  var q5prob = (reviewState.abc === 'B' || reviewState.abc === 'C')
+    ? document.getElementById('q5-problem-text').value : '无';
+
+  var summary = '=== 复核结论 ===\n' +
+    'Q1(是否跑通): ' + reviewState.q1 + '\n' +
+    'Q2(是否有价值): ' + reviewState.q2 + '\n' +
+    'Q3(是否减轻工作): ' + reviewState.q3 + '\n' +
+    'Q4(是否有偏差): ' + reviewState.q4 +
+    (q4dev !== '无' ? '\n偏差详情: ' + q4dev : '') + '\n' +
+    'ABC决策: ' + reviewState.abc +
+    (q5prob !== '无' ? '\n问题详情: ' + q5prob : '');
+
+  var resultEl = document.getElementById('review-submit-result');
+  if (resultEl) {
+    resultEl.style.display = 'block';
+    resultEl.innerHTML = '<div style="background:#f0fdf4; border:1px solid #86efac; border-radius:8px; padding:14px;">' +
+      '<div style="font-weight:700; color:#166534; margin-bottom:8px;">✅ 复核结论已暂存</div>' +
+      '<div style="font-size:12px; color:#166534; line-height:1.8; white-space:pre-wrap;">' + summary.replace(/</g,'&lt;') + '</div>' +
+      '<div style="font-size:12px; color:#166534; margin-top:8px; opacity:0.8;">（本MVP版本为演示状态，真实复核记录将在04/14样本接入后正式提交。）</div>' +
+      '</div>';
+  }
+  var btn = document.getElementById('review-submit-btn');
+  if (btn) { btn.disabled = true; btn.textContent = '✅ 已提交'; }
+}
+
+function handleMainUpload(input) {
+  var file = input.files[0];
+  if (!file) return;
+  var nameEl = document.getElementById('main-upload-filename');
+  if (nameEl) nameEl.textContent = '✅ ' + file.name;
+  var summaryEl = document.getElementById('data-completeness-summary');
+  if (summaryEl) {
+    summaryEl.innerHTML = '<span style="color:#1e3a5f;font-weight:600;">📦 ' + file.name + ' 已选择</span> — 系统将自动识别并切片';
+  }
+  alert('已选择文件：' + file.name + '\n\n本MVP版本为演示状态，文件将在后端接入后正式处理。');
+}
+
+function handleSupUpload(input) {
+  var files = input.files;
+  if (!files || files.length === 0) return;
+  var names = Array.from(files).map(function(f){ return f.name; }).join('、');
+  var nameEl = document.getElementById('sup-upload-filename');
+  if (nameEl) nameEl.textContent = '✅ 已选' + files.length + '个文件';
+  alert('已选择补传文件：' + names + '\n\n本MVP版本为演示状态，文件将在后端接入后正式处理。');
+}
+
+// Init
+renderAll();
+checkSampleCompleteness(); // P1-002: 初始化时检查样本齐套状态
+</script>
+</body>
+</html>

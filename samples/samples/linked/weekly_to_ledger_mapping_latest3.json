@@ -1,0 +1,98 @@
+[
+  {
+    "period": "1222-1226",
+    "source_type": "closure_requests",
+    "source_project_name": "制定贷款促投放提升方案",
+    "match_type": "fuzzy",
+    "ledger_record_id": "ledger-31",
+    "ledger_project_name": "制定贷款促投放提升方案，有序压降票证规模"
+  },
+  {
+    "period": "1222-1226",
+    "source_type": "closure_requests",
+    "source_project_name": "外币低息存款上量",
+    "match_type": "semantic",
+    "ledger_record_id": "ledger-38",
+    "ledger_project_name": "外币低息存款上量（外币存款付息率下行）"
+  },
+  {
+    "period": "1222-1226",
+    "source_type": "key_alert",
+    "source_project_name": "汽车行业",
+    "match_type": "unmatched",
+    "ledger_record_id": null,
+    "ledger_project_name": null
+  },
+  {
+    "period": "1222-1226",
+    "source_type": "new_item",
+    "source_project_name": "普惠三大模式进展汇报",
+    "match_type": "exact",
+    "ledger_record_id": "ledger-48",
+    "ledger_project_name": "普惠三大模式进展汇报"
+  },
+  {
+    "period": "1215-1219",
+    "source_type": "closure_requests",
+    "source_project_name": "成立“对公资产方案中心”",
+    "match_type": "semantic",
+    "ledger_record_id": "ledger-3",
+    "ledger_project_name": "对公改革规划"
+  },
+  {
+    "period": "1215-1219",
+    "source_type": "closure_requests",
+    "source_project_name": "完善组织策略",
+    "match_type": "unmatched",
+    "ledger_record_id": null,
+    "ledger_project_name": null
+  },
+  {
+    "period": "1215-1219",
+    "source_type": "key_alert",
+    "source_project_name": "汽车行业",
+    "match_type": "unmatched",
+    "ledger_record_id": null,
+    "ledger_project_name": null
+  },
+  {
+    "period": "1208-1212",
+    "source_type": "closure_requests",
+    "source_project_name": "六策合一”新行业扫描",
+    "match_type": "unmatched",
+    "ledger_record_id": null,
+    "ledger_project_name": null
+  },
+  {
+    "period": "1208-1212",
+    "source_type": "closure_requests",
+    "source_project_name": "“数字经营\"规划推进",
+    "match_type": "unmatched",
+    "ledger_record_id": null,
+    "ledger_project_name": null
+  },
+  {
+    "period": "1208-1212",
+    "source_type": "closure_requests",
+    "source_project_name": "香港分行战略发展规划：项目启动以来",
+    "match_type": "unmatched",
+    "ledger_record_id": null,
+    "ledger_project_name": null
+  },
+  {
+    "period": "1208-1212",
+    "source_type": "key_alert",
+    "source_project_name": "学校行业，计划9月末完成小试，因储备项目较少，预计中试推迟至12月末。项目逾期，黄灯继续提示。",
+    "match_type": "unmatched",
+    "ledger_record_id": null,
+    "ledger_project_name": null
+  },
+  {
+    "period": "1208-1212",
+    "source_type": "key_alert",
+    "source_project_name": "汽车行业",
+    "match_type": "unmatched",
+    "ledger_record_id": null,
+    "ledger_project_name": null
+  }
+]

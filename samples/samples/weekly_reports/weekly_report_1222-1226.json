@@ -1,0 +1,68 @@
+{
+  "sample_type": "pmo_weekly_report",
+  "sample_version": "v1",
+  "is_desensitized": true,
+  "report_meta": {
+    "report_id": "PMO-WR-2025-1222-1226",
+    "report_period": "1222-1226",
+    "report_date_text": "二零二五年十二月二十六日",
+    "reporting_unit": "某总行条线PMO",
+    "report_scope": "重点项目推进周报"
+  },
+  "project_overview": {
+    "total_items": 60,
+    "category_1_plus_3_items": 12,
+    "other_key_items": 48,
+    "closed_or_paused_or_terminated": 43,
+    "in_progress_items": 17,
+    "status_light": "green"
+  },
+  "key_requests": {
+    "closure_requests": [
+      {
+        "project_name": "制定贷款促投放提升方案",
+        "raw": "制定贷款促投放提升方案，有序压降票证规模，年末人民币贷款余额预计较年初增1,500亿，目标达成率115%；票证提前达成全年压降目标-1,339亿，公司部申请结项，转常态推动。"
+      },
+      {
+        "project_name": "外币低息存款上量",
+        "raw": "外币低息存款上量，外币低息存款435亿，较目标+335亿，达成既定目标，跨境部申请结项，转常规推动。"
+      }
+    ],
+    "delay_requests": [],
+    "termination_requests": []
+  },
+  "key_alerts": [
+    {
+      "project_name": "汽车行业",
+      "alert_level": "yellow",
+      "raw": "汽车行业：计划11月启动中试。项目逾期，黄灯继续提示。"
+    }
+  ],
+  "new_items": [
+    {
+      "project_name": "普惠三大模式进展汇报"
+    }
+  ],
+  "management_summary": {
+    "overall_judgment": null,
+    "completed_or_resolved": [],
+    "delayed_items": [
+      "汽车行业"
+    ],
+    "no_clear_progress_items": [],
+    "items_requiring_leadership_attention": [
+      "汽车行业"
+    ]
+  },
+  "source_note": {
+    "source_form": "邮件式周报整理",
+    "removed_content": [
+      "称呼",
+      "收发件人",
+      "抄送",
+      "邮件链",
+      "邮箱地址",
+      "签名信息"
+    ]
+  }
+}

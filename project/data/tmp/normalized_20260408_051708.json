@@ -1,0 +1,452 @@
+{
+  "normalized_items": [
+    {
+      "project_name": "汽车行业",
+      "period": "1222-1226",
+      "source": "weekly_report",
+      "owner": "[待关联]",
+      "promised_items": "汽车行业",
+      "current_progress": "汽车行业：计划11月启动中试。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+      "risk_points": "[黄灯]汽车行业：汽车行业：计划11月启动中试。项目逾期，黄灯继续提示。[黄灯]存在逾期风险，进度滞后",
+      "escalation_requested": false,
+      "is_closure_request": false,
+      "is_yellow_alert": true,
+      "ledger_record_id": null
+    },
+    {
+      "project_name": "制定贷款促投放提升方案",
+      "period": "1222-1226",
+      "source": "weekly_report",
+      "owner": "公司业务管理部 / 交易银行部 / 资产负债部",
+      "promised_items": "制定贷款促投放提升方案",
+      "current_progress": "制定贷款促投放提升方案，有序压降票证规模，年末人民币贷款余额预计较年初增1,500亿，目标达成率115%；票证提前达成全年压降目标-1,339亿，公司部申请结项，转常态推动。",
+      "risk_points": "",
+      "escalation_requested": false,
+      "is_closure_request": true,
+      "is_yellow_alert": false,
+      "ledger_record_id": "ledger-31"
+    },
+    {
+      "project_name": "外币低息存款上量",
+      "period": "1222-1226",
+      "source": "weekly_report",
+      "owner": "跨境金融部",
+      "promised_items": "外币低息存款上量",
+      "current_progress": "外币低息存款上量，外币低息存款435亿，较目标+335亿，达成既定目标，跨境部申请结项，转常规推动。",
+      "risk_points": "",
+      "escalation_requested": false,
+      "is_closure_request": true,
+      "is_yellow_alert": false,
+      "ledger_record_id": "ledger-38"
+    },
+    {
+      "project_name": "汽车行业",
+      "period": "1215-1219",
+      "source": "weekly_report",
+      "owner": "[待关联]",
+      "promised_items": "汽车行业",
+      "current_progress": "汽车行业：计划11月启动中试。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+      "risk_points": "[黄灯]汽车行业：汽车行业：计划11月启动中试。项目逾期，黄灯继续提示。[黄灯]存在逾期风险，进度滞后",
+      "escalation_requested": false,
+      "is_closure_request": false,
+      "is_yellow_alert": true,
+      "ledger_record_id": null
+    },
+    {
+      "project_name": "成立“对公资产方案中心”",
+      "period": "1215-1219",
+      "source": "weekly_report",
+      "owner": "公司条线",
+      "promised_items": "成立“对公资产方案中心”",
+      "current_progress": "成立“对公资产方案中心”，建立运行机制，对公资产方案中心已成立并建立运行机制，战客部申请结项。",
+      "risk_points": "",
+      "escalation_requested": false,
+      "is_closure_request": true,
+      "is_yellow_alert": false,
+      "ledger_record_id": "ledger-3"
+    },
+    {
+      "project_name": "完善组织策略",
+      "period": "1215-1219",
+      "source": "weekly_report",
+      "owner": "[待关联]",
+      "promised_items": "完善组织策略",
+      "current_progress": "完善组织策略，已在对公改革规划K3-4队伍管理与考核中体现，后续与销售队伍“1+3”转型方案合并追踪，申请结项。",
+      "risk_points": "",
+      "escalation_requested": false,
+      "is_closure_request": true,
+      "is_yellow_alert": false,
+      "ledger_record_id": null
+    },
+    {
+      "project_name": "学校行业，计划9月末完成小试，因储备项目较少，预计中试推迟至12月末。项目逾期，黄灯继续提示。",
+      "period": "1208-1212",
+      "source": "weekly_report",
+      "owner": "[待关联]",
+      "promised_items": "学校行业，计划9月末完成小试，因储备项目较少，预计中试推迟至12月末。项目逾期，黄灯继续提示。",
+      "current_progress": "学校行业，计划9月末完成小试，因储备项目较少，预计中试推迟至12月末。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+      "risk_points": "[黄灯]学校行业，计划9月末完成小试，因储备项目较少，预计中试推迟至12月末。项目逾期，黄灯继续提示。：学校行业，计划9月末完成小试，因储备项目较少，预计中试推迟至12月末。项目逾期，黄灯继续提示。[黄灯]存在逾期风险，进度滞后",
+      "escalation_requested": false,
+      "is_closure_request": false,
+      "is_yellow_alert": true,
+      "ledger_record_id": null
+    },
+    {
+      "project_name": "汽车行业",
+      "period": "1208-1212",
+      "source": "weekly_report",
+      "owner": "[待关联]",
+      "promised_items": "汽车行业",
+      "current_progress": "汽车行业：计划11月启动中试。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+      "risk_points": "[黄灯]汽车行业：汽车行业：计划11月启动中试。项目逾期，黄灯继续提示。[黄灯]存在逾期风险，进度滞后",
+      "escalation_requested": false,
+      "is_closure_request": false,
+      "is_yellow_alert": true,
+      "ledger_record_id": null
+    },
+    {
+      "project_name": "六策合一”新行业扫描",
+      "period": "1208-1212",
+      "source": "weekly_report",
+      "owner": "[待关联]",
+      "promised_items": "六策合一”新行业扫描",
+      "current_progress": "六策合一”新行业扫描，“上一横”已形成行业库，未来持续运用麦肯锡方法论定期检视行业库，战客部申请结项。",
+      "risk_points": "",
+      "escalation_requested": false,
+      "is_closure_request": true,
+      "is_yellow_alert": false,
+      "ledger_record_id": null
+    },
+    {
+      "project_name": "“数字经营\"规划推进",
+      "period": "1208-1212",
+      "source": "weekly_report",
+      "owner": "[待关联]",
+      "promised_items": "“数字经营\"规划推进",
+      "current_progress": "“数字经营\"规划推进，结现部本周向您、项行和孙行专题汇报并获同意，后续推进立项及交付等工作，申请结项。",
+      "risk_points": "",
+      "escalation_requested": false,
+      "is_closure_request": true,
+      "is_yellow_alert": false,
+      "ledger_record_id": null
+    },
+    {
+      "project_name": "香港分行战略发展规划：项目启动以来",
+      "period": "1208-1212",
+      "source": "weekly_report",
+      "owner": "[待关联]",
+      "promised_items": "香港分行战略发展规划：项目启动以来",
+      "current_progress": "香港分行战略发展规划：项目启动以来，港分加强与境内分行沟通，建立业务争议解决机制，联动业务显著提升，后续转常态化推进，香港分行申请结项。",
+      "risk_points": "",
+      "escalation_requested": false,
+      "is_closure_request": true,
+      "is_yellow_alert": false,
+      "ledger_record_id": null
+    }
+  ],
+  "engine_results": [
+    {
+      "project_name": "汽车行业",
+      "status_summary": {
+        "overall": "关注",
+        "progress_text": "汽车行业：计划11月启动中试。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+        "completion_estimate": "承诺事项存在无法按时完成的风险"
+      },
+      "risk_assessment": {
+        "level": "中",
+        "triggered_by": [
+          "责任人自述风险"
+        ],
+        "summary": "进度滞后是主要风险点 责任人已主动识别风险"
+      },
+      "suggested_actions": [
+        "分析滞后根因，明确下一步行动和责任人",
+        "对自述风险进行深入分析，制定缓释措施"
+      ],
+      "escalation_recommended": false,
+      "reasoning": {
+        "facts_extracted": [
+          "承诺事项：汽车行业",
+          "当前进展：汽车行业：计划11月启动中试。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+          "风险自述：[黄灯]汽车行业：汽车行业：计划11月启动中试。项目逾期，黄灯继续提示。[黄灯]存在逾期风险，进度滞后"
+        ],
+        "rules_applied": [
+          "rule_进度滞后",
+          "rule_risk_self_reported"
+        ],
+        "raw_signal": "责任人自述风险；进度滞后"
+      }
+    },
+    {
+      "project_name": "制定贷款促投放提升方案",
+      "status_summary": {
+        "overall": "正常",
+        "progress_text": "制定贷款促投放提升方案，有序压降票证规模，年末人民币贷款余额预计较年初增1,500亿，目标达成率115%；票证提前达成全年压降目标-1,339亿，公司部申请结项，转常态推动。",
+        "completion_estimate": "当前未发现明显进度风险"
+      },
+      "risk_assessment": {
+        "level": "低",
+        "triggered_by": [],
+        "summary": "未发现显著风险"
+      },
+      "suggested_actions": [
+        "继续保持当前节奏，定期更新进展"
+      ],
+      "escalation_recommended": false,
+      "reasoning": {
+        "facts_extracted": [
+          "承诺事项：制定贷款促投放提升方案",
+          "当前进展：制定贷款促投放提升方案，有序压降票证规模，年末人民币贷款余额预计较年初增1,500亿，目标达成率115%；票证提前达成全年压降目标-1,339亿，公司部申请结项，转常态推动。"
+        ],
+        "rules_applied": [],
+        "raw_signal": "无明显风险信号"
+      }
+    },
+    {
+      "project_name": "外币低息存款上量",
+      "status_summary": {
+        "overall": "正常",
+        "progress_text": "外币低息存款上量，外币低息存款435亿，较目标+335亿，达成既定目标，跨境部申请结项，转常规推动。",
+        "completion_estimate": "当前未发现明显进度风险"
+      },
+      "risk_assessment": {
+        "level": "低",
+        "triggered_by": [],
+        "summary": "未发现显著风险"
+      },
+      "suggested_actions": [
+        "继续保持当前节奏，定期更新进展"
+      ],
+      "escalation_recommended": false,
+      "reasoning": {
+        "facts_extracted": [
+          "承诺事项：外币低息存款上量",
+          "当前进展：外币低息存款上量，外币低息存款435亿，较目标+335亿，达成既定目标，跨境部申请结项，转常规推动。"
+        ],
+        "rules_applied": [],
+        "raw_signal": "无明显风险信号"
+      }
+    },
+    {
+      "project_name": "汽车行业",
+      "status_summary": {
+        "overall": "关注",
+        "progress_text": "汽车行业：计划11月启动中试。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+        "completion_estimate": "承诺事项存在无法按时完成的风险"
+      },
+      "risk_assessment": {
+        "level": "中",
+        "triggered_by": [
+          "责任人自述风险"
+        ],
+        "summary": "进度滞后是主要风险点 责任人已主动识别风险"
+      },
+      "suggested_actions": [
+        "分析滞后根因，明确下一步行动和责任人",
+        "对自述风险进行深入分析，制定缓释措施"
+      ],
+      "escalation_recommended": false,
+      "reasoning": {
+        "facts_extracted": [
+          "承诺事项：汽车行业",
+          "当前进展：汽车行业：计划11月启动中试。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+          "风险自述：[黄灯]汽车行业：汽车行业：计划11月启动中试。项目逾期，黄灯继续提示。[黄灯]存在逾期风险，进度滞后"
+        ],
+        "rules_applied": [
+          "rule_进度滞后",
+          "rule_risk_self_reported"
+        ],
+        "raw_signal": "责任人自述风险；进度滞后"
+      }
+    },
+    {
+      "project_name": "成立“对公资产方案中心”",
+      "status_summary": {
+        "overall": "正常",
+        "progress_text": "成立“对公资产方案中心”，建立运行机制，对公资产方案中心已成立并建立运行机制，战客部申请结项。",
+        "completion_estimate": "当前未发现明显进度风险"
+      },
+      "risk_assessment": {
+        "level": "低",
+        "triggered_by": [],
+        "summary": "未发现显著风险"
+      },
+      "suggested_actions": [
+        "继续保持当前节奏，定期更新进展"
+      ],
+      "escalation_recommended": false,
+      "reasoning": {
+        "facts_extracted": [
+          "承诺事项：成立“对公资产方案中心”",
+          "当前进展：成立“对公资产方案中心”，建立运行机制，对公资产方案中心已成立并建立运行机制，战客部申请结项。"
+        ],
+        "rules_applied": [],
+        "raw_signal": "无明显风险信号"
+      }
+    },
+    {
+      "project_name": "完善组织策略",
+      "status_summary": {
+        "overall": "正常",
+        "progress_text": "完善组织策略，已在对公改革规划K3-4队伍管理与考核中体现，后续与销售队伍“1+3”转型方案合并追踪，申请结项。",
+        "completion_estimate": "当前未发现明显进度风险"
+      },
+      "risk_assessment": {
+        "level": "低",
+        "triggered_by": [],
+        "summary": "未发现显著风险"
+      },
+      "suggested_actions": [
+        "继续保持当前节奏，定期更新进展"
+      ],
+      "escalation_recommended": false,
+      "reasoning": {
+        "facts_extracted": [
+          "承诺事项：完善组织策略",
+          "当前进展：完善组织策略，已在对公改革规划K3-4队伍管理与考核中体现，后续与销售队伍“1+3”转型方案合并追踪，申请结项。"
+        ],
+        "rules_applied": [],
+        "raw_signal": "无明显风险信号"
+      }
+    },
+    {
+      "project_name": "学校行业，计划9月末完成小试，因储备项目较少，预计中试推迟至12月末。项目逾期，黄灯继续提示。",
+      "status_summary": {
+        "overall": "关注",
+        "progress_text": "学校行业，计划9月末完成小试，因储备项目较少，预计中试推迟至12月末。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+        "completion_estimate": "承诺事项存在无法按时完成的风险"
+      },
+      "risk_assessment": {
+        "level": "中",
+        "triggered_by": [
+          "责任人自述风险"
+        ],
+        "summary": "进度滞后是主要风险点 责任人已主动识别风险"
+      },
+      "suggested_actions": [
+        "分析滞后根因，明确下一步行动和责任人",
+        "对自述风险进行深入分析，制定缓释措施"
+      ],
+      "escalation_recommended": false,
+      "reasoning": {
+        "facts_extracted": [
+          "承诺事项：学校行业，计划9月末完成小试，因储备项目较少，预计中试推迟至12月末。项目逾期，黄灯继续提示。",
+          "当前进展：学校行业，计划9月末完成小试，因储备项目较少，预计中试推迟至12月末。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+          "风险自述：[黄灯]学校行业，计划9月末完成小试，因储备项目较少，预计中试推迟至12月末。项目逾期，黄灯继续提示。：学校行业，计划9月末完成小试，因储备项目较少，预计中试推迟至12月末。项目逾期，黄灯继续提示。[黄灯]存在逾期风险，进度滞后"
+        ],
+        "rules_applied": [
+          "rule_进度滞后",
+          "rule_risk_self_reported"
+        ],
+        "raw_signal": "责任人自述风险；进度滞后"
+      }
+    },
+    {
+      "project_name": "汽车行业",
+      "status_summary": {
+        "overall": "关注",
+        "progress_text": "汽车行业：计划11月启动中试。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+        "completion_estimate": "承诺事项存在无法按时完成的风险"
+      },
+      "risk_assessment": {
+        "level": "中",
+        "triggered_by": [
+          "责任人自述风险"
+        ],
+        "summary": "进度滞后是主要风险点 责任人已主动识别风险"
+      },
+      "suggested_actions": [
+        "分析滞后根因，明确下一步行动和责任人",
+        "对自述风险进行深入分析，制定缓释措施"
+      ],
+      "escalation_recommended": false,
+      "reasoning": {
+        "facts_extracted": [
+          "承诺事项：汽车行业",
+          "当前进展：汽车行业：计划11月启动中试。项目逾期，黄灯继续提示。存在逾期风险，进度滞后。",
+          "风险自述：[黄灯]汽车行业：汽车行业：计划11月启动中试。项目逾期，黄灯继续提示。[黄灯]存在逾期风险，进度滞后"
+        ],
+        "rules_applied": [
+          "rule_进度滞后",
+          "rule_risk_self_reported"
+        ],
+        "raw_signal": "责任人自述风险；进度滞后"
+      }
+    },
+    {
+      "project_name": "六策合一”新行业扫描",
+      "status_summary": {
+        "overall": "正常",
+        "progress_text": "六策合一”新行业扫描，“上一横”已形成行业库，未来持续运用麦肯锡方法论定期检视行业库，战客部申请结项。",
+        "completion_estimate": "当前未发现明显进度风险"
+      },
+      "risk_assessment": {
+        "level": "低",
+        "triggered_by": [],
+        "summary": "未发现显著风险"
+      },
+      "suggested_actions": [
+        "继续保持当前节奏，定期更新进展"
+      ],
+      "escalation_recommended": false,
+      "reasoning": {
+        "facts_extracted": [
+          "承诺事项：六策合一”新行业扫描",
+          "当前进展：六策合一”新行业扫描，“上一横”已形成行业库，未来持续运用麦肯锡方法论定期检视行业库，战客部申请结项。"
+        ],
+        "rules_applied": [],
+        "raw_signal": "无明显风险信号"
+      }
+    },
+    {
+      "project_name": "“数字经营\"规划推进",
+      "status_summary": {
+        "overall": "正常",
+        "progress_text": "“数字经营\"规划推进，结现部本周向您、项行和孙行专题汇报并获同意，后续推进立项及交付等工作，申请结项。",
+        "completion_estimate": "当前未发现明显进度风险"
+      },
+      "risk_assessment": {
+        "level": "低",
+        "triggered_by": [],
+        "summary": "未发现显著风险"
+      },
+      "suggested_actions": [
+        "继续保持当前节奏，定期更新进展"
+      ],
+      "escalation_recommended": false,
+      "reasoning": {
+        "facts_extracted": [
+          "承诺事项：“数字经营\"规划推进",
+          "当前进展：“数字经营\"规划推进，结现部本周向您、项行和孙行专题汇报并获同意，后续推进立项及交付等工作，申请结项。"
+        ],
+        "rules_applied": [],
+        "raw_signal": "无明显风险信号"
+      }
+    },
+    {
+      "project_name": "香港分行战略发展规划：项目启动以来",
+      "status_summary": {
+        "overall": "正常",
+        "progress_text": "香港分行战略发展规划：项目启动以来，港分加强与境内分行沟通，建立业务争议解决机制，联动业务显著提升，后续转常态化推进，香港分行申请结项。",
+        "completion_estimate": "当前未发现明显进度风险"
+      },
+      "risk_assessment": {
+        "level": "低",
+        "triggered_by": [],
+        "summary": "未发现显著风险"
+      },
+      "suggested_actions": [
+        "继续保持当前节奏，定期更新进展"
+      ],
+      "escalation_recommended": false,
+      "reasoning": {
+        "facts_extracted": [
+          "承诺事项：香港分行战略发展规划：项目启动以来",
+          "当前进展：香港分行战略发展规划：项目启动以来，港分加强与境内分行沟通，建立业务争议解决机制，联动业务显著提升，后续转常态化推进，香港分行申请结项。"
+        ],
+        "rules_applied": [],
+        "raw_signal": "无明显风险信号"
+      }
+    }
+  ]
+}

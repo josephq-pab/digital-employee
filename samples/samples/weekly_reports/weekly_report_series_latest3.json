@@ -1,0 +1,209 @@
+[
+  {
+    "sample_type": "pmo_weekly_report",
+    "sample_version": "v1",
+    "is_desensitized": true,
+    "report_meta": {
+      "report_id": "PMO-WR-2025-1222-1226",
+      "report_period": "1222-1226",
+      "report_date_text": "二零二五年十二月二十六日",
+      "reporting_unit": "某总行条线PMO",
+      "report_scope": "重点项目推进周报"
+    },
+    "project_overview": {
+      "total_items": 60,
+      "category_1_plus_3_items": 12,
+      "other_key_items": 48,
+      "closed_or_paused_or_terminated": 43,
+      "in_progress_items": 17,
+      "status_light": "green"
+    },
+    "key_requests": {
+      "closure_requests": [
+        {
+          "project_name": "制定贷款促投放提升方案",
+          "raw": "制定贷款促投放提升方案，有序压降票证规模，年末人民币贷款余额预计较年初增1,500亿，目标达成率115%；票证提前达成全年压降目标-1,339亿，公司部申请结项，转常态推动。"
+        },
+        {
+          "project_name": "外币低息存款上量",
+          "raw": "外币低息存款上量，外币低息存款435亿，较目标+335亿，达成既定目标，跨境部申请结项，转常规推动。"
+        }
+      ],
+      "delay_requests": [],
+      "termination_requests": []
+    },
+    "key_alerts": [
+      {
+        "project_name": "汽车行业",
+        "alert_level": "yellow",
+        "raw": "汽车行业：计划11月启动中试。项目逾期，黄灯继续提示。"
+      }
+    ],
+    "new_items": [
+      {
+        "project_name": "普惠三大模式进展汇报"
+      }
+    ],
+    "management_summary": {
+      "overall_judgment": null,
+      "completed_or_resolved": [],
+      "delayed_items": [
+        "汽车行业"
+      ],
+      "no_clear_progress_items": [],
+      "items_requiring_leadership_attention": [
+        "汽车行业"
+      ]
+    },
+    "source_note": {
+      "source_form": "邮件式周报整理",
+      "removed_content": [
+        "称呼",
+        "收发件人",
+        "抄送",
+        "邮件链",
+        "邮箱地址",
+        "签名信息"
+      ]
+    }
+  },
+  {
+    "sample_type": "pmo_weekly_report",
+    "sample_version": "v1",
+    "is_desensitized": true,
+    "report_meta": {
+      "report_id": "PMO-WR-2025-1215-1219",
+      "report_period": "1215-1219",
+      "report_date_text": "二零二五年十二月十九日",
+      "reporting_unit": "某总行条线PMO",
+      "report_scope": "重点项目推进周报"
+    },
+    "project_overview": {
+      "total_items": 59,
+      "category_1_plus_3_items": 12,
+      "other_key_items": 47,
+      "closed_or_paused_or_terminated": 43,
+      "in_progress_items": 16,
+      "status_light": "green"
+    },
+    "key_requests": {
+      "closure_requests": [
+        {
+          "project_name": "成立“对公资产方案中心”",
+          "raw": "成立“对公资产方案中心”，建立运行机制，对公资产方案中心已成立并建立运行机制，战客部申请结项。"
+        },
+        {
+          "project_name": "完善组织策略",
+          "raw": "完善组织策略，已在对公改革规划K3-4队伍管理与考核中体现，后续与销售队伍“1+3”转型方案合并追踪，申请结项。"
+        }
+      ],
+      "delay_requests": [],
+      "termination_requests": []
+    },
+    "key_alerts": [
+      {
+        "project_name": "汽车行业",
+        "alert_level": "yellow",
+        "raw": "汽车行业：计划11月启动中试。项目逾期，黄灯继续提示。"
+      }
+    ],
+    "new_items": [],
+    "management_summary": {
+      "overall_judgment": null,
+      "completed_or_resolved": [],
+      "delayed_items": [
+        "汽车行业"
+      ],
+      "no_clear_progress_items": [],
+      "items_requiring_leadership_attention": [
+        "汽车行业"
+      ]
+    },
+    "source_note": {
+      "source_form": "邮件式周报整理",
+      "removed_content": [
+        "称呼",
+        "收发件人",
+        "抄送",
+        "邮件链",
+        "邮箱地址",
+        "签名信息"
+      ]
+    }
+  },
+  {
+    "sample_type": "pmo_weekly_report",
+    "sample_version": "v1",
+    "is_desensitized": true,
+    "report_meta": {
+      "report_id": "PMO-WR-2025-1208-1212",
+      "report_period": "1208-1212",
+      "report_date_text": "二零二五年十二月十二日",
+      "reporting_unit": "某总行条线PMO",
+      "report_scope": "重点项目推进周报"
+    },
+    "project_overview": {
+      "total_items": 59,
+      "category_1_plus_3_items": 12,
+      "other_key_items": 47,
+      "closed_or_paused_or_terminated": 41,
+      "in_progress_items": 18,
+      "status_light": "green"
+    },
+    "key_requests": {
+      "closure_requests": [
+        {
+          "project_name": "六策合一”新行业扫描",
+          "raw": "六策合一”新行业扫描，“上一横”已形成行业库，未来持续运用麦肯锡方法论定期检视行业库，战客部申请结项。"
+        },
+        {
+          "project_name": "“数字经营\"规划推进",
+          "raw": "“数字经营\"规划推进，结现部本周向您、项行和孙行专题汇报并获同意，后续推进立项及交付等工作，申请结项。"
+        },
+        {
+          "project_name": "香港分行战略发展规划：项目启动以来",
+          "raw": "香港分行战略发展规划：项目启动以来，港分加强与境内分行沟通，建立业务争议解决机制，联动业务显著提升，后续转常态化推进，香港分行申请结项。"
+        }
+      ],
+      "delay_requests": [],
+      "termination_requests": []
+    },
+    "key_alerts": [
+      {
+        "project_name": "学校行业，计划9月末完成小试，因储备项目较少，预计中试推迟至12月末。项目逾期，黄灯继续提示。",
+        "alert_level": "yellow",
+        "raw": "学校行业，计划9月末完成小试，因储备项目较少，预计中试推迟至12月末。项目逾期，黄灯继续提示。"
+      },
+      {
+        "project_name": "汽车行业",
+        "alert_level": "yellow",
+        "raw": "汽车行业：计划11月启动中试。项目逾期，黄灯继续提示。"
+      }
+    ],
+    "new_items": [],
+    "management_summary": {
+      "overall_judgment": null,
+      "completed_or_resolved": [],
+      "delayed_items": [
+        "学校行业，计划9月末完成小试，因储备项目较少，预计中试推迟至12月末。项目逾期，黄灯继续提示。",
+        "汽车行业"
+      ],
+      "no_clear_progress_items": [],
+      "items_requiring_leadership_attention": [
+        "学校行业，计划9月末完成小试，因储备项目较少，预计中试推迟至12月末。项目逾期，黄灯继续提示。",
+        "汽车行业"
+      ]
+    },
+    "source_note": {
+      "source_form": "邮件式周报整理",
+      "removed_content": [
+        "称呼",
+        "收发件人",
+        "抄送",
+        "邮件链",
+        "邮箱地址",
+        "签名信息"
+      ]
+    }
+  }
+]

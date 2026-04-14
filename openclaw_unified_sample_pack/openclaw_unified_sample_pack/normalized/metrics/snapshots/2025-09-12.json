@@ -1,0 +1,316 @@
+{
+  "snapshot_date": "2025-09-12",
+  "metric_row_count": 31,
+  "metrics": [
+    {
+      "project_name": "制定贷款促投放提升方案，有序压降票证规模",
+      "detail": "增贷款",
+      "canonical_key": "制定贷款促投放提升方案，有序压降票证规模增贷款",
+      "metric_name": "战客口径人民币贷款",
+      "target": 500,
+      "unit": "亿元",
+      "value": "320\n（截至9月10日）",
+      "gap_note": null
+    },
+    {
+      "project_name": "制定贷款促投放提升方案，有序压降票证规模",
+      "detail": null,
+      "canonical_key": "制定贷款促投放提升方案，有序压降票证规模",
+      "metric_name": "银团贷款",
+      "target": 200,
+      "unit": "亿元",
+      "value": "97\n（截至9月10日）",
+      "gap_note": null
+    },
+    {
+      "project_name": "制定贷款促投放提升方案，有序压降票证规模",
+      "detail": null,
+      "canonical_key": "制定贷款促投放提升方案，有序压降票证规模",
+      "metric_name": "并购贷款",
+      "target": 180,
+      "unit": "亿元",
+      "value": "35\n（截至9月10日）",
+      "gap_note": null
+    },
+    {
+      "project_name": "制定贷款促投放提升方案，有序压降票证规模",
+      "detail": null,
+      "canonical_key": "制定贷款促投放提升方案，有序压降票证规模",
+      "metric_name": "项目贷款（非房）",
+      "target": 200,
+      "unit": "亿元",
+      "value": "57\n（截至9月10日）",
+      "gap_note": null
+    },
+    {
+      "project_name": "制定贷款促投放提升方案，有序压降票证规模",
+      "detail": null,
+      "canonical_key": "制定贷款促投放提升方案，有序压降票证规模",
+      "metric_name": "普惠贷款",
+      "target": 51,
+      "unit": "亿元",
+      "value": "17\n（截至9月10日）",
+      "gap_note": null
+    },
+    {
+      "project_name": "制定贷款促投放提升方案，有序压降票证规模",
+      "detail": null,
+      "canonical_key": "制定贷款促投放提升方案，有序压降票证规模",
+      "metric_name": "供应链金融",
+      "target": 200,
+      "unit": "亿元",
+      "value": "210\n（截至9月10日）",
+      "gap_note": null
+    },
+    {
+      "project_name": "制定贷款促投放提升方案，有序压降票证规模",
+      "detail": null,
+      "canonical_key": "制定贷款促投放提升方案，有序压降票证规模",
+      "metric_name": "跨境人民币贷款（不含一、二级福费廷）",
+      "target": 150,
+      "unit": "亿元",
+      "value": "12\n（截至9月10日）",
+      "gap_note": null
+    },
+    {
+      "project_name": "制定贷款促投放提升方案，有序压降票证规模",
+      "detail": "压票证",
+      "canonical_key": "制定贷款促投放提升方案，有序压降票证规模压票证",
+      "metric_name": "全年压降",
+      "target": 1200,
+      "unit": "亿元",
+      "value": "截至9月9日，\n一、票证余额3200亿，较年初压降1083亿，较月初压降387亿；\n二、票证日均3702亿，较年初压降868亿，较月初压降16亿。",
+      "gap_note": null
+    },
+    {
+      "project_name": "提高中长期贷款（并购、银团、非房项目贷款）绝对规模和市场份额",
+      "detail": "并购",
+      "canonical_key": "提高中长期贷款并购银团非房项目贷款绝对规模和市场份额并购",
+      "metric_name": "25年并购贷款余额净增",
+      "target": 180,
+      "unit": "亿元",
+      "value": "35\n（截至9月10日）",
+      "gap_note": null
+    },
+    {
+      "project_name": "提高中长期贷款（并购、银团、非房项目贷款）绝对规模和市场份额",
+      "detail": null,
+      "canonical_key": "提高中长期贷款并购银团非房项目贷款绝对规模和市场份额",
+      "metric_name": "25年银团贷款余额净增",
+      "target": 200,
+      "unit": "亿元",
+      "value": "97\n（截至9月10日）",
+      "gap_note": null
+    },
+    {
+      "project_name": "提高中长期贷款（并购、银团、非房项目贷款）绝对规模和市场份额",
+      "detail": null,
+      "canonical_key": "提高中长期贷款并购银团非房项目贷款绝对规模和市场份额",
+      "metric_name": "中期流贷银团贷款（三年期以下）",
+      "target": "下半年保底投放60亿、挑战100亿",
+      "unit": "亿元",
+      "value": "32\n（截至9月9日）",
+      "gap_note": null
+    },
+    {
+      "project_name": "提高中长期贷款（并购、银团、非房项目贷款）绝对规模和市场份额",
+      "detail": null,
+      "canonical_key": "提高中长期贷款并购银团非房项目贷款绝对规模和市场份额",
+      "metric_name": "25年项目贷款余额净增（非房）",
+      "target": 200,
+      "unit": "亿元",
+      "value": "48\n（截至9月8日）",
+      "gap_note": "1-6月份存量隐债还款108亿，导致非房项目贷款余额下降较多，隐债置换因素未在达成值中剔除。"
+    },
+    {
+      "project_name": "存款调优",
+      "detail": "人民币存款",
+      "canonical_key": "存款调优人民币存款",
+      "metric_name": "人民币付息率",
+      "target": 1.45,
+      "unit": "%",
+      "value": 1.45,
+      "gap_note": null
+    },
+    {
+      "project_name": "存款调优",
+      "detail": null,
+      "canonical_key": "存款调优",
+      "metric_name": "结构性存款付息率优化",
+      "target": 1.75,
+      "unit": "%",
+      "value": 1.75,
+      "gap_note": null
+    },
+    {
+      "project_name": "存款调优",
+      "detail": null,
+      "canonical_key": "存款调优",
+      "metric_name": "三年期定期存款余额（含普通定期+大额存单）较年初",
+      "target": 4300,
+      "unit": "亿元",
+      "value": 4330,
+      "gap_note": "分行在限额内正常使用额度，下个月会有较大到期量。"
+    },
+    {
+      "project_name": "存款调优",
+      "detail": null,
+      "canonical_key": "存款调优",
+      "metric_name": "保证金+质押存款余额较年初",
+      "target": "降500",
+      "unit": "亿元",
+      "value": 4805,
+      "gap_note": null
+    },
+    {
+      "project_name": "存款调优",
+      "detail": null,
+      "canonical_key": "存款调优",
+      "metric_name": "低风险保证金+质押存款余额较年初",
+      "target": "降300",
+      "unit": "亿元",
+      "value": 3448,
+      "gap_note": null
+    },
+    {
+      "project_name": "存款调优",
+      "detail": null,
+      "canonical_key": "存款调优",
+      "metric_name": "24年末持有协定存款客户的存款日均",
+      "target": 9400,
+      "unit": "亿元",
+      "value": 9399,
+      "gap_note": null
+    },
+    {
+      "project_name": "存款调优",
+      "detail": null,
+      "canonical_key": "存款调优",
+      "metric_name": "协定存款利率不高于0.45%的客户数",
+      "target": 26000,
+      "unit": "户",
+      "value": 16400,
+      "gap_note": null
+    },
+    {
+      "project_name": "外币低息存款上量（外币存款付息率下行）",
+      "detail": "外币低息存款",
+      "canonical_key": "外币低息存款上量外币存款付息率下行外币低息存款",
+      "metric_name": "外币低息存款月日均净增",
+      "target": 100,
+      "unit": "亿元",
+      "value": "截至9月8日：558",
+      "gap_note": null
+    },
+    {
+      "project_name": "外币低息存款上量（外币存款付息率下行）",
+      "detail": null,
+      "canonical_key": "外币低息存款上量外币存款付息率下行",
+      "metric_name": "外币存款月度付息率",
+      "target": 2.9,
+      "unit": "%",
+      "value": "截至9月8日：2.96",
+      "gap_note": null
+    },
+    {
+      "project_name": "外币低息存款上量（外币存款付息率下行）",
+      "detail": "外币真活期",
+      "canonical_key": "外币低息存款上量外币存款付息率下行外币真活期",
+      "metric_name": "外币真活期存款营收",
+      "target": 16.5,
+      "unit": "亿元",
+      "value": "截至9月8日：11.54",
+      "gap_note": null
+    },
+    {
+      "project_name": "跨境非息收入持续上量",
+      "detail": "跨境非息收入",
+      "canonical_key": "跨境非息收入持续上量跨境非息收入",
+      "metric_name": "跨境非息收入增量",
+      "target": 21,
+      "unit": "亿元",
+      "value": "截至9月8日：14.88",
+      "gap_note": null
+    },
+    {
+      "project_name": "跨境非息收入持续上量",
+      "detail": null,
+      "canonical_key": "跨境非息收入持续上量",
+      "metric_name": "结售汇衍生非息",
+      "target": 6.92,
+      "unit": "亿元",
+      "value": "截至9月8日：5.21",
+      "gap_note": null
+    },
+    {
+      "project_name": "跨境非息收入持续上量",
+      "detail": null,
+      "canonical_key": "跨境非息收入持续上量",
+      "metric_name": "贸融及结算非息",
+      "target": 3.8,
+      "unit": "亿元",
+      "value": "截至9月8日：2.84",
+      "gap_note": null
+    },
+    {
+      "project_name": "跨境非息收入持续上量",
+      "detail": null,
+      "canonical_key": "跨境非息收入持续上量",
+      "metric_name": "复杂投融非息",
+      "target": 6.67,
+      "unit": "亿元",
+      "value": "截至9月8日：4.69",
+      "gap_note": null
+    },
+    {
+      "project_name": "机构业务政策改革",
+      "detail": "资格",
+      "canonical_key": "机构业务政策改革资格",
+      "metric_name": "核心资格新增",
+      "target": 120,
+      "unit": "个",
+      "value": 100,
+      "gap_note": "较全年目标差距59个资格，后续将加强商机筛选，通过投标易平台及时推送，增加中标率。"
+    },
+    {
+      "project_name": "机构业务政策改革",
+      "detail": "账户",
+      "canonical_key": "机构业务政策改革账户",
+      "metric_name": "机构资格带来的开户数净增",
+      "target": 600,
+      "unit": "个",
+      "value": "账户8092户，较年初增长760户，较上周+30个",
+      "gap_note": null
+    },
+    {
+      "project_name": "机构业务政策改革",
+      "detail": "机构存款",
+      "canonical_key": "机构业务政策改革机构存款",
+      "metric_name": "机构存款规模保持3%稳健增速",
+      "target": 0.03,
+      "unit": "%",
+      "value": "机构日均新增156.6亿，增速3.8%",
+      "gap_note": null
+    },
+    {
+      "project_name": "机构业务政策改革",
+      "detail": null,
+      "canonical_key": "机构业务政策改革",
+      "metric_name": "执行利率1%及以下的新起息定期存款（不含阶梯财富）",
+      "target": 100,
+      "unit": "亿元",
+      "value": "208.77亿\n其中财政场景新起息187.53亿，占比89.9%；住建场景新起息11.36亿 ，占比5.4%；司法场景新起息9.88亿，占比4.7%。",
+      "gap_note": null
+    },
+    {
+      "project_name": "机构业务政策改革",
+      "detail": null,
+      "canonical_key": "机构业务政策改革",
+      "metric_name": "活期净增",
+      "target": null,
+      "unit": null,
+      "value": "新增活期36.1亿，其中财政场景新增29.2亿、司法场景新增27.8亿、住建场景-20.9亿。",
+      "gap_note": null
+    }
+  ]
+}

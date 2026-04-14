@@ -1,0 +1,40 @@
+{
+  "slice_name": "holdout_validation_november",
+  "purpose": "未参与前两周原型调优的留出验证集，适合 Week3 新样本验证",
+  "report_periods": [
+    "1103-1107",
+    "1110-1114",
+    "1117-1121",
+    "1124-1128"
+  ],
+  "includes": "weekly+ledger+metrics where available",
+  "items": [
+    {
+      "report_period": "1103-1107",
+      "report_file": "normalized/weekly_reports/by_period/2025-11-03_2025-11-07.json",
+      "ledger_snapshot_file": "normalized/ledgers/snapshots/2025-11-03_2025-11-07.json",
+      "metrics_snapshot_file": "normalized/metrics/snapshots/2025-11-07.json"
+    },
+    {
+      "report_period": "1110-1114",
+      "report_file": "normalized/weekly_reports/by_period/2025-11-10_2025-11-14.json",
+      "ledger_snapshot_file": "normalized/ledgers/snapshots/2025-11-10_2025-11-14.json",
+      "metrics_snapshot_file": "normalized/metrics/snapshots/2025-11-14.json"
+    },
+    {
+      "report_period": "1117-1121",
+      "report_file": "normalized/weekly_reports/by_period/2025-11-17_2025-11-21.json",
+      "ledger_snapshot_file": "normalized/ledgers/snapshots/2025-11-17_2025-11-21.json",
+      "metrics_snapshot_file": "normalized/metrics/snapshots/2025-11-21.json"
+    },
+    {
+      "report_period": "1124-1128",
+      "report_file": "normalized/weekly_reports/by_period/2025-11-24_2025-11-28.json",
+      "ledger_snapshot_file": "normalized/ledgers/snapshots/2025-11-24_2025-11-28.json",
+      "metrics_snapshot_file": "normalized/metrics/snapshots/2025-11-28.json"
+    }
+  ],
+  "notes": [
+    "用于验证系统是否能适配未见样本，不建议用于前期规则调优。"
+  ]
+}

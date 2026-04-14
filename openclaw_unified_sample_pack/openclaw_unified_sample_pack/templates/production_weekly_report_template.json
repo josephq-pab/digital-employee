@@ -1,0 +1,26 @@
+{
+  "sample_type": "pmo_weekly_report",
+  "sample_version": "v2",
+  "is_desensitized": true,
+  "report_meta": {
+    "report_id": "",
+    "report_type": "周报或双周报",
+    "report_period": "MMDD-MMDD",
+    "start_date": "YYYY-MM-DD",
+    "end_date": "YYYY-MM-DD",
+    "report_date": "YYYY-MM-DD",
+    "reporting_unit": "某总行条线PMO",
+    "service_audience": "管理层"
+  },
+  "overview": {
+    "as_of": "MM月DD日",
+    "total_items": 0,
+    "one_plus_three_items": 0,
+    "other_key_items": 0
+  },
+  "request_lines": [],
+  "alert_lines": [],
+  "new_items_count": 0,
+  "in_progress_count": 0,
+  "raw_text": ""
+}
