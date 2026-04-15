@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>数字员工MVP - 试用反馈表</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 760px; margin: 40px auto; padding: 0 20px; color: #1e293b; }
+  h1 { font-size: 20px; color: #1e3a5f; border-bottom: 2px solid #1e3a5f; padding-bottom: 12px; }
+  h2 { font-size: 15px; color: #334155; margin-top: 28px; }
+  .meta { font-size: 13px; color: #64748b; margin-bottom: 20px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 13px; }
+  th { background: #1e3a5f; color: white; padding: 10px 8px; text-align: left; }
+  td { border: 1px solid #e2e8f0; padding: 8px; vertical-align: top; }
+  tr:nth-child(even) td { background: #f8fafc; }
+  input[type=text], select, textarea { width: 100%; padding: 6px 8px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 13px; box-sizing: border-box; }
+  .radio-group { display: flex; gap: 16px; flex-wrap: wrap; font-size: 13px; }
+  .radio-group label { display: flex; align-items: center; gap: 4px; }
+  .section { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px 20px; margin-top: 16px; }
+  .notice { background: #fef3c7; border: 1px solid #fbbf24; border-radius: 8px; padding: 12px 16px; font-size: 13px; color: #78350f; margin-top: 20px; }
+  .footer { margin-top: 32px; font-size: 12px; color: #94a3b8; border-top: 1px solid #e2e8f0; padding-top: 12px; }
+  .example { background: #f0fdf4; border-left: 3px solid #22c55e; padding: 8px 12px; font-size: 12px; color: #166534; margin-top: 6px; }
+</style>
+</head>
+<body>
+
+<h1>📋 数字员工MVP试用反馈表</h1>
+<div class="meta">
+  版本 v1.0 &nbsp;|&nbsp; 填写说明在页面底部<br>
+  页面地址：<strong>http://47.112.211.98:3000/</strong>
+</div>
+
+<h2>一、基本信息</h2>
+<table>
+  <tr><td style="width:120px; font-weight:600;">反馈人</td><td><input type="text" placeholder="姓名或角色"></td></tr>
+  <tr><td style="font-weight:600;">填写日期</td><td><input type="text" placeholder="YYYY-MM-DD"></td></tr>
+</table>
+
+<h2>二、试用路径（走过的页面）</h2>
+<div style="font-size:13px; color:#475569; line-height:2;">
+  请在走过的页面打勾：<br>
+  □ 首页结论卡　□ 推演样本切换（W16~W20）　□ 领导摘要　□ 事项总台账　□ 风险清单　□ 复核与决策
+</div>
+
+<h2>三、具体问题反馈（每条一行，不够可追加）</h2>
+<table>
+  <thead>
+    <tr>
+      <th style="width:40px;">#</th>
+      <th style="width:130px;">页面/功能</th>
+      <th style="width:90px;">类型</th>
+      <th>具体描述（做了哪个操作后，看到了什么）</th>
+      <th style="width:60px;">优先级</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td><input type="text" placeholder="如：风险清单"></td><td><select><option value="">选类型</option><option>A体验</option><option>B表达</option><option>C流程</option><option>D建议</option><option>E阻断</option></select></td><td><input type="text" placeholder="做了XX操作后，看到XX问题"></td><td><select><option>高</option><option>中</option><option>低</option></select></td></tr>
+    <tr><td>2</td><td><input type="text"></td><td><select><option value="">选类型</option><option>A体验</option><option>B表达</option><option>C流程</option><option>D建议</option><option>E阻断</option></select></td><td><input type="text"></td><td><select><option>高</option><option>中</option><option>低</option></select></td></tr>
+    <tr><td>3</td><td><input type="text"></td><td><select><option value="">选类型</option><option>A体验</option><option>B表达</option><option>C流程</option><option>D建议</option><option>E阻断</option></select></td><td><input type="text"></td><td><select><option>高</option><option>中</option><option>低</option></select></td></tr>
+    <tr><td>4</td><td><input type="text"></td><td><select><option value="">选类型</option><option>A体验</option><option>B表达</option><option>C流程</option><option>D建议</option><option>E阻断</option></select></td><td><input type="text"></td><td><select><option>高</option><option>中</option><option>低</option></select></td></tr>
+    <tr><td>5</td><td><input type="text"></td><td><select><option value="">选类型</option><option>A体验</option><option>B表达</option><option>C流程</option><option>D建议</option><option>E阻断</option></select></td><td><input type="text"></td><td><select><option>高</option><option>中</option><option>低</option></select></td></tr>
+  </tbody>
+</table>
+
+<h2>四、快速问答（选填）</h2>
+<div class="section">
+  <div style="font-weight:600; margin-bottom:8px;">看完首页结论卡后，你是否清楚"现在这周的情况是什么"？</div>
+  <div class="radio-group">
+    <label><input type="radio" name="q1"> 非常清楚</label>
+    <label><input type="radio" name="q1"> 大概知道</label>
+    <label><input type="radio" name="q1"> 不太清楚</label>
+    <label><input type="radio" name="q1"> 完全看不懂</label>
+  </div>
+</div>
+<div class="section">
+  <div style="font-weight:600; margin-bottom:8px;">切换推演样本（W16~W20）后，你是否理解五期趋势图在展示什么？</div>
+  <div class="radio-group">
+    <label><input type="radio" name="q2"> 完全理解</label>
+    <label><input type="radio" name="q2"> 大概理解</label>
+    <label><input type="radio" name="q2"> 不太理解</label>
+    <label><input type="radio" name="q2"> 完全看不懂</label>
+  </div>
+</div>
+<div class="section">
+  <div style="font-weight:600; margin-bottom:8px;">看完风险清单后，你是否清楚"哪些事情需要重点跟踪"？</div>
+  <div class="radio-group">
+    <label><input type="radio" name="q3"> 非常清楚</label>
+    <label><input type="radio" name="q3"> 大概知道</label>
+    <label><input type="radio" name="q3"> 不太清楚</label>
+    <label><input type="radio" name="q3"> 完全看不懂</label>
+  </div>
+</div>
+
+<div class="section">
+  <div style="font-weight:600; margin-bottom:8px;">你最想反馈的一件事情是什么？（一句话）</div>
+  <input type="text" placeholder="请填写">
+</div>
+
+<div class="notice">
+  ⚠️ <strong>填写技巧</strong>：具体描述比评分更有价值。<br>
+  <div class="example">✅ 正确："点击W17按钮后，台账里显示空白，但首页结论卡有数据"</div>
+  <div class="example">❌ 无效："不太好用"（无法据此改进）</div>
+</div>
+
+<div class="footer">
+  填写完成后发给：[负责人姓名/邮箱]<br>
+  文档位置：project/docs/MVP试用反馈表_业务方填写版.md<br>
+  反馈将统一录入：project/docs/MVP试用反馈记录.md
+</div>
+
+</body>
+</html>
