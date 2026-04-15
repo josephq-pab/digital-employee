@@ -161,7 +161,10 @@
       <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; flex-wrap:wrap; gap:12px;">
         <div>
           <div style="font-size:11px; text-transform:uppercase; letter-spacing:0.1em; opacity:0.7; margin-bottom:4px;">Phase 6E · 并行运行系统</div>
-          <div style="font-size:20px; font-weight:700;" id="home-period-title">2026-04-14 / 04-18 本周期结论</div>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div style="font-size:20px; font-weight:700;" id="home-period-title">2026-04-14 / 04-18 本周期结论</div>
+            <span id="home-simulation-badge" style="display:none; font-size:11px; font-weight:600; background:rgba(255,255,255,0.2); border:1px solid rgba(255,255,255,0.35); color:rgba(255,255,255,0.9); padding:3px 10px; border-radius:20px; letter-spacing:0.05em;">推演样本</span>
+          </div>
         </div>
         <div style="text-align:right;">
           <div style="font-size:11px; opacity:0.7; margin-bottom:4px;">样本状态</div>
@@ -217,6 +220,97 @@
           ① 本周：逐户梳理汽车零部件已授信未投放客户，明确卡点责任人<br>
           ② 尽快：补充学校行业中试储备项目清单<br>
           ③ 04/18前：锁定双链融合汇报方案完成时间
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- M-001 五期进度趋势对比（仅推演样本显示） -->
+  <div id="home-m001-trend" style="display:none; margin-bottom:20px;">
+    <div style="background:white; border-radius:14px; padding:20px; border:1px solid var(--border); box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; flex-wrap:wrap; gap:8px;">
+        <div style="font-size:14px; font-weight:700; color:var(--text);">📊 M-001 五期进度趋势</div>
+        <div style="font-size:11px; color:var(--text-muted);">汽车零部件贷款余额净增 · 目标：15亿元</div>
+      </div>
+      <!-- 进度条区域 -->
+      <div id="m001-bars-container">
+        <!-- W16 -->
+        <div style="margin-bottom:14px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;">
+            <span style="font-size:12px; font-weight:600; color:var(--text-muted); width:60px;">W16</span>
+            <span style="font-size:12px; color:#ef4444; font-weight:600; width:50px; text-align:right;" id="m001-w16-gap">缺8.2亿</span>
+            <span style="font-size:13px; font-weight:700; color:#ef4444; width:60px; text-align:right;" id="m001-w16-val">6.8亿</span>
+          </div>
+          <div style="background:#f1f5f9; border-radius:6px; height:10px; overflow:hidden; position:relative;">
+            <div id="m001-w16-bar" style="width:45%; background:#ef4444; height:100%; border-radius:6px; transition:width 0.4s ease;"></div>
+            <div style="position:absolute; top:0; left:100%; transform:translateX(-50%); width:2px; height:100%; background:#1e3a5f; opacity:0.6;" title="目标15亿"></div>
+          </div>
+        </div>
+        <!-- W17 -->
+        <div style="margin-bottom:14px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;">
+            <span style="font-size:12px; font-weight:600; color:var(--text-muted); width:60px;">W17</span>
+            <span style="font-size:12px; color:#f97316; font-weight:600; width:50px; text-align:right;" id="m001-w17-gap">缺5.5亿</span>
+            <span style="font-size:13px; font-weight:700; color:#f97316; width:60px; text-align:right;" id="m001-w17-val">9.5亿</span>
+          </div>
+          <div style="background:#f1f5f9; border-radius:6px; height:10px; overflow:hidden; position:relative;">
+            <div id="m001-w17-bar" style="width:63%; background:#f97316; height:100%; border-radius:6px; transition:width 0.4s ease;"></div>
+            <div style="position:absolute; top:0; left:100%; transform:translateX(-50%); width:2px; height:100%; background:#1e3a5f; opacity:0.6;"></div>
+          </div>
+        </div>
+        <!-- W18 -->
+        <div style="margin-bottom:14px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;">
+            <span style="font-size:12px; font-weight:600; color:var(--text-muted); width:60px;">W18</span>
+            <span style="font-size:12px; color:#eab308; font-weight:600; width:50px; text-align:right;" id="m001-w18-gap">缺1.8亿</span>
+            <span style="font-size:13px; font-weight:700; color:#ca8a04; width:60px; text-align:right;" id="m001-w18-val">13.2亿</span>
+          </div>
+          <div style="background:#f1f5f9; border-radius:6px; height:10px; overflow:hidden; position:relative;">
+            <div id="m001-w18-bar" style="width:88%; background:#eab308; height:100%; border-radius:6px; transition:width 0.4s ease;"></div>
+            <div style="position:absolute; top:0; left:100%; transform:translateX(-50%); width:2px; height:100%; background:#1e3a5f; opacity:0.6;"></div>
+          </div>
+        </div>
+        <!-- W19 -->
+        <div style="margin-bottom:14px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;">
+            <span style="font-size:12px; font-weight:600; color:var(--text-muted); width:60px;">W19</span>
+            <span style="font-size:12px; color:#22c55e; font-weight:600; width:50px; text-align:right;" id="m001-w19-gap">超0.6亿</span>
+            <span style="font-size:13px; font-weight:700; color:#16a34a; width:60px; text-align:right;" id="m001-w19-val">15.6亿</span>
+          </div>
+          <div style="background:#f1f5f9; border-radius:6px; height:10px; overflow:hidden; position:relative;">
+            <div id="m001-w19-bar" style="width:100%; background:#22c55e; height:100%; border-radius:6px; transition:width 0.4s ease;"></div>
+            <div style="position:absolute; top:0; left:calc(100% * 15 / 18); transform:translateX(-50%); width:2px; height:100%; background:#1e3a5f; opacity:0.6;" title="目标15亿"></div>
+          </div>
+        </div>
+        <!-- W20 -->
+        <div>
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;">
+            <span style="font-size:12px; font-weight:600; color:var(--text-muted); width:60px;">W20</span>
+            <span style="font-size:12px; color:#22c55e; font-weight:600; width:50px; text-align:right;" id="m001-w20-gap">超2.1亿</span>
+            <span style="font-size:13px; font-weight:700; color:#16a34a; width:60px; text-align:right;" id="m001-w20-val">17.1亿</span>
+          </div>
+          <div style="background:#f1f5f9; border-radius:6px; height:10px; overflow:hidden; position:relative;">
+            <div id="m001-w20-bar" style="width:100%; background:#22c55e; height:100%; border-radius:6px; transition:width 0.4s ease;"></div>
+            <div style="position:absolute; top:0; left:calc(100% * 15 / 20); transform:translateX(-50%); width:2px; height:100%; background:#1e3a5f; opacity:0.6;" title="目标15亿"></div>
+          </div>
+        </div>
+      </div>
+      <!-- 图例 -->
+      <div style="display:flex; align-items:center; gap:16px; margin-top:14px; padding-top:12px; border-top:1px solid var(--border); flex-wrap:wrap;">
+        <div style="display:flex; align-items:center; gap:5px; font-size:11px; color:var(--text-muted);">
+          <div style="width:20px; height:6px; background:#ef4444; border-radius:3px;"></div>偏离（缺≥5亿）
+        </div>
+        <div style="display:flex; align-items:center; gap:5px; font-size:11px; color:var(--text-muted);">
+          <div style="width:20px; height:6px; background:#f97316; border-radius:3px;"></div>改善中（缺<5亿）
+        </div>
+        <div style="display:flex; align-items:center; gap:5px; font-size:11px; color:var(--text-muted);">
+          <div style="width:20px; height:6px; background:#eab308; border-radius:3px;"></div>接近达标（缺<3亿）
+        </div>
+        <div style="display:flex; align-items:center; gap:5px; font-size:11px; color:var(--text-muted);">
+          <div style="width:20px; height:6px; background:#22c55e; border-radius:3px;"></div>达标/超额
+        </div>
+        <div style="display:flex; align-items:center; gap:5px; font-size:11px; color:var(--text-muted);">
+          <div style="width:2px; height:10px; background:#1e3a5f; opacity:0.6;"></div>目标线（15亿）
         </div>
       </div>
     </div>
@@ -1361,6 +1455,15 @@ function renderHomepage(d) {
   // Sample status
   document.getElementById('home-sample-status-icon').textContent = '✅';
   document.getElementById('home-sample-status-text').textContent = '已齐套';
+
+  // 推演样本标识
+  var isSimulation = (currentSample === 'SIMW16' || currentSample === 'SIMW17' ||
+                      currentSample === 'SIMW18' || currentSample === 'SIMW19' || currentSample === 'SIMW20');
+  document.getElementById('home-simulation-badge').style.display = isSimulation ? 'inline-block' : 'none';
+
+  // M-001五期趋势图（仅推演样本显示）
+  var m001Trend = document.getElementById('home-m001-trend');
+  m001Trend.style.display = isSimulation ? 'block' : 'none';
 
   // Risk level
   var riskLevel = '可控';
