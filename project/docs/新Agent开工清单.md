@@ -549,3 +549,79 @@ T01 → T02 → T03 → T04 → T05 → T06/T07 → T08 → T09 → T10
 | 问题登记 | `project/docs/6B首周期问题登记表.md` |
 | 价值判断 | `project/docs/6B首周期价值判断.md` |
 | 状态更新 | `project/docs/阶段6B状态更新_6BLIVE_W16.md` |
+
+---
+
+## 十七、稳定基线固化说明（2026-04-16新增）
+
+**当前稳定基线版本：git commit `0054b44`**
+
+### 如何确认当前运行的是稳定基线版本
+
+```bash
+cd /home/admin/.openclaw/workspace-digital-employee
+git log --oneline -1
+# 应输出：0054b44 feat(stable-baseline): 稳定基线固化 - RUNBOOK + GitHub超时留痕
+```
+
+### 稳定基线验证方法
+
+```bash
+cd /home/admin/.openclaw/workspace-digital-employee/project
+python3 scripts/run_prototype.py
+# 预期：7/7 冒烟测试全部 PASS
+```
+
+### 稳定基线包含什么
+
+| 组件 | 状态 | 说明 |
+|------|------|------|
+| 7/7 冒烟测试 | ✅ 通过 | 样本可读、归一化、判断、输出均PASS |
+| 压力测试（9期/38条） | ✅ 通过 | run_week4_stress.py 无报错 |
+| RUNBOOK.md | ✅ 已补齐 | 含运行/测试/故障排查完整操作手册 |
+| GitHub 超时留痕 | ✅ 已记录 | docs/GITHUB_SYNC_ISSUE.md |
+| 原型代码 | ✅ 已提交 | commit 0054b44 |
+
+### 稳定基线当前缺口
+
+| 缺口 | 状态 | 说明 |
+|------|------|------|
+| GitHub 远程未同步 | ⏳ 待补 | Connection timed out，网络恢复后执行 `git push` |
+| 压力测试结果文档 | ⏳ 本次补 | 见 RUNBOOK.md |
+
+### 新 Agent 接入后第一件事
+
+```bash
+# 1. 确认当前版本是稳定基线
+cd /home/admin/.openclaw/workspace-digital-employee
+git log --oneline -1
+
+# 2. 确认原型可运行
+cd project && python3 scripts/run_prototype.py
+
+# 3. 确认 GitHub 同步状态
+git status
+# 如果有 uncommitted changes，先 commit
+# 如果 remote 有更新，先拉取
+```
+
+### 稳定基线之后的下一步
+
+- 网络恢复后执行 `git push origin master`
+- RUNBOOK 中记录的待验证项（压力测试结果）已在本轮固化完成
+- 后续变更应基于 commit `0054b44` 的稳定基线进行
+
+---
+
+## 十八、新Agent接入时常见问题
+
+| 问题 | 解答 |
+|------|------|
+| 从哪里开始读？ | 《一期原型总览》 |
+| 哪个文档最重要？ | 《阶段推进总表》（掌握门控） |
+| 发现文档冲突怎么办？ | 以《阶段推进总表》中的门控状态为准 |
+| 门控未清零能做什么？ | 读文档、修正已有文档、推动可自己完成的准备 |
+| 可以跳过阶段吗？ | 绝对不可以 |
+| 遇到不确定的问题找谁？ | 记录到《决策记录与待确认事项.md》，等待用户/PMO确认 |
+| GitHub push 失败怎么办？ | 见 `docs/GITHUB_SYNC_ISSUE.md`，本地代码不受影响 |
+| 如何确认当前是稳定版本？ | `git log --oneline -1` 确认 commit 为 `0054b44` |
