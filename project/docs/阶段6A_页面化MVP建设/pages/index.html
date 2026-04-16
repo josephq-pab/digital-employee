@@ -142,6 +142,12 @@
 <body>
 <div class="container">
 
+<!-- E-P1-1: 首页系统定位说明 -->
+<div style="background:linear-gradient(135deg,#4f46e5 0%,#7c3aed 100%); border-radius:12px; padding:14px 20px; margin-bottom:16px; color:white;">
+  <div style="font-size:13px; font-weight:700; margin-bottom:2px;">🤖 组织执行力数字员工 · 并行运行MVP</div>
+  <div style="font-size:11px; opacity:0.8;">数字员工原型 · 冻结建设版起点（c1e85bc） · 请勿视为生产系统</div>
+</div>
+
 <!-- Navigation -->
 <div class="nav-tabs">
   <a href="#" class="tab active" data-tab="home">🏠 首页</a>
@@ -163,8 +169,10 @@
           <div style="font-size:11px; text-transform:uppercase; letter-spacing:0.1em; opacity:0.7; margin-bottom:4px;">Phase 6E · 并行运行系统</div>
           <div style="display:flex; align-items:center; gap:10px;">
             <div style="font-size:20px; font-weight:700;" id="home-period-title">2026-04-14 / 04-18 本周期结论</div>
-            <span id="home-simulation-badge" style="display:none; font-size:11px; font-weight:600; background:rgba(255,255,255,0.2); border:1px solid rgba(255,255,255,0.35); color:rgba(255,255,255,0.9); padding:3px 10px; border-radius:20px; letter-spacing:0.05em;">推演样本</span>
+            <span id="home-simulation-badge" style="display:none; font-size:11px; font-weight:600; background:#ef4444; color:white; padding:3px 10px; border-radius:20px; letter-spacing:0.05em;">【样本数据】</span>
           </div>
+          <!-- G5: 数据来源标注 -->
+          <div id="home-data-source" style="display:none; font-size:11px; color:rgba(255,255,255,0.65); margin-top:4px;"></div>
         </div>
         <div style="text-align:right;">
           <div style="font-size:11px; opacity:0.7; margin-bottom:4px;">样本状态</div>
@@ -741,6 +749,13 @@
     <button class="sample-btn" onclick="switchSample('5CS')">历史2：1208-1212</button>
   </div>
 
+  <!-- G10: 风险清单分级筛选tab -->
+  <div style="display:flex; gap:8px; margin-bottom:16px; flex-wrap:wrap;">
+    <button class="btn btn-secondary" id="risk-filter-yellow" onclick="setRiskFilter('yellow')" style="padding:6px 14px; font-size:12px;">🔴 只看黄灯</button>
+    <button class="btn btn-secondary" id="risk-filter-defer" onclick="setRiskFilter('defer')" style="padding:6px 14px; font-size:12px;">🟠 只看延期</button>
+    <button class="btn btn-secondary" id="risk-filter-all" onclick="setRiskFilter('all')" style="padding:6px 14px; font-size:12px; border:2px solid #4f46e5; background:#4f46e5; color:white;">全部</button>
+  </div>
+
   <!-- Risks content will be injected by JS -->
   <div id="risks-content"></div>
 </div>
@@ -1278,6 +1293,7 @@ var DATA = {
 };
 
 var currentSample = "6BLIVE";
+var currentRiskFilter = 'all';
 
 // ============ TAB NAVIGATION ============
 document.querySelectorAll('.nav-tabs .tab').forEach(function(tab){
@@ -1475,10 +1491,19 @@ function renderHomepage(d) {
   document.getElementById('home-sample-status-icon').textContent = '✅';
   document.getElementById('home-sample-status-text').textContent = '已齐套';
 
-  // 推演样本标识
-  var isSimulation = (currentSample === 'SIMW16' || currentSample === 'SIMW17' ||
-                      currentSample === 'SIMW18' || currentSample === 'SIMW19' || currentSample === 'SIMW20');
+  // 推演样本标识（G4/E-P1-2: 全部非6BLIVE样本显示"【样本数据】"）
+  var isSimulation = (currentSample !== '6BLIVE');
   document.getElementById('home-simulation-badge').style.display = isSimulation ? 'inline-block' : 'none';
+  // G5: 数据来源标注
+  var dsEl = document.getElementById('home-data-source');
+  if (dsEl) {
+    if (isSimulation) {
+      dsEl.style.display = 'block';
+      dsEl.textContent = '数据来源：' + d.sample_id + ' | ' + d.period + '（样本数据，非生产数据）';
+    } else {
+      dsEl.style.display = 'none';
+    }
+  }
 
   // M-001五期趋势图（仅推演样本显示）
   var m001Trend = document.getElementById('home-m001-trend');
@@ -1658,10 +1683,34 @@ function renderTracker(d) {
   document.getElementById('tracker-content').innerHTML = html;
 }
 
+function setRiskFilter(filter) {
+  currentRiskFilter = filter;
+  // Update button styles
+  var filters = ['yellow', 'defer', 'all'];
+  filters.forEach(function(f) {
+    var btn = document.getElementById('risk-filter-' + f);
+    if (btn) {
+      if (f === filter) {
+        btn.style.background = '#4f46e5';
+        btn.style.color = 'white';
+        btn.style.border = '2px solid #4f46e5';
+      } else {
+        btn.style.background = '';
+        btn.style.color = '';
+        btn.style.border = '';
+      }
+    }
+  });
+  // Re-render
+  var d = DATA[currentSample];
+  renderRisks(d);
+}
+
 function renderRisks(d) {
   var html = '';
+  var filter = currentRiskFilter || 'all';
 
-  // Stats
+  // Stats (always show)
   html += '<div class="grid-3" style="gap:12px; margin-bottom:16px;">';
   html += '<div class="stat-card" style="padding:16px;"><div class="stat-num yellow">' + d.yellow + '</div><div class="stat-label">黄灯持续</div></div>';
   html += '<div class="stat-card" style="padding:16px;"><div class="stat-num red">' + d.defer + '</div><div class="stat-label">延期申请</div></div>';
@@ -1676,8 +1725,15 @@ function renderRisks(d) {
     html += '<div class="alert-desc">申请结项是正常生命周期，不是风险。本页<strong>仅展示黄灯和延期</strong>，3项申请结项事项已在领导摘要和台账中单独列出。</div></div>';
   }
 
-  // Yellow items
-  if (d.yellow_items.length) {
+  // G11: 正常状态说明（仅在"全部"tab下显示）
+  var totalNonRisk = (d.close_items ? d.close_items.length : 0);
+  if (filter === 'all' && totalNonRisk > 0) {
+    html += '<div class="card" style="border-left:4px solid #86efac; margin-bottom:12px;"><div style="font-size:12px; color:#166534;"><span style="font-weight:600;">✅ 其余' + totalNonRisk + '项为正常状态（未触发风险条件）</span></div></div>';
+  }
+
+  // Yellow items（filter=yellow 或 filter=all 时显示）
+  var showYellow = (filter === 'yellow' || filter === 'all');
+  if (showYellow && d.yellow_items.length) {
     var riskTitle = d.yellow_items.some(function(i){return i.item_type === '关注';}) ? '🟠 关注事项' : '🔴 黄灯警示（持续）';
     html += '<div class="card"><div class="card-title">' + riskTitle + '</div>';
     d.yellow_items.forEach(function(item, i){
@@ -1691,10 +1747,13 @@ function renderRisks(d) {
       html += '</div>';
     });
     html += '</div>';
+  } else if (showYellow && !d.yellow_items.length) {
+    html += '<div class="card"><div class="alert-box green"><div class="alert-title">✅ 本周期无黄灯警示</div></div></div>';
   }
 
-  // Defer items
-  if (d.defer_items.length) {
+  // Defer items（filter=defer 或 filter=all 时显示）
+  var showDefer = (filter === 'defer' || filter === 'all');
+  if (showDefer && d.defer_items.length) {
     html += '<div class="card"><div class="card-title">🟠 延期申请</div>';
     d.defer_items.forEach(function(item, i){
       html += '<div class="alert-box red" style="margin-bottom:' + (i < d.defer_items.length-1 ? '12px' : '0') + ';">';
@@ -1705,6 +1764,8 @@ function renderRisks(d) {
       html += '</div>';
     });
     html += '</div>';
+  } else if (showDefer && !d.defer_items.length) {
+    html += '<div class="card"><div class="alert-box green"><div class="alert-title">✅ 本周期无延期申请</div></div></div>';
   }
 
   if (!d.yellow_items.length && !d.defer_items.length) {
@@ -1828,14 +1889,14 @@ function submitReview() {
   var resultEl = document.getElementById('review-submit-result');
   if (resultEl) {
     resultEl.style.display = 'block';
-    resultEl.innerHTML = '<div style="background:#f0fdf4; border:1px solid #86efac; border-radius:8px; padding:14px;">' +
-      '<div style="font-weight:700; color:#166534; margin-bottom:8px;">✅ 复核结论已暂存</div>' +
-      '<div style="font-size:12px; color:#166534; line-height:1.8; white-space:pre-wrap;">' + summary.replace(/</g,'&lt;') + '</div>' +
-      '<div style="font-size:12px; color:#166534; margin-top:8px; opacity:0.8;">（本MVP版本为演示状态，真实复核记录将在04/14样本接入后正式提交。）</div>' +
+    resultEl.innerHTML = '<div style="background:#f0fdf4; border:2px solid #22c55e; border-radius:10px; padding:16px 20px; margin-top:12px;">' +
+      '<div style="font-weight:700; color:#166534; font-size:14px; margin-bottom:8px;">✅ 复核已提交</div>' +
+      '<div style="font-size:12px; color:#166534; line-height:1.9; white-space:pre-wrap; margin-bottom:10px;">' + summary.replace(/</g,'&lt;') + '</div>' +
+      '<div style="font-size:12px; color:#166534; margin-top:8px; padding-top:8px; border-top:1px solid #86efac;">📌 可点击顶部 <strong>📜 历史运行</strong> 标签查看历史复核记录。</div>' +
       '</div>';
   }
   var btn = document.getElementById('review-submit-btn');
-  if (btn) { btn.disabled = true; btn.textContent = '✅ 已提交'; }
+  if (btn) { btn.disabled = true; btn.textContent = '✅ 已提交'; btn.style.opacity = '1'; btn.style.cursor = 'default'; }
 }
 
 function handleMainUpload(input) {
