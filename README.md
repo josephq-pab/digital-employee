@@ -82,6 +82,9 @@ workspace-digital-employee/
 | 文档 | 用途 |
 |------|------|
 | `RUNBOOK.md` | 操作手册（运行/测试/故障排查） |
+| `docs/正式交付结论落版.md` | **正式交付结论（第一份必读）** |
+| `docs/正式移交启动说明.md` | 移交对象/范围/第一天行动 |
+| `docs/正式交付包清单.md` | 完整交付文件清单（17份文档） |
 | `project/docs/新Agent开工清单.md` | 新Agent第一份必读 |
 | `project/docs/阶段推进总表.md` | 阶段门控状态 |
 | `project/docs/输入输出数据契约.md` | 输入输出字段定义 |
