@@ -2,37 +2,103 @@
 
 **Agent ID**: digital-employee
 **显示名**: 数字员工实验室
-**项目**: 数字员工（待定）
-**状态**: 空白可开发
+**项目**: 数字员工 - 重点项目执行跟踪原型
+**稳定基线版本**: commit `0054b44`（2026-04-16）
 
 ---
 
-## 项目状态
+## 当前稳定基线
 
-当前为**初始状态**，没有任何项目文件。从零开始建设。
+原型已通过 7/7 冒烟测试和压力测试（38条/9期），端到端可运行。
 
-## 建议项目结构
+### 验证命令
+
+```bash
+cd /home/admin/.openclaw/workspace-digital-employee/project
+python3 scripts/run_prototype.py
+# 预期：7/7 PASS
+```
+
+```bash
+python3 scripts/run_week4_stress.py
+# 预期：38条事项完整处理，无报错
+```
+
+### 稳定基线包含
+
+- 原型端到端可运行（加载→归一化→规则判断→输出生成）
+- 7/7 冒烟测试通过
+- 压力测试（9期/38条）通过
+- RUNBOOK.md 操作手册已就绪
+- GitHub 超时问题已记录（远程未同步，本地代码正常）
+
+### 稳定基线缺口
+
+- GitHub 远程未同步（`Connection timed out`，待网络恢复后 `git push`）
+
+---
+
+## 项目当前能做什么
+
+输入：项目周报（JSON）+ 台账（JSON）+ 映射关系（JSON）  
+处理：归一化 → 规则判断 → 风险评估  
+输出：
+- 领导摘要（txt）
+- 事项总台账（txt）
+- 风险清单（txt）
+
+---
+
+## 项目结构
 
 ```
-project/
-├── app/              ← 主应用代码
-│   └── main.py       ← 应用入口
-├── data/             ← 数据文件
-├── tests/            ← 测试用例
-├── prototypes/       ← 原型/实验代码
-├── docs/             ← 项目文档
-├── scripts/          ← 工具脚本
-└── eval/             ← 评估/测试结果
+workspace-digital-employee/
+├── RUNBOOK.md               ← 操作手册（运行/测试/故障排查）
+├── HANDOFF.md              ← 交接文档
+├── project/
+│   ├── app/                ← 主应用
+│   ├── src/
+│   │   ├── adapters/       ← 归一化适配
+│   │   ├── generators/     ← 输出生成
+│   │   ├── loaders/        ← 数据加载
+│   │   └── rules/          ← 规则（待激活）
+│   ├── data/
+│   │   ├── output/         ← 生成的输出文件
+│   │   └── tmp/            ← 归一化中间结果
+│   ├── docs/               ← 项目文档（总索引：docs总索引与阅读路径.md）
+│   ├── scripts/
+│   │   ├── run_prototype.py    ← 主流程（含7/7冒烟测试）
+│   │   └── run_week4_stress.py ← 压力测试
+│   └── tests/
+├── docs/                   ← 工程级文档
+│   └── GITHUB_SYNC_ISSUE.md ← GitHub连接问题留痕
+└── samples/                ← 样本数据
 ```
+
+---
+
+## 关键文档索引
+
+| 文档 | 用途 |
+|------|------|
+| `RUNBOOK.md` | 操作手册（运行/测试/故障排查） |
+| `project/docs/新Agent开工清单.md` | 新Agent第一份必读 |
+| `project/docs/阶段推进总表.md` | 阶段门控状态 |
+| `project/docs/输入输出数据契约.md` | 输入输出字段定义 |
+| `project/docs/docs总索引与阅读路径.md` | 全部文档索引 |
+| `docs/GITHUB_SYNC_ISSUE.md` | GitHub连接问题记录 |
+
+---
 
 ## 下一步建议
 
-1. 明确数字员工的具体业务场景
-2. 确定使用的技术栈（Python/Node.js/其他）
-3. 初始化第一个可运行版本
-4. 设置 smoke test 基线
+1. 网络恢复后执行 `git push origin master`（当前唯一未完成的工程动作）
+2. 确认 RUNBOOK.md 中的操作步骤是否清晰
+3. 推进演示/交接准备
 
-## 当前 Python 环境
+---
+
+## Python 环境
 
 - `/tmp/py39env/bin/python`（3.9.25）
 - 可用库：scrapling 0.2.99 / beautifulsoup4 / openpyxl
