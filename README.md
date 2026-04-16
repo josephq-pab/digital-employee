@@ -100,5 +100,7 @@ workspace-digital-employee/
 
 ## Python 环境
 
-- `/tmp/py39env/bin/python`（3.9.25）
+- `python3`（通过 `#!/usr/bin/env python3` 调用，当前系统 Python 3.6.8）
 - 可用库：scrapling 0.2.99 / beautifulsoup4 / openpyxl
+
+**注意**：RUNBOOK 和脚本使用 `python3`（系统默认），非 `/tmp/py39env/bin/python`。

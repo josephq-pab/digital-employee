@@ -219,7 +219,7 @@ ls -t /home/admin/.openclaw/workspace-digital-employee/project/data/tmp/normaliz
 本原型目前无 on-call 机制。发现异常时：
 1. 先看本 RUNBOOK 第 7 节「失败时优先看哪些文件」
 2. 检查样本文件是否被意外修改
-3. 确认 Python 环境正常（Python 3.9+）
+3. 确认 Python 环境正常（Python 3.6+）
 
 ---
 
