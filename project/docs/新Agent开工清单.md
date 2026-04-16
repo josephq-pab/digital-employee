@@ -1,6 +1,6 @@
 # 新Agent开工清单
 
-**版本：** v2.1（新增阶段5C-S双样本并行验证文档，2026-04-10）
+**版本：** v2.2（新增稳定基线固化章节+演示与交接准备文档，2026-04-16）
 **适用：** 任意新Agent接手时
 **目标：** 第1天知道做什么，不做什么，能直接开工
 
@@ -554,14 +554,14 @@ T01 → T02 → T03 → T04 → T05 → T06/T07 → T08 → T09 → T10
 
 ## 十七、稳定基线固化说明（2026-04-16新增）
 
-**当前稳定基线版本：git commit `0054b44`**
+**当前稳定基线版本：git commit `c1e85bc`**
 
 ### 如何确认当前运行的是稳定基线版本
 
 ```bash
 cd /home/admin/.openclaw/workspace-digital-employee
 git log --oneline -1
-# 应输出：0054b44 feat(stable-baseline): 稳定基线固化 - RUNBOOK + GitHub超时留痕
+# 应输出：c1e85bc feat(stable-baseline): 稳定基线固化 - RUNBOOK + GitHub超时留痕
 ```
 
 ### 稳定基线验证方法
@@ -580,7 +580,7 @@ python3 scripts/run_prototype.py
 | 压力测试（9期/38条） | ✅ 通过 | run_week4_stress.py 无报错 |
 | RUNBOOK.md | ✅ 已补齐 | 含运行/测试/故障排查完整操作手册 |
 | GitHub 超时留痕 | ✅ 已记录 | docs/GITHUB_SYNC_ISSUE.md |
-| 原型代码 | ✅ 已提交 | commit 0054b44 |
+| 原型代码 | ✅ 已提交 | commit c1e85bc |
 
 ### 稳定基线当前缺口
 
@@ -609,7 +609,7 @@ git status
 
 - 网络恢复后执行 `git push origin master`
 - RUNBOOK 中记录的待验证项（压力测试结果）已在本轮固化完成
-- 后续变更应基于 commit `0054b44` 的稳定基线进行
+- 后续变更应基于 commit `c1e85bc` 的稳定基线进行
 
 ---
 
@@ -624,4 +624,4 @@ git status
 | 可以跳过阶段吗？ | 绝对不可以 |
 | 遇到不确定的问题找谁？ | 记录到《决策记录与待确认事项.md》，等待用户/PMO确认 |
 | GitHub push 失败怎么办？ | 见 `docs/GITHUB_SYNC_ISSUE.md`，本地代码不受影响 |
-| 如何确认当前是稳定版本？ | `git log --oneline -1` 确认 commit 为 `0054b44` |
+| 如何确认当前是稳定版本？ | `git log --oneline -1` 确认 commit 为 `c1e85bc` |
